@@ -1,3 +1,4 @@
+<?php
 class Administrador {
 	private $administradorId;	
 	private $correo;
@@ -38,3 +39,4 @@ class Administrador {
 		$this->estado=$estado;
 	}
 }
+?>

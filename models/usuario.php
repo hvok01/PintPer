@@ -1,3 +1,4 @@
+<?php
 class Usuario {
 	private $usuarioId;
 	private $nickName;
@@ -46,3 +47,5 @@ class Usuario {
 		$this->estado=$estado;
 	}
 }
+
+?>

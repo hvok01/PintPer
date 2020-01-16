@@ -1,3 +1,4 @@
+<?php
 class Propietario {
 	private $propietarioId;
 	private $nombre;
@@ -62,3 +63,5 @@ class Propietario {
 		$this->estado=$estado;
 	}
 }
+
+?>
