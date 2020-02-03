@@ -9,7 +9,7 @@
 
 <p>Podes registrarte para encontrar puntos de recarga <br> completando el siguiente formulario:</p>
 
-<form action="index.php" method="post">
+<form action="loginUsuarioComun.php" method="post">
     <label for="nombreUsuario">Nombre de usuario</label>
     <input type="text" name="nombreUsuario" id="" placeholder="Nombre de usuario"> <br>
 
@@ -25,6 +25,6 @@
     <input type="submit" value="Registrarme">
 </form>
 
-<p> ¿Ya tenes cuenta? <a href="#">Inicía sesion</a> </p>
+<p> ¿Ya tenes cuenta? <a href="loginUsuarioComun.php">Inicía sesion</a> </p>
 </body>
 </html>

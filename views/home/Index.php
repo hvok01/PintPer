@@ -2,24 +2,21 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Pintper</title>
 </head>
 <body>
-<h1>Login usuario comun</h1>
+<h1>Index Pintper</h1>
 
-	<form action="" method="post">
+	<h1>Ingresar como usuario comun</h1>
+		<a href="loginUsuarioComun.php">acá</a>
+	<hr>
 
-		<label for="correoUsuario">Correo electronico</label>
-		<input type="text" name="correoUsuario" id="" placeholder="Correo electronico"> <br>
+	<h1>Ingresar como Administrador</h1>
+		<a href="loginAdmin.php">acá</a>
+	<hr>
 
-		<label for="claveUsuario">Clave de usuario</label>
-		<input type="password" name="claveUsuario" id="" placeholder="Clave"> <br>
-
-		<a href="#">Olvidé mi contraseña</a> <br>
-
-		<input type="submit" value="Iniciar Sesion">
-	</form>
-
-	<p> ¿No tenes cuenta? <a href="registrarUsuarioComun.php">registrate acá</a> </p>	
+	<h1>Ingresar como dueño de local</h1>
+		<a href="loginDuenioLocal.php">acá</a>
+	<hr>
 </body>
 </html>
