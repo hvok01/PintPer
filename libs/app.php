@@ -8,18 +8,19 @@ class Principal{
 		$url=explode('/',$url);
 		//cuando se ingresa sin definir controlador
 		if(empty($url[0])){
-			$archivoController='controllers/home.php';
+			$archivoController='controllers/homecontroller.php';
 			require_once $archivoController;
-			$controller=new Main();
-			$controller->loadModel('main');
+			$controller=new HomeController();
+			$controller->loadModel('Home');
 			$controller->render();
 			return false;
 		}
-		$archivoController='controllers/'.$url[0].'.php';
+		$archivoController='controllers/'.$url[0].'Controller.php';
 		if(file_exists($archivoController)){
 			require_once $archivoController;
 			//inicializar el controlador
-			$controller=new $url[0];
+			$modelo=$url[0]."Controller";			
+			$controller=new $modelo;			
 			$controller->loadModel($url[0]);
 			//tiene el # de elementos del arreglo
 			$nparam=sizeof($url);
@@ -44,7 +45,13 @@ class Principal{
 			}
 			if($_SESSION['usuario_registrado']==null)
 			{
-			    header("Location:".constant('URL')."login");
+				$archivoController='controllers/home.php';
+				require_once $archivoController;
+				$controller=new Home();
+				$controller->loadModel('Home');
+				$controller->render();
+				return false;
+			    //header("Location:".constant('URL')."home.php");
 			}
 			$controller=new Errores();
 

@@ -28,6 +28,6 @@
         <input type="submit" value="Agregar Local">
     </form>
 
-    <a href="indexDuenioLocal.php">Volver</a>
+    <a href="<?php echo constant('URL')?>home/user_prop">Volver</a>
 </body>
 </html>

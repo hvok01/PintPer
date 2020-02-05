@@ -15,10 +15,10 @@
     <div id="navBar">
         Navegar Por aca
         <ul>
-            <li><a href="verLocalesUsuarioComun.php">Ver Locales</a></li>
+            <li><a href="<?php echo constant('URL')?>local">Ver Locales</a></li>
             <li><a href="#Promociones">Promociones</a></li>
-            <li><a href="configuracionesUsuarioComun.php">Configuraciones</a></li>
-            <li><a href="loginUsuarioComun.php">Cerrar Sesion</a></li>
+            <li><a href="<?php echo constant('URL')?>usuario/config">Configuraciones</a></li>
+            <li><a href="<?php echo constant('URL')?>Usuario">Cerrar Sesion</a></li>
         </ul>
     </div>
     <!-- Acá se encuenta la barra de navegacion de estilos de cerveza -->

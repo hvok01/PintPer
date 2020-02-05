@@ -6,7 +6,7 @@ class Propietario {
 	private $dni;
 	private $correo;
 	private $clave;
-	private $estado
+	private $estado;
 		
 	public function __construct(){
 	}
@@ -24,6 +24,7 @@ class Propietario {
 	public function getNombre(){
 		return $this->nombre;
 	}
+	
 	public function setNombre($nombre){
 		$this->nombre=$nombre;
 	}
@@ -32,7 +33,7 @@ class Propietario {
 		return $this->apellido;
 	}
 	public function setApellido($apellido){
-		$this->nombre=$apellido;
+		$this->apellido=$apellido;
 	}
 
 	public function getDni(){

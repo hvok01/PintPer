@@ -27,7 +27,7 @@
         <hr>
     </div>
 
-    <a href="verLocalUsuarioComun.php">Regresar</a>
+    <a href="<?php echo constant('URL')?>local">Regresar</a>
 
 </body>
 </html>

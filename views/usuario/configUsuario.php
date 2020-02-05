@@ -15,7 +15,7 @@
             <input type="text" name="" id="" placeholder="Repetir Clave Actual">
             <input type="text" name="" id="" placeholder="Nueva Clave">
             <input type="submit" value="Aceptar">
-            <a href="indexUsuarioComun.php">Volver</a>
+            <a href="<?php echo constant('URL')?>home/user_comun">Volver</a>
         </form>
 
         <form action="" method="post">
@@ -24,9 +24,9 @@
             <input type="submit" value="Darme de baja">
         </form>
         <hr>
-        <p>Si querés ponerte en contacto con pintper para dejar sugerencias hace <a href="formularioPintper.php">click acá </a></p>
+        <p>Si querés ponerte en contacto con pintper para dejar sugerencias hace <a href="<?php echo constant('URL')?>Home/contacto">click acá </a></p>
     </div>
 
-    <a href="indexUsuarioComun.php">Inicio</a>
+    <a href="<?php echo constant('URL')?>home/user_comun">Inicio</a>
 </body>
 </html>

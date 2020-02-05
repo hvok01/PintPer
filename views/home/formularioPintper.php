@@ -14,6 +14,6 @@
         <input type="text" name="" id="" placeholder="Mensaje">
         <input type="submit" value="Enviar">
     </form>
-    <a href="configuracionesUsuarioComun.php">Volver</a>
+    <a href="<?php echo constant('URL')?>usuario/config">Volver</a>
 </body>
 </html>

@@ -9,8 +9,8 @@
 
 	<p>Volver al home haciendo click <a href="index.php">acá</a></p>
 
-	<form action="indexDuenioLocal.php" method="post">
-
+	<form action="<?php echo constant('URL')?>propietario/login" method="post">
+		<span><?php echo $this->mensaje; ?></span><br>
 		<label for="correoUsuario">Correo electronico</label>
 		<input type="text" name="correoUsuario" id="" placeholder="Correo electronico"> <br>
 
@@ -22,6 +22,6 @@
 		<input type="submit" value="Iniciar Sesion">
 	</form>
 
-	<p> ¿No tenes cuenta? <a href="registrarDuenioLocal.php">registrate acá</a> </p>	
+	<p> ¿No tenes cuenta? <a href="<?php echo constant("URL");?>Propietario/registroview">registrate acá</a> </p>	
 </body>
 </html>

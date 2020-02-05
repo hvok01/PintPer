@@ -18,8 +18,8 @@
         <hr>
     </div>
     <!--Vuelve a donde estan todos los locales -->
-    <a href="verLocalesUsuarioComun.php">Volver</a>
+    <a href="<?php echo constant('URL')?>home/user_comun">Volver</a>
     <!--Ver más para ver cervezas y estilos del local -->
-    <a href="verMasDeLocalUsuarioComun.php">Ver más</a>
+    <a href="<?php echo constant('URL')?>local/verMas">Ver más</a>
 </body>
 </html>

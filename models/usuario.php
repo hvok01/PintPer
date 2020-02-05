@@ -4,7 +4,7 @@ class Usuario {
 	private $nickName;
 	private $correo;
 	private $clave;
-	private $estado
+	private $estado;
 		
 	public function __construct(){
 	}

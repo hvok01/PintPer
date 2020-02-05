@@ -2,21 +2,27 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
 	<title>Pintper</title>
 </head>
 <body>
-<h1>Index Pintper</h1>
-
+	<?php include('header.php'); ?>
+	<h1>Index Pintper</h1>
+	
 	<h1>Ingresar como usuario comun</h1>
-		<a href="loginUsuarioComun.php">acá</a>
+		<a href="Usuario">acá</a>
 	<hr>
 
 	<h1>Ingresar como Administrador</h1>
-		<a href="loginAdmin.php">acá</a>
+		<a href="#">acá</a>
 	<hr>
 
 	<h1>Ingresar como dueño de local</h1>
-		<a href="loginDuenioLocal.php">acá</a>
+		<a href="Propietario">acá</a>
 	<hr>
+
+	<?php include('footer.php'); ?>
+	<script type="" src="public/js/jquery-3.4.1.js"></script>
+	<script type="" src="public/js/bootstrap.min.js"></script>
 </body>
 </html>

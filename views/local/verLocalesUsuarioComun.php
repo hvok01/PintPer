@@ -23,6 +23,6 @@
         <hr>
     </div>
 
-    <a href="indexUsuarioComun.php" class="btnVolver">Volver</a>
+    <a href="<?php echo constant('URL')?>home/user_comun" class="btnVolver">Volver</a>
 </body>
 </html>

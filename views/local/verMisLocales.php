@@ -22,6 +22,6 @@
         </form>
     </div>
 
-    <a href="indexDuenioLocal.php">inicio</a>
+    <a href="<?php echo constant('URL')?>home/user_prop">inicio</a>
 </body>
 </html>
