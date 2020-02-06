@@ -1,5 +1,6 @@
-<h1>Agrega un nuevo local para llegar a mas gente.</h1>
+<h1>Editar Local: Nombre Local</h1>
 <hr>
+<input type="button" value="Editar">
 <form action="">
     <input type="text" name="Nombre" id="" placeholder="Nombre">
     <input type="text" name="Telefono" id="" placeholder="Telefono">
@@ -18,7 +19,7 @@
     <input type="checkbox" name="Sabado" id="">Sabado
     <input type="checkbox" name="Domingo" id="">Domingo
 
-    <input type="submit" value="Agregar Local">
+    <input type="submit" value="Guardar">
 </form>
 
 <a href="<?php echo constant('URL')?>home/user_prop">Volver</a>

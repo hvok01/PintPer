@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once 'models/propietario.php';
 class PropietarioController extends Controller{
 	
@@ -46,6 +47,10 @@ class PropietarioController extends Controller{
 			$this->view->mensaje="Se guardo";
 			$this->registroview();
 		}		
+	}
+
+	function configuraciones(){
+		$this->view->render('propietario/configuracionesDuenio');	
 	}
 }
 

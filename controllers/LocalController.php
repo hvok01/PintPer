@@ -23,6 +23,11 @@ class LocalController extends Controller{
 	function verMisLocales(){
 		$this->view->render('local/verMisLocales');	
 	}
+
+	function editarLocal(){
+		$this->view->render('local/editarMiLocal');	
+	}
+
 }
 
 ?>

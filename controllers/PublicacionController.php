@@ -9,7 +9,7 @@ class PublicacionController extends Controller{
 	}
 	
 	function render(){
-		$this->view->render('publicacion/index');
+		$this->view->render('publicacion/subirPublicidad');
 	}
 }
 

@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Agregar Estilo</title>
-</head>
-<body>
     <h1>Agregá un nuevo estilo de cerveza</h1>
     <hr>
     <div>
@@ -16,7 +9,5 @@
             <input type="file" name="SeleccionarImagen" id=""> <br>
             <input type="submit" value="Guardar">
         </form>
-        <a href="indexDuenioLocal.php">Volver</a>
+        <a href="<?php echo constant('URL')?>Home/user_Prop">Volver</a>
     </div>
-</body>
-</html>

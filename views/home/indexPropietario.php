@@ -1,4 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,12 +15,12 @@
 
     <!--Links de navegacion temporal -->
     <ul>
-        <li><a href="agregarEstilosDuenio.php">Agregar Estilos</a></li>
-        <li><a href="verEstilosDuenio.php">Ver mis Estilos</a></li>
-        <li><a href="subirPublicidadDuenio.php">Subir Publicidad</a></li>
+        <li><a href="<?php echo constant('URL')?>Estilo/agregarEstilo">Agregar Estilos</a></li>
+        <li><a href="<?php echo constant('URL')?>Estilo/verMisEstilos">Ver mis Estilos</a></li>
+        <li><a href="<?php echo constant('URL')?>publicacion">Subir Publicidad</a></li>
         <li><a href="<?php echo constant('URL')?>local/agregar">Agregar Local</a></li>
         <li><a href="<?php echo constant('URL')?>local/verMisLocales">Ver mis Locales</a></li>
-        <li><a href="configuracionesDuenioLocal.php">Configuracion</a></li>
+        <li><a href="<?php echo constant('URL')?>propietario/configuraciones">Configuracion</a></li>
         <li><a href="<?php echo constant('URL')?>propietario">Salir</a></li>
     </ul>
 </body>
