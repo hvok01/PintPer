@@ -3,6 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="public/css/pintperRoot.css">
+	<link rel="stylesheet" type="text/css" href="public/css/pintperGrid.css">
+	<link rel="stylesheet" type="text/css" href="public/css/headerPintper.css">
+	<link rel="icon" href="public/img/Favicon2.png">
 	<title>Pintper</title>
 </head>
 <body>
