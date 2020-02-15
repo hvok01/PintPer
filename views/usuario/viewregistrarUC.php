@@ -77,7 +77,6 @@
                                 echo "<p>".$this->mensaje."</p>";
                             }    
                         ?>
-
                     <p> ¿Ya tenes cuenta? <a href="<?php echo constant("URL");?>Usuario">Inicía sesion</a> </p>
                 </div>
             </div>

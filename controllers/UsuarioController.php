@@ -25,13 +25,17 @@ class UsuarioController extends Controller{
 		$user->setCorreo($_POST["correoUsuario"]);
 		$user->setClave($_POST["claveUsuario"]);
 		$user->setEstado($estado);
-		
-		if($this->model->resgistrarUsuario($user)){
-			$this->view->mensaje="Ud se registro satifactoriamente";
+		if($_POST["nombreUsuario"]==""){
+			$this->view->mensaje="Error... Debe llenar todos los campos";
 			$this->registroview();
 		}else{
-			$this->view->mensaje="Error de Reistro";
-			$this->registroview();
+			if($this->model->resgistrarUsuario($user)){
+				$this->view->mensaje="Ud se registro satifactoriamente";
+				$this->registroview();
+			}else{
+				$this->view->mensaje="Error de Reistro";
+				$this->registroview();
+			}
 		}
 	}
 

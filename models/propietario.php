@@ -7,6 +7,7 @@ class Propietario {
 	private $correo;
 	private $clave;
 	private $estado;
+	private $provinciaId;
 		
 	public function __construct(){
 	}
@@ -62,6 +63,13 @@ class Propietario {
 	}
 	public function setEstado($estado){
 		$this->estado=$estado;
+	}
+
+	public function getProvinciaId(){
+		return $this->provinciaId;
+	}
+	public function setProvinciaId($provinciaId){
+		$this->provinciaId=$provinciaId;
 	}
 }
 
