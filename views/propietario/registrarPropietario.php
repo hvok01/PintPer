@@ -51,7 +51,7 @@
                         <input type="password" name="Clave" placeholder="Clave" class="pintper-textbox"> <br>
 
                         <select name="provinicas" class="pintper-option">
-                            <option value="Buenos Aires"></option>
+                            <option value="Buenos Aires">Buenos Aires</option>
                             <option value="Catamarca">Catamarca</option>
                             <option value="Chaco">Chaco</option>
                             <option value="Chubut">Chubut</option>
