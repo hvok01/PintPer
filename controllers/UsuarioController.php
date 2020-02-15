@@ -44,7 +44,7 @@ class UsuarioController extends Controller{
 			$this->view->render('home/indexUsuarioComun');
 		}else{
 			$this->view->mensaje="Correo o Contraseña incorrectos";
-			$this->render();			
+			$this->render();
 		}
 	}
 

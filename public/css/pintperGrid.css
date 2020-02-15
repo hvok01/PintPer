@@ -1,0 +1,76 @@
+.pintper-container {
+    max-width: 1240px;
+    margin: auto;
+}
+
+.pintper-row {
+    display: flex;
+}
+
+.pintper-col-1 {
+    width: 6.25%;
+}
+
+.pintper-col-2 {
+    width: 12.5%;
+}
+
+.pintper-col-3 {
+    width: 18.75%;
+}
+
+.pintper-col-4 {
+    width: 25%;
+}
+
+.pintper-col-5 {
+    width: 31.25%;
+}
+
+.pintper-col-6 {
+    width: 37.5%;
+}
+
+.pintper-col-7 {
+    width: 43.75%;
+}
+
+.pintper-col-8 {
+    width: 50%;
+}
+
+.pintper-col-9 {
+    width: 56.25%;
+}
+
+.pintper-col-10 {
+    width: 62.5%;
+}
+
+.pintper-col-11 {
+    width: 68.75%;
+}
+
+.pintper-col-12 {
+    width: 75%;
+}
+
+.pintper-col-13 {
+    width: 81.25%;
+}
+
+.pintper-col-14 {
+    width: 87.5%;
+}
+
+.pintper-col-15 {
+    width: 93.75%;
+}
+
+.pintper-col-16 {
+    width: 100%;
+}
+
+.pintper-col-1, .pintper-col-2, .pintper-col-3, .pintper-col-4, .pintper-col-5, .pintper-col-6, .pintper-col-7, .pintper-col-8, .pintper-col-9, .pintper-col-10, .pintper-col-11, .pintper-col-12, .pintper-col-13, .pintper-col-14, .pintper-col-15, .pintper-col-16 {
+    padding: 5px 10px;
+}

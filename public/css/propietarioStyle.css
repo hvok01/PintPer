@@ -1,0 +1,525 @@
+.pintper-menu {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 10px;
+    z-index: 15;
+}
+
+.pintper-menu:hover {
+    cursor: pointer;
+}
+
+.menu-pintper-nav {
+    width: 20vw;
+    height: 95vh;
+    background-color: var(--primary);
+    display: flex;
+    position: absolute; 
+    right: 0;
+    z-index: 10;
+    text-align: center;
+    justify-content: center;
+}
+
+.menu-pintper-nav ul {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.menu-pintper-nav ul li{
+    padding: 25px;
+    list-style: none;
+}
+
+.menu-pintper-nav ul li a {
+    color: var(--black);
+    font-family: var(--alata);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-pintper-nav ul li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.items-fade {
+    -webkit-animation-delay: .2s;
+    animation-delay: .2s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: items-fade;
+    animation-name: items-fade;
+}
+
+@keyframes items-fade {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(50px, 0, 0);
+        transform: translate3d(50px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0); 
+    }
+}
+
+.propietario .pintper-row {
+    background-color: white;
+}
+
+.propietario .pintper-row .pintper-col-16 {
+    margin: 25px 0;
+    height: 60vh;
+}
+
+.propietario .pintper-row .pintper-col-16 button {
+    position: relative;
+    float: right;
+    margin: 0;
+    color: var(--black);
+    border: none;
+    background-color: transparent;
+    font-family: var(--alata);
+    top: -20px;
+}
+
+.propietario .pintper-row .pintper-col-16 button:hover {
+    color: var(--blueExtra);
+    cursor: pointer;
+}
+
+.propietario .pintper-row .pintper-col-16 h1 {
+    color: var(--black);
+    font-size: 24px;
+    font-family: var(--alata);
+    font-weight: bold;
+    margin: 0;
+}
+
+.propietario .pintper-row .pintper-col-16 hr {
+    border: 1px solid var(--black);
+    margin: 25px 0;
+}
+
+.propietario .pintper-row .pintper-col-16 p {
+    color: var(--black);
+    font-size: 14px;
+    font-family: var(--open-sans);
+    margin: 0;
+}
+
+.propietario .pintper-row .pintper-col-16 h2 {
+    color: var(--black);
+    font-size: 18px;
+    font-family: var(--open-sans);
+    margin: 0;
+}
+
+.propietario .pintper-row .pintper-col-16 .contenido-container {
+    width: 90vw; 
+    height: 200px; 
+    background-color: #5F646D;
+    margin: 25px 0;
+}
+
+.propietario .pintper-row .pintper-col-16 .contenedor-archivo {
+    overflow: hidden;
+    position: relative;
+    padding: 10px 40px;
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    text-decoration: none;
+    top: 65vh;
+}
+
+.propietario .pintper-row .pintper-col-16 .contenedor-archivo [type=file] {
+    cursor: inherit;
+    display: block;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+.propietario .pintper-row .pintper-col-16 .contenedor-archivo:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.propietario .pintper-row .pintper-col-16 .estilos-txt {
+    margin-bottom: 25px;
+    width: 80%;
+}
+
+.propietario .pintper-row .pintper-col-16 .estilos-txt:nth-child(3) {
+    margin-bottom: 150px;
+}
+
+.propietario .pintper-row .pintper-col-16 .formulario-agregar-estilos {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+}
+
+.propietario .pintper-row .pintper-col-16 .formulario-agregar-estilos .contenedor-foto {
+    height: 100%; 
+    background-color: #5F646D;
+    margin: 0;
+    flex: 1;
+}
+
+.propietario .pintper-row .pintper-col-16 .formulario-agregar-estilos .contenedor-inputs {
+    height: 100%; 
+    margin: 0;
+    flex: 1;
+    display: block;
+    text-align: center;
+}
+
+.propietario .pintper-row .pintper-col-16 .formulario-agregar-estilos .contenedor-inputs .pintper-button-marron-claro {
+    padding: 10px 40px;
+}
+
+.verEstilos {
+    margin-top: 25px;
+}
+
+.verEstilos .pintper-row {
+    background-color: white;
+}
+
+.verEstilos .pintper-row .pintper-col-16 h1 {
+    color: var(--black);
+    font-size: 24px;
+    font-family: var(--alata);
+    font-weight: bold;
+    margin: 0;
+}
+
+.verEstilos .pintper-row .pintper-col-16 hr, .verEstilos .pintper-row .pintper-col-8 hr {
+    border: 1px solid var(--black);
+    margin: 25px 0;
+}
+
+.verEstilos .pintper-row .pintper-col-8 h3 {
+    color: var(--black);
+    font-size: 20px;
+    font-family: var(--alata);
+    font-weight: bold;
+    margin: 0;
+}
+
+.verEstilos .pintper-row .pintper-col-8 p{
+    color: var(--black);
+    font-size: 14px;
+    font-family: var(--open-sans);
+    margin: 0;
+}
+
+.verEstilos .pintper-row .pintper-col-8 form .pintper-button-op2 {
+    float: right;
+}
+
+.agregar-publicidad .pintper-row {
+    background-color: white;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 {
+    margin-top: 25px;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 h1 {
+    color: var(--black);
+    font-size: 24px;
+    font-family: var(--alata);
+    font-weight: bold;
+    margin: 0;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 hr {
+    border: 1px solid var(--black);
+    margin: 25px 0;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 p {
+    color: var(--black);
+    font-size: 14px;
+    font-family: var(--alata);
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .pintper-textbox {
+    margin: 15px 0;
+    width: 50%;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .descripcion {
+    width: 90%;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .pintper-button {
+    position: relative;
+    float: right;
+    top: 4vh;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .pintper-button-marron-claro {
+    float: right;
+    position: relative;
+    top: 4vh;
+    right: 5px;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .pintper-button-marron-claro a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 40px;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .pintper-button-marron-claro a:hover {
+    color: var(--secondary);
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .formulario-subir-publicidad {
+    width: 100%;
+    margin: 0;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .formulario-subir-publicidad .contenedor-foto { 
+    width: 100%; 
+    height: 150px;
+    background-color: #5F646D;
+    margin: 0;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .contenedor-archivo {
+    overflow: hidden;
+    position: relative;
+    padding: 10px 40px;
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    text-decoration: none;
+    top: 125%;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .contenedor-archivo [type=file] {
+    cursor: inherit;
+    display: block;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+.agregar-publicidad .pintper-row .pintper-col-16 .contenedor-archivo:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.agregar-local .pintper-row {
+    background-color: white;
+}
+
+.agregar-local .pintper-row .pintper-col-16:nth-child(1) {
+    margin-top: 25px;
+}
+
+.agregar-local .pintper-row .pintper-col-16 h1 {
+    color: var(--black);
+    font-size: 24px;
+    font-family: var(--alata);
+    font-weight: bold;
+    margin: 0;
+    display: inline;
+}
+
+.agregar-local .pintper-row .pintper-col-16 hr {
+    border: 1px solid var(--black);
+    margin: 25px 0;
+}
+
+.agregar-local .pintper-row .pintper-textbox {
+    margin: 0;
+    width: 90%;
+    margin-bottom: 15px;
+}
+
+.agregar-local .pintper-row .pintper-button-op2 {
+    width: 90%;
+}
+
+.agregar-local .pintper-row .checkboxs {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.label-checkbox {
+    display: inline;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: var(--open-sans);
+    color: var(--grey);
+}
+
+.label-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.chequeado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+
+.label-checkbox:hover input ~ .chequeado {
+    background-color: #ccc;
+}
+
+.label-checkbox input:checked ~ .chequeado {
+    background-color: var(--primary);
+}
+  
+.chequeado:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+.label-checkbox input:checked ~ .chequeado:after {
+    display: block;
+}
+  
+.label-checkbox .chequeado:after {
+    left: 5px;
+    top: 0px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.agregar-local .pintper-row .pintper-col-16 .pintper-button-marron-claro a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px 40px;
+}
+
+.agregar-local .pintper-row .pintper-col-16 .pintper-button-marron-claro a:hover {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.agregar-local .pintper-row .pintper-col-16 button {
+    float: right;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: var(--blueExtra);
+    font-size: 14px;
+    font-family: var(--alata);
+}
+
+.agregar-local .pintper-row .pintper-col-16 button:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.agregar-local .pintper-row .pintper-col-16 .volver {
+    float: none;
+    margin: 0;
+    border: none;
+    background-color: var(--secondary);
+    color: var(--blueExtra);
+    font-size: 14px;
+    font-family: var(--alata);
+}
+
+.agregar-local .pintper-row .pintper-col-16 .volver a:hover {
+    text-decoration: none;
+}
+
+.agregar-local .pintper-row .pintper-col-16 .volver:hover {
+    border: 1px solid var(--primary);
+    background-color: white;
+}
+
+.configuraciones .pintper-row {
+    background: white;
+}
+
+.configuraciones .pintper-row .pintper-col-16 {
+    margin-top: 15px
+}
+
+.configuraciones .pintper-row .pintper-col-16 h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--black);
+    font-family: var(--alata);
+}
+
+.configuraciones .pintper-row .pintper-col-16 hr {
+    border: 1px solid var(--black);
+    margin: 25px 0;
+}
+
+.configuraciones .pintper-row .pintper-textbox {
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.configuraciones .pintper-row .pintper-button-marron-claro a{
+    padding: 10px 40px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.configuraciones .pintper-row .pintper-button-marron-claro a:hover {
+    color: var(--secondary);
+}

@@ -45,12 +45,12 @@ class Principal{
 			}
 			if($_SESSION['usuario_registrado']==null)
 			{
-				$archivoController='controllers/home.php';
+				/* $archivoController='controllers/home.php';
 				require_once $archivoController;
 				$controller=new Home();
 				$controller->loadModel('Home');
 				$controller->render();
-				return false;
+				return false; */
 			    //header("Location:".constant('URL')."home.php");
 			}
 			$controller=new Errores();

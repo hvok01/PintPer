@@ -1,24 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperRoot.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperGrid.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/headerPintper.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/usuarioStyle.css">
+	<link rel="icon" href="<?php echo constant("URL")?>public/img/Favicon2.png">
+	<title>Pintper</title>
 </head>
 <body>
-<h1>Login usuario comun</h1>
-	<form action="Usuario/login" method="post">
-		<span><?php echo $this->mensaje; ?></span><br>
-		<label for="correoUsuario">Correo electronico</label>
-		<input type="text" name="correoUsuario" id="" placeholder="Correo electronico"> <br>
+	<!--nav bar-->
+	<?php include('header.php'); ?>
 
-		<label for="claveUsuario">Clave de usuario</label>
-		<input type="password" name="claveUsuario" id="" placeholder="Clave"> <br>
+	<div class="pintper-container">
+		<div class="pintper-row usuario-row">
+			<div class="pintper-col-16">
+				<h3>Bienvenido!</h3>
+				<form action="Usuario/login" method="post">
+					<span><?php echo $this->mensaje; ?></span><br>
+					<!-- <label for="correoUsuario">Correo electronico</label> -->
+					<input type="text" name="correoUsuario" placeholder="Correo electronico" class="pintper-textbox"> <br>
 
-		<a href="#">Olvidé mi contraseña</a> <br>
+					<!-- <label for="claveUsuario">Clave de usuario</label> -->
+					<input type="password" name="claveUsuario" id="" placeholder="Clave" class="pintper-textbox"> <br>
 
-		<input type="submit" value="Iniciar Sesion">
-	</form>
+					<input type="submit" value="Iniciar Sesion" class="pintper-button"> <br>
 
-	<p> ¿No tenes cuenta? <a href="<?php echo constant("URL"); ?>Usuario/registroview">registrate acá</a> </p>	
+					<a href="#">Olvidé mi contraseña</a>
+				</form>
+
+				<p> ¿No tenes cuenta? <a href="<?php echo constant("URL"); ?>usuario/registroview">registrate acá</a> </p>
+			</div>
+		</div>
+	</div>	
 </body>
 </html>

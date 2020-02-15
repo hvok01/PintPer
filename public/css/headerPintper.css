@@ -1,0 +1,34 @@
+.pintper-container-nav {
+    width: 100%;
+    height: 8vh;
+    color: var(--primary);
+}
+
+.pintper-row {
+    background-color: var(--primary);
+    width: inherit;
+    height: inherit;
+    position: relative;
+}
+
+.pintper-row .pintper-logo-container a {
+    display: inline;
+}
+
+.pintper-row .pintper-logo-container img {
+    width: 40px;
+    height: 40px;
+}
+
+.pintper-row .pintper-iniciar-sesion-container a{
+    display: inline;
+}
+
+.pintper-row .pintper-iniciar-sesion-container img {
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: relative;
+    top: 10px;
+    right: 25px;
+}

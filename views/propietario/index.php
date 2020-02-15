@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperRoot.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperGrid.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/headerPintper.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/usuarioStyle.css">
+	<link rel="icon" href="<?php echo constant("URL")?>public/img/Favicon2.png">
 	<title>login Dueño local</title>
 </head>
 <body>
-<h1>Login Dueño local</h1>
+	<?php include('header.php'); ?>
 
-	<p>Volver al home haciendo click <a href="index.php">acá</a></p>
+		<div class="pintper-container">
+			<div class="pintper-row usuario-row">
+				<div class="pintper-col-16">
+					<h3>Bienvenido dueño de local!</h3>
+					<form action="<?php echo constant('URL')?>propietario/login" method="post">
+						<span><?php echo $this->mensaje; ?></span><br>
+						<!-- <label for="correoUsuario">Correo electronico</label> -->
+						<input type="text" name="correoUsuario" placeholder="Correo electronico" class="pintper-textbox"> <br>
 
-	<form action="<?php echo constant('URL')?>propietario/login" method="post">
-		<span><?php echo $this->mensaje; ?></span><br>
-		<label for="correoUsuario">Correo electronico</label>
-		<input type="text" name="correoUsuario" id="" placeholder="Correo electronico"> <br>
+						<!-- <label for="claveUsuario">Clave de usuario</label> -->
+						<input type="password" name="claveUsuario" id="" placeholder="Clave" class="pintper-textbox"> <br>
 
-		<label for="claveUsuario">Clave de usuario</label>
-		<input type="password" name="claveUsuario" id="" placeholder="Clave"> <br>
+						<input type="submit" value="Iniciar Sesion" class="pintper-button"> <br>
 
-		<a href="#">Olvidé mi contraseña</a> <br>
+						<a href="#">Olvidé mi contraseña</a>
+					</form>
 
-		<input type="submit" value="Iniciar Sesion">
-	</form>
-
-	<p> ¿No tenes cuenta? <a href="<?php echo constant("URL");?>Propietario/registroview">registrate acá</a> </p>	
+					<p> ¿No tenes cuenta? <a href="<?php echo constant("URL");?>Propietario/registroview">registrate acá</a> </p>
+				</div>
+			</div>
+		</div>		
 </body>
 </html>

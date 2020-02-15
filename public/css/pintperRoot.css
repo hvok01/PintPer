@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
+:root {
+    --primary : #6E5D52;
+    --secondary: #BFA693;
+    --white: #F6F6FB;
+    --black: #121012;
+    --grey: #5F646D;
+    --greenSuccess: #B6D094;
+    --blueExtra: #454ADE;
+
+    --font-size-master: 14px;
+
+    --alata : 'Alata', sans-serif;
+    --open-sans : 'Open Sans', 'helvetica', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: var(--font-size-master);
+}
+
+.pintper-button {
+    width: 140px;
+    height: 40px;
+    background-color: var(--grey);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    text-decoration: none;
+}
+
+.pintper-button:hover {
+    cursor: pointer;
+    border: 2px solid var(--grey);
+    background-color: white;
+    color: var(--grey);
+}
+
+.pintper-button-op2 {
+    width: 140px;
+    height: 40px;
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    text-decoration: none;
+}
+
+.pintper-button-op2:hover {
+    cursor: pointer;
+    border: 2px solid var(--primary);
+    background-color: white;
+    color: var(--primary);
+}
+
+.pintper-button-marron-claro {
+    width: 140px;
+    height: 40px;
+    background-color: var(--secondary);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    text-decoration: none;
+}
+
+.pintper-button-marron-claro:hover {
+    cursor: pointer;
+    border: 2px solid var(--secondary);
+    background-color: white;
+    color: var(--secondary);
+}
+
+.pintper-textbox {
+    width: auto;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary); 
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    padding: 5px;
+}
+
+.pintper-textarea {
+    width: auto;
+    height: 30px;
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary); 
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    padding: 5px;
+    resize: none;
+}
+
+h3 {
+    font-weight: normal;
+    font-family: var(--open-sans);
+    font-size: 1.5rem;
+    color: var(--black);
+}

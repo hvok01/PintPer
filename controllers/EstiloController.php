@@ -9,6 +9,9 @@ class EstiloController extends Controller{
 		$this->view->id_p=0;
 	}
 	
+	function verModuloEstilos() {
+		$this->view->render('estilos/moduloVerEstilos');
+	}
 	
 	function agregarEstilo(){
 		$this->view->render('estilos/agregarEstilos');	

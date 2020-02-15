@@ -11,6 +11,10 @@ class HomeController extends Controller{
 		$this->view->render('home/index');
 	}
 
+	function renderLogins(){
+		$this->view->render('home/logInUsuarios');
+	}
+
 	function user_comun(){
 		$this->view->render('home/indexUsuarioComun');
 	}

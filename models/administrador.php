@@ -3,7 +3,7 @@ class Administrador {
 	private $administradorId;	
 	private $correo;
 	private $clave;
-	private $estado
+	private $estado;
 		
 	public function __construct(){
 	}

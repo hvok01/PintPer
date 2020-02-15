@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="icon" href="../public/img/Favicon2.png">
 	<link rel="stylesheet" type="text/css" href="../public/css/pintperRoot.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/pintperGrid.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/headerPintper.css">
     <link rel="stylesheet" type="text/css" href="../public/css/usuarioStyle.css">
-    <link rel="icon" href="../public/img/Favicon2.png">
     <!-- Alpine js -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.10.1/dist/alpine.js" defer></script>
     <title>Bienvenido a Pintper</title>
@@ -32,7 +33,7 @@
             </div>
             <div class="pintper-col-1" x-data="{ open: false }">
 
-                <img src="../public/img/customer.png" alt="Iniciar Sesion" class="pintper-menu" @click="open = true">
+                <img src="../public/img/customer.png" alt="Iniciar Sesion" class="pintper-menu" @click="open = true" style="top: 6px;">
                 
 
                 <div class="menu-pintper-nav"  x-show="open" @click.away="open = false">
@@ -51,7 +52,28 @@
     <!-- Acá dejo un div para poner el modulo de publicidad. -->
     <!-- Acá se encuenta la barra de navegacion de estilos de cerveza -->
     <div class="nav-estilos" x-data="{ open: false }">
-        <div id="EspacioPublicidad">
+
+        <div class="EspacioPublicidad" id="publicidad">
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block img-carousel" src="../public/img/cerveza4.jpg" alt="First slide">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-carousel" src="../public/img/cerveza5.jpg" alt="Second slide">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+                
         </div>
 
         <img src="../public/img/menu.png" alt="menu" class="pintper-menu-icon" id="menu-pintper" @click="open = true">
@@ -70,6 +92,16 @@
         </div>
     </div>
     
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../public/js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
+    
+    <script>
+       $('.carousel').carousel();
+    </script> 
+        
     <script src="../public/js/navScript.js"></script>
 </body>
 </html>

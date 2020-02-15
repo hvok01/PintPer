@@ -12,6 +12,14 @@ class LocalController extends Controller{
 		$this->view->render('local/verLocalUsuarioComun');
 	}
 
+	function moduloLocales() {
+		$this->view->render('local/moduloVerLocalesUsuarioComun');	
+	}
+
+	function verLocales() {
+		$this->view->render('local/verLocalesUsuarioComun');	
+	}
+
 	function verMas(){
 		$this->view->render('local/verMasDeLocalUsuarioComun');	
 	}
@@ -27,6 +35,7 @@ class LocalController extends Controller{
 	function editarLocal(){
 		$this->view->render('local/editarMiLocal');	
 	}
+
 
 }
 
