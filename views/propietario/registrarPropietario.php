@@ -34,15 +34,19 @@
 
                     <p>Podes registrarte para ofrecer puntos de recarga <br> completando el siguiente formulario:</p>
                     <form action="registrar" method="post">
-
+                        <span><?php echo $this->Error?></span><br>
                     <!-- agregar provincia -->
-                        <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox"> <br>
+                        <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox" 
+                        value='<?php if(isset($_POST['Nombre']))echo $_POST['Nombre']?>'> <br>
 
-                        <input type="text" name="Apellido" placeholder="Apellido" class="pintper-textbox"> <br>
+                        <input type="text" name="Apellido" placeholder="Apellido" class="pintper-textbox"
+                        value='<?php if(isset($_POST['Apellido']))echo $_POST['Apellido']?>'> <br>
 
-                        <input type="text" name="Documento" placeholder="Documento" class="pintper-textbox"> <br>
+                        <input type="text" name="Documento" placeholder="Documento" class="pintper-textbox"
+                        value='<?php if(isset($_POST['Documento']))echo $_POST['Documento']?>'> <br>
 
-                        <input type="text" name="Correo" placeholder="Correo" class="pintper-textbox"> <br>
+                        <input type="text" name="Correo" placeholder="Correo" class="pintper-textbox"
+                        value='<?php if(isset($_POST['Correo']))echo $_POST['Correo']?>'> <br>
 
                         <input type="password" name="Clave" placeholder="Clave" class="pintper-textbox"> <br>
                         
@@ -50,7 +54,7 @@
                     </form>
                         <?php
                             if($this->mensaje!=""){
-                                echo "<p>".$this->mensaje."</p>";
+                                echo "<p style='color:green; font-size:14px;'>".$this->mensaje."</p>";
                             }    
                         ?>
 

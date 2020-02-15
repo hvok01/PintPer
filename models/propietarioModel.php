@@ -30,12 +30,11 @@ class PropietarioModel extends Model{
 		$dni=$user->getDni();
 		$correo=$user->getCorreo();
 		$clave=$user->getClave();
-		$estado=$user->getEstado();
-		$token="token";
+		$estado=$user->getEstado();		
 		$provincia="San Luis";
 
-		$sql="INSERT INTO propietarios (Nombre,Apellido,Dni,Correo,Clave,Estado,Token,Provincia) 
-		VALUES (?,?,?,?,?,?,?,?);";
+		$sql="INSERT INTO propietarios (Nombre,Apellido,Dni,Correo,Clave,Estado,Provincia) 
+		VALUES (?,?,?,?,?,?,?);";
 		
 		$resultado=$cone->prepare($sql);
 		$resultado->bindParam(1, $nombre);
@@ -43,9 +42,8 @@ class PropietarioModel extends Model{
 		$resultado->bindParam(3, $dni);
 		$resultado->bindParam(4, $correo);
 		$resultado->bindParam(5, $clave);
-		$resultado->bindParam(6, $estado);
-		$resultado->bindParam(7, $token);
-		$resultado->bindParam(8, $provincia);
+		$resultado->bindParam(6, $estado);		
+		$resultado->bindParam(7, $provincia);
 		
 		$resultado->execute();
 		$resultado->closeCursor();
