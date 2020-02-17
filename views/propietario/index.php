@@ -10,19 +10,20 @@
 	<title>login Dueño local</title>
 </head>
 <body>
+
 	<?php include('header.php'); ?>
 
 		<div class="pintper-container">
 			<div class="pintper-row usuario-row">
 				<div class="pintper-col-16">
 					<h3>Bienvenido dueño de local!</h3>
-					<form action="<?php echo constant('URL')?>propietario/login" method="post">
-						<span><?php echo $this->mensaje; ?></span><br>
-						<!-- <label for="correoUsuario">Correo electronico</label> -->
-						<input type="text" name="correoUsuario" placeholder="Correo electronico" class="pintper-textbox"> <br>
+					<form action="<?php echo constant('URL')?>propietario/login" method="post" onsubmit="return validar();">
 
-						<!-- <label for="claveUsuario">Clave de usuario</label> -->
-						<input type="password" name="claveUsuario" id="" placeholder="Clave" class="pintper-textbox"> <br>
+						<span id="mensaje-error"><?php echo $this->mensaje; ?></span><br>
+
+						<input type="email" name="correoUsuario" placeholder="Correo electronico" class="pintper-textbox" id="correo" required> <br>
+
+						<input type="password" name="claveUsuario" placeholder="Clave" class="pintper-textbox" id="clave" required> <br>
 
 						<input type="submit" value="Iniciar Sesion" class="pintper-button"> <br>
 
@@ -33,5 +34,7 @@
 				</div>
 			</div>
 		</div>		
+
+		<script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
 </body>
 </html>

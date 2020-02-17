@@ -20,18 +20,20 @@
                     <h3>Registro usuario comun</h3>
 
                     <p>Podes registrarte para encontrar puntos de recarga <br> completando el siguiente formulario:</p>
-                    <form action="registro" method="post">
-        
-                        <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="pintper-textbox"> <br>
+                    <form action="#" method="post" onsubmit="return registrarUsuarioComun();">
 
-                        <input type="text" name="correoUsuario" placeholder="Correo electronico" class="pintper-textbox"> <br>
+                        <span id="mensaje-error"><?php echo $this->mensaje; ?></span><br>
+                    
+                        <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="pintper-textbox" id="nombre" required> <br>
 
-                        <input type="password" name="claveUsuario" placeholder="Clave" class="pintper-textbox"> <br>
+                        <input type="email" name="correoUsuario" placeholder="Correo electronico" class="pintper-textbox" id="correo" required> <br>
 
-                        <input type="password" name="repetirClaveUsuario" placeholder="Repetir clave" class="pintper-textbox"> <br>
+                        <input type="password" name="claveUsuario" placeholder="Clave" class="pintper-textbox" id="clave" required> <br>
 
-                        <select name=""> a
-                            <option value="Buenos Aires"></option>
+                        <input type="password" name="repetirClaveUsuario" placeholder="Repetir clave" class="pintper-textbox" id="repetirClave" required> <br>
+
+                        <select name="">
+                            <option value="Buenos Aires">Buenos Aires</option>
                             <option value="Catamarca">Catamarca</option>
                             <option value="Chaco">Chaco</option>
                             <option value="Chubut">Chubut</option>
@@ -70,5 +72,7 @@
                 </div>
             </div>
     </div>	
+
+    <script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
 </body>
 </html>

@@ -96,14 +96,18 @@
         <!-- Fragmento para buscar usuarios -->
         <div class="pintper-row">
             <div class="pintper-col-16">
-                <form action="editarUsuarioDesdeAdmin.php">
+                <!--editarUsuarioDesdeAdmin.php-->
+                <form action="<?php echo constant("URL")?>administrador/editarUsuario" method="POST">
                     <h2>Buscar Usuario</h2> <br>
-                    <input type="text" name="NombreUsuario" placeholder="Nombre" class="pintper-textbox">
-                    <input type="submit" value="Buscar" class="pintper-button">
+                    <input type="text" name="NombreUsuario" placeholder="Nombre" class="pintper-textbox" id="nombreUsuarioBusqueda" required>
+                    <input type="submit" value="Buscar" class="pintper-button" onclick="return validarBusquedaUsuario();"> <br>
+                    <span id="mensaje-error-busqueda"><?php echo $this->mensaje; ?></span><br>
                 </form>
             </div>
         </div>
     </div>
+
+    <script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
 
 </body>
 </html>

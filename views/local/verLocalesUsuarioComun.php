@@ -23,9 +23,9 @@
             <div class="pintper-col-14">
                 <div class="pintper-iniciar-sesion-container" >
                     <!-- Formulario para enviar la busqueda -->
-                    <form action="" method="get" class="form-busqueda">
-                        <input type="text" name="" placeholder="Buscar local" class="pintper-txt-busqueda">
-                        <input type="submit" value="" class="pintper-btn-buscar">
+                    <form action="<?php echo constant('URL')?>local/verLocales" method="POST" class="form-busqueda">
+                        <input type="text" name="busqueda" placeholder="Buscar local" class="pintper-txt-busqueda" id="txt-busqueda">
+                        <input type="submit" value="" class="pintper-btn-buscar" onclick="return validarBusqueda();">
                     </form>
                 </div>
             </div>
@@ -59,5 +59,7 @@
         </div>
     </div>
 
+    <script src="<?php echo constant("URL")?>public/js/navScript.js"></script>
+    
     </body>
 </html>

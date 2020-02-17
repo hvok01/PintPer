@@ -33,22 +33,23 @@
                     <h3>Registrar Dueño de local</h3>
 
                     <p>Podes registrarte para ofrecer puntos de recarga <br> completando el siguiente formulario:</p>
-                    <form action="registrar" method="post">
-                        <span><?php echo $this->Error?></span><br>
-                    <!-- agregar provincia -->
-                        <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox" 
+                    <form action="registrar" method="post" onsubmit="return validarRegistroDuenio();">
+
+                        <span id="mensaje-error"><?php echo $this->Error?></span><br>
+                    
+                        <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox" id="nombre" required
                         value='<?php if(isset($_POST['Nombre']))echo $_POST['Nombre']?>'> <br>
 
-                        <input type="text" name="Apellido" placeholder="Apellido" class="pintper-textbox"
+                        <input type="text" name="Apellido" placeholder="Apellido" class="pintper-textbox" id="apellido" required
                         value='<?php if(isset($_POST['Apellido']))echo $_POST['Apellido']?>'> <br>
 
-                        <input type="text" name="Documento" placeholder="Documento" class="pintper-textbox"
+                        <input type="number" name="Documento" placeholder="Documento" class="pintper-textbox" id="documento" required
                         value='<?php if(isset($_POST['Documento']))echo $_POST['Documento']?>'> <br>
 
-                        <input type="text" name="Correo" placeholder="Correo" class="pintper-textbox"
+                        <input type="email" name="Correo" placeholder="Correo" class="pintper-textbox" id="correo" required
                         value='<?php if(isset($_POST['Correo']))echo $_POST['Correo']?>'> <br>
 
-                        <input type="password" name="Clave" placeholder="Clave" class="pintper-textbox"> <br>
+                        <input type="password" name="Clave" placeholder="Clave" class="pintper-textbox" id="clave" required> <br>
 
                         <select name="provinicas" class="pintper-option">
                             <option value="Buenos Aires">Buenos Aires</option>
@@ -87,6 +88,9 @@
                     <p> ¿Ya tenes cuenta? <a href="<?php echo constant("URL");?>Propietario">Inicía sesion</a> </p>
                 </div>
             </div>
-    </div>	
+    </div>
+    
+    <script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
+    
 </body>
 </html>

@@ -54,16 +54,16 @@
             </div>
         </div>
 
-        <form action="">
+        <form action="" onsubmit="return validarConfigDuenio();">
 
         <div class="pintper-row">
             <div class="pintper-col-8">
-                <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox">
-                <input type="text" name="Apellido" placeholder="Apellido" class="pintper-textbox">
+                <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox" id="nombre" required autofocus>
+                <input type="text" name="Apellido" placeholder="Apellido" class="pintper-textbox" id="apellido" required >
             </div>
             <div class="pintper-col-8">
-                <input type="text" name="Documento" placeholder="Documento" class="pintper-textbox">
-                <input type="text" name="Correo" placeholder="Correo" class="pintper-textbox">
+                <input type="number" name="Documento" placeholder="Documento" class="pintper-textbox" id="documento" required >
+                <input type="email" name="Correo" placeholder="Correo" class="pintper-textbox" id="correo" required >
             </div>
         </div>
 
@@ -76,16 +76,17 @@
 
         <div class="pintper-row">
             <div class="pintper-col-8">
-                <input type="text" name="ClaveActual" placeholder="Clave Actual" class="pintper-textbox">
-                <input type="text" name="NuevaClave" placeholder="Nueva Clave" class="pintper-textbox">
+                <input type="password" name="ClaveActual" placeholder="Clave Actual" class="pintper-textbox" id="claveActual" required >
+                <input type="password" name="NuevaClave" placeholder="Nueva Clave" class="pintper-textbox" id="nuevaClave" required >
             </div>
             <div class="pintper-col-8">
-                <input type="text" name="RepetirNuevaClave" placeholder="Repetir Nueva Clave" class="pintper-textbox">
+                <input type="password" name="RepetirNuevaClave" placeholder="Repetir Nueva Clave" class="pintper-textbox" id="repetirNuevaClave" required >
             </div>
         </div>
 
         <div class="pintper-row">
             <div class="pintper-col-16">
+                <span id="mensaje-error"></span> <br>
                 <button class="pintper-button-marron-claro"><a href="<?php echo constant('URL')?>Home/user_prop">Volver</a></button>
                     <input type="submit" value="Guardar" class="pintper-button">
                 </form>
@@ -93,6 +94,8 @@
         </div>
 
     </div>
+
+    <script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
 
 </body>
 </html>

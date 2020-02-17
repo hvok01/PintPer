@@ -1,6 +1,5 @@
 .pintper-container-nav {
     width: 100%;
-    height: 8vh;
     color: var(--primary);
 }
 
@@ -31,4 +30,119 @@
     position: relative;
     top: 10px;
     right: 25px;
+}
+
+
+@media screen and (max-width: 374px) {
+
+    .pintper-row .pintper-logo-container img {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        top: 0;
+    }
+
+    .pintper-row .pintper-iniciar-sesion-container img {
+        width: 20px;
+        height: 20px;
+        top: 3px;
+        right: 5px;
+    }
+
+}
+
+@media screen and (min-width: 375px) {
+
+    .pintper-row .pintper-logo-container img {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        top: 0;
+    }
+
+    .pintper-row .pintper-iniciar-sesion-container img {
+        width: 20px;
+        height: 20px;
+        top: 3px;
+        right: 5px;
+    }
+
+}
+
+@media screen and (min-width: 423px) {
+
+    .pintper-row .pintper-logo-container img {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 0;
+    }
+
+    .pintper-row .pintper-iniciar-sesion-container img {
+        width: 20px;
+        height: 20px;
+        top: 3px;
+        right: 5px;
+    }
+
+}
+
+@media screen and (min-width: 785px) {
+
+    .pintper-row .pintper-logo-container img {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: 0;
+    }
+
+    .pintper-row .pintper-iniciar-sesion-container img {
+        width: 20px;
+        height: 20px;
+        top: 5px;
+        right: 0;
+    }
+
+}
+
+@media screen and (min-width: 1023px) {
+    
+
+}
+
+@media screen and (min-width: 1439px) {
+    
+    .pintper-row .pintper-logo-container img {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        top: 5px;
+    }
+
+    .pintper-row .pintper-iniciar-sesion-container img {
+        width: 35px;
+        height: 35px;
+        top: 15px;
+        right: 0;
+    }
+
+}
+
+
+@media screen and (min-width: 1440px) {
+
+    .pintper-row .pintper-logo-container img {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        top: 5px;
+    }
+
+    .pintper-row .pintper-iniciar-sesion-container img {
+        width: 35px;
+        height: 35px;
+        top: 15px;
+        right: 0;
+    }
+
 }

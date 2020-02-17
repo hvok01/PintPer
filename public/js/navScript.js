@@ -15,3 +15,18 @@ salir.addEventListener('click', () => {
     publicidad.classList.toggle("EspacioPublicidad");
     publicidad.classList.remove("EspacioPublicidadReducido");
 });
+
+function validarBusqueda () {
+
+    let busqueda = document.getElementById("txt-busqueda").value;
+
+    const regExp = /^[A-Za-z0-9\s]+$/;
+
+    if(regExp.test(busqueda)) {
+        return true;
+    } else {
+        alert("La busqueda es incorrecta");
+        return false;
+    }
+
+}

@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../public/css/pintperGrid.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/headerPintper.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/usuarioStyle.css">
+    <link rel="icon" href="../public/img/Favicon2.png">
     <!-- Alpine js -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.10.1/dist/alpine.js" defer></script>
     <title>Contacto: Pintper</title>
@@ -23,9 +24,9 @@
             <div class="pintper-col-14">
                 <div class="pintper-iniciar-sesion-container">
                     <!-- Formulario para enviar la busqueda -->
-                    <form action="" method="get" class="form-busqueda">
-                        <input type="text" name="" placeholder="Buscar local" class="pintper-txt-busqueda">
-                        <input type="submit" value="" class="pintper-btn-buscar">
+                    <form action="<?php echo constant('URL')?>local/verLocales" method="POST" class="form-busqueda">
+                        <input type="text" name="busqueda" placeholder="Buscar local" class="pintper-txt-busqueda" id="txt-busqueda">
+                        <input type="submit" value="" class="pintper-btn-buscar" onclick="return validarBusqueda();">
                     </form>
                 </div>
             </div>
@@ -56,11 +57,12 @@
         </div>
         <div class="pintper-row">
             <div class="pintper-col-16">
-                <form action="#" method="post">
-                    <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox"> <br>
-                    <input type="email" name="Correo" placeholder="Correo" class="pintper-textbox"> <br>
-                    <textarea placeholder="Mensaje" class="pintper-textarea"></textarea> <br>
-                    <input type="submit" value="Enviar" class="pintper-button">
+                <form action="<?php echo constant("URL")?>home/user_comun" method="post">
+                    <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox" id="nombre" required> <br>
+                    <input type="email" name="Correo" placeholder="Correo" class="pintper-textbox" id="correo" required> <br>
+                    <textarea placeholder="Mensaje" class="pintper-textarea" id="mensaje" required></textarea> <br>
+                    <span id="mensaje-error"></span> <br>
+                    <input type="submit" value="Enviar" class="pintper-button" onclick="return validarFormularioPintper();">
                 </form>
 
                 <a href="<?php echo constant('URL')?>usuario/config" class="pintper-button-op2">
@@ -70,6 +72,8 @@
         </div>
     </div>
 
+    <script src="<?php echo constant("URL")?>public/js/navScript.js"></script>
+    <script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
     
 </body>
 </html>

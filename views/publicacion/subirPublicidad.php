@@ -54,13 +54,17 @@
                 <hr>
                 <p>Se recomienta que la imagen a subir tenga una resolucion de 1200px X 700px.</p>
                 
-                <form action="" class="formulario-subir-publicidad">
-                    <input type="text" name="Titulo" placeholder="Titulo" class="pintper-textbox"> <br>
-                    <input type="text" name="Descripcion" placeholder="Descripcion" class="pintper-textbox descripcion">
-                    <div class="contenedor-foto">
+                <form action="" class="formulario-subir-publicidad" onsubmit="return validarPublicidad();">
+                    <input type="text" name="Titulo" placeholder="Titulo" class="pintper-textbox" id="titulo" required autofocus> <br>
+                    <input type="text" name="Descripcion" placeholder="Descripcion" class="pintper-textbox descripcion" id="descripcion" required>
+                    <span id="mensaje-error"></span> <br>
+                    <div class="contenedor-foto" id="contenedorFoto">
+                    <!--Checkear con php que si ya hay una foto subida, cambiar style=display: none, por block y agregar el link a src-->
+                            <img src="" alt="Imagen Previa" class="imagen_previa" style="display: none; width: 100%; height: 100%; object-fit: cover;" id="imagenPrevia">
+
                             <label class="contenedor-archivo">
                                 Seleccionar foto
-                                <input type="file" accept="image/*">
+                                <input type="file" accept="image/*" id="estiloSubir">
                             </label>
                     </div>
                     <input type="submit" value="Guardar" class="pintper-button">
@@ -73,6 +77,40 @@
 
     </div>
 
-    
+    <script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
+
+    <script>
+
+        const contenedorFoto = document.getElementById("contenedorFoto");
+        const inputImagen = document.getElementById("estiloSubir");
+        const imagenPrevia = document.getElementById("imagenPrevia");
+        const contenedorArchivo = contenedorFoto.querySelector(".contenedor-archivo");
+
+        inputImagen.addEventListener("change", function() {
+
+            const file = this.files[0];
+
+            if (file) {
+                const lector = new FileReader();
+
+                imagenPrevia.style.display = "block";
+                contenedorArchivo.style.top = "5vh";
+
+                lector.addEventListener("load", function() {
+                    imagenPrevia.setAttribute("src", this.result);
+                });
+
+                lector.readAsDataURL(file);
+            } else {
+
+                imagenPrevia.style.display = "none";
+                imagenPrevia.setAttribute("src", "");
+                contenedorArchivo.style.top = "30vh";
+            }
+            
+        });
+
+
+    </script>
 </body>
 </html>

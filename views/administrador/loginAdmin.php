@@ -18,11 +18,13 @@
 				<div class="pintper-col-16">
 					<h3>Login admin</h3>
 
-					<form action="<?php echo constant('URL')?>administrador/login" method="post">
+					<form action="<?php echo constant('URL')?>administrador/login" method="post" onsubmit="return validar()">
 
-						<input type="text" name="correoUsuario" placeholder="Correo electronico" class="pintper-textbox"> <br>
+						<span id="mensaje-error"><?php echo $this->mensaje; ?></span><br>
+					
+						<input type="email" name="correoUsuario" placeholder="Correo electronico" class="pintper-textbox" id="correo" required> <br>
 
-						<input type="password" name="claveUsuario" placeholder="Clave" class="pintper-textbox"> <br>
+						<input type="password" name="claveUsuario" placeholder="Clave" class="pintper-textbox" id="clave" required> <br>
 
 						<a href="#">Olvidé mi contraseña</a> <br>
 
@@ -33,6 +35,7 @@
 	</div>
 	
 
-	
+	<script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
+
 </body>
 </html>

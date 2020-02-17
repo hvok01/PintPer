@@ -24,9 +24,9 @@
             <div class="pintper-col-14">
                 <div class="pintper-iniciar-sesion-container">
                     <!-- Formulario para enviar la busqueda -->
-                    <form action="" method="get" class="form-busqueda">
-                        <input type="text" name="" placeholder="Buscar local" class="pintper-txt-busqueda">
-                        <input type="submit" value="" class="pintper-btn-buscar">
+                    <form action="<?php echo constant('URL')?>local/verLocales" method="POST" class="form-busqueda">
+                        <input type="text" name="busqueda" placeholder="Buscar local" class="pintper-txt-busqueda" id="txt-busqueda">
+                        <input type="submit" value="" class="pintper-btn-buscar" onclick="return validarBusqueda();">
                     </form>
                 </div>
             </div>
@@ -60,10 +60,11 @@
                     <form action="" method="post">
                         <h1>Cambiar contraseña</h1>
                         <p>Podés cambiar la contraseña completando el formulario de abajo.</p>
-                        <input type="text" name="" placeholder="Clave Actual" class="pintper-textbox"> <br>
-                        <input type="text" name="" placeholder="Repetir Clave Actual" class="pintper-textbox"> <br>
-                        <input type="text" name="" placeholder="Nueva Clave" class="pintper-textbox"> <br>
-                        <input type="submit" value="Aceptar" class="pintper-button">
+                        <input type="password" name="Clave" placeholder="Clave Actual" class="pintper-textbox" id="claveActual" required> <br>
+                        <input type="password" name="RepetirClave" placeholder="Repetir Clave Actual" class="pintper-textbox" id="claveRepetida" required> <br>
+                        <input type="password" name="Nueva Clave" placeholder="Nueva Clave" class="pintper-textbox" id="nuevaClave" required> <br>
+                        <span id="mensaje-error"></span> <br>
+                        <input type="submit" value="Aceptar" class="pintper-button" onclick="return validarConfig();">
                     </form>
                     <a href="<?php echo constant('URL')?>home/user_comun" class="pintper-button-op2">Volver</a>
                     <br>
@@ -88,5 +89,8 @@
                 
     </div>
 
+    <script src="<?php echo constant("URL")?>public/js/navScript.js"></script>
+    <script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
+    
 </body>
 </html>

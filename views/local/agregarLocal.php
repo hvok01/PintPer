@@ -62,16 +62,16 @@
             </div>
         </div>
         
-        <form action="">
+        <form action="" onsubmit="return validarAgregarLocal();">
 
             <div class="pintper-row">
 
                 <div class="pintper-col-8">
-                    <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox">
-                    <input type="text" name="Telefono" placeholder="Telefono" class="pintper-textbox"> 
+                    <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox" id="nombre" required autofocus>
+                    <input type="text" name="Telefono" placeholder="Telefono" class="pintper-textbox" id="telefono" required> 
                 </div>
                 <div class="pintper-col-8">
-                    <input type="text" name="Direccion" placeholder="Direccion" class="pintper-textbox" id="ModalMapAddress" value="">
+                    <input type="text" name="Direccion" placeholder="Direccion" class="pintper-textbox" id="ModalMapAddress" value="" required>
                     <input type="button" value="Seleccionar Ubicacion" class="pintper-button-op2"  data-toggle="modal" data-target="#ModalMap">
 
                 </div>
@@ -87,10 +87,12 @@
 
             <div class="pintper-row">
                 <div class="pintper-col-8">
-                    <input type="text" name="Desde" placeholder="Desde" class="pintper-textbox">
+                    <label for="Desde">Desde:</label> <br>
+                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHora" required value="08:00">
                 </div>
                 <div class="pintper-col-8">
-                    <input type="text" name="Hasta" placeholder="Hasta" class="pintper-textbox">
+                    <label for="Hasta">Hasta:</label> <br>
+                    <input type="time" name="Hasta" class="pintper-textbox" id="hastaHora" required value="17:00">
                 </div>
             </div>
 
@@ -117,18 +119,19 @@
                         <span class="chequeado"></span>
                     </label>
                     <label class="label-checkbox">
-                        <input type="checkbox" checked="checked">Sabado
+                        <input type="checkbox">Sabado
                         <span class="chequeado"></span>
                     </label>
                     <label class="label-checkbox">
-                        <input type="checkbox" checked="checked">Domingo
+                        <input type="checkbox">Domingo
                         <span class="chequeado"></span>
                     </label>
                 </div>
             </div>
             
             <div class="pintper-row">
-                <div class="pintper-col-16">
+                <div class="pintper-col-16 enviar-formulario">
+                    <span id="mensaje-error"></span> <br>
                     <button class="pintper-button-marron-claro volver"><a href="<?php echo constant('URL')?>home/user_prop">Volver</a></button>
                     <input type="submit" value="Agregar Local" class="pintper-button">
                 </div>
@@ -178,6 +181,8 @@
         </div>
         </div>
 
+    <script src="<?php echo constant("URL")?>public/js/validarForm.js"></script>
+
     <script>
 
         $("#ModalMapPreview").locationpicker({
@@ -197,8 +202,7 @@
 
         onchanged: function (currentLocation, radius, isMarkerDropped) {
         $("#ModalMapAddress").val();
-
-        // console.log($("#ModalMapAddress").val());
+        
         }
         });
         $("#ModalMap").on("shown.bs.modal", function () {
