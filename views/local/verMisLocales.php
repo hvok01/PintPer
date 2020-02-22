@@ -44,6 +44,9 @@
             </div>
         </div>
     </header>
+    <?php 
+        $locales=$this->local;    
+    ?>
 
     <div class="pintper-container verEstilos">
         <div class="pintper-row">
@@ -53,25 +56,28 @@
             </div>
         </div>
         <!--Repetir de acá hasta el hr-->
+        <?php 
+            for($i=0; $i<sizeof($locales);$i++){
+        ?>
         <div class="pintper-row">
             <div class="pintper-col-8">
-                <h3>Nombre Local</h3>
-                <p>Direccion Local</p>
+                <h3><?php echo $locales[$i]->Nombre; ?></h3>
+                <p><?php echo  $locales[$i]->Direccion; ?></p>
             </div>
             <div class="pintper-col-8">
-                <form action="editarLocal">
-                    <input type="hidden" name="nombreLocal">
-                    <input type="hidden" name="direccionLocal">
+                <form action="editarLocal" method="post">
+                    <input type="hidden" name="localId" value="<?php echo  $locales[$i]->LocalId; ?>">
                     <input type="submit" value="Ver Mas" class="pintper-button-op2">
                 </form>
             </div>
         </div>
-
+        
         <div class="pintper-row">
             <div class="pintper-col-16">
                 <hr>
             </div>
         </div>
+        <?php } ?>
         <!-- hasta acá -->
     </div>
 

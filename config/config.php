@@ -10,7 +10,17 @@ define('USER','root');
 //-----PASSWORD BASE DE DATOS
 define('PASS','');
 //-----PROVINCIAS ARGENTINAS
-//define(PROVINCIAS, ["Buenos Aires","Catamarca","Chaco","Chubut","Cordoba","Corrientes","Entre Rios",
-//"Formosa","Jujuy","La Pampa","La Rioja","Mendoza","Misiones","Neuquén","Rio Negro","Salta","San Juan",
-//"San Luis","Santa Cruz","Santa Fe","Santiago del Estero","Tierra del Fuego","Tucuman"]);
+define('PROVINCIAS', array(
+	'Buenos Aires',	'Catamarca',
+	'Chaco','Chubut',
+	'Cordoba','Corrientes',
+	'Entre Rios','Formosa',
+	'Jujuy','La Pampa',
+	'La Rioja','Mendoza',
+	'Misiones','Neuquén',
+	'Rio Negro','Salta','San Juan',
+	'San Luis','Santa Cruz',
+	'Santa Fe','Santiago del Estero',
+	'Tierra del Fuego','Tucuman'
+));
 ?>

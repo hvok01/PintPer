@@ -185,7 +185,7 @@ function validarAgregarLocal() {
 
     let telefono = document.getElementById("telefono").value;
 
-    let direccion = document.getElementById("ModalMapAddress").value;
+    let direccion = document.getElementById("ubi").value;
 
     let desdeHora = document.getElementById("desdeHora").value;
 
@@ -195,12 +195,15 @@ function validarAgregarLocal() {
 
     const regExpTelefono = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/;
 
-    if(nombre != "" && regExpTelefono.test(telefono) && direccion != "" && desdeHora != "" && hastaHora != "") {
+    if(nombre != "" && telefono!="" && direccion != "" && desdeHora != "" && hastaHora != "") {
 
-        if(desdeHora < hastaHora) {
-            return true;
-        } else {
+        if(!(desdeHora < hastaHora)) {
             mensajeError.innerHTML = "Error. Hora invalida.";
+            return false;
+        }
+
+        if (!regExpTelefono.test(telefono)){
+            mensajeError.innerHTML = "Error. Telefono invalido.";
             return false;
         }
     } else {

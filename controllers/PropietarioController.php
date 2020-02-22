@@ -1,5 +1,8 @@
 <?php 
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
 require_once 'models/propietario.php';
 class PropietarioController extends Controller{	
 	
@@ -19,13 +22,13 @@ class PropietarioController extends Controller{
 		$mail='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
 		$correo=htmlentities(addslashes($_POST["correoUsuario"]));
 		$clave=htmlentities(addslashes($_POST["claveUsuario"]));
+
 		if($correo!="" and $clave!=""){
 			if(preg_match($mail,$correo)){
-				$user=$this->model->loginProp($correo);
-				
+				$_SESSION['usuario_registrado']=$this->model->loginProp($correo);
+				$user=$_SESSION['usuario_registrado'];				
 				if($user!=null){
-					$_SESSION['usuario_registrado']=$correo;
-				 	$this->view->render('home/indexPropietario');		 	
+					$this->view->render('home/indexPropietario');
 				}else{
 					$this->view->mensaje="Correo o Contraseña incorrectos";
 					$this->render();
@@ -70,6 +73,7 @@ class PropietarioController extends Controller{
 			$user->setDni($_POST["Documento"]);
 			$user->setCorreo($_POST["Correo"]);
 			$user->setClave($_POST["Clave"]);
+			$user->setProvincia($_POST['provincias']);
 			$user->setEstado($estado);
 
 			if($this->model->registrarProp($user)){

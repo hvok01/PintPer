@@ -15,8 +15,8 @@ class PropietarioModel extends Model{
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
-			return $registro;	
+			$cone=null;			
+			return $registro;
 		}else{
 			return null;
 		}		
@@ -31,7 +31,7 @@ class PropietarioModel extends Model{
 		$correo=$user->getCorreo();
 		$clave=$user->getClave();
 		$estado=$user->getEstado();		
-		$provincia="San Luis";
+		$provincia=$user->getProvincia();
 
 		$sql="INSERT INTO propietarios (Nombre,Apellido,Dni,Correo,Clave,Estado,Provincia) 
 		VALUES (?,?,?,?,?,?,?);";

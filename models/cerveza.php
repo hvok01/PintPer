@@ -1,4 +1,4 @@
-<? php
+<?php
 class Cerveza {
 	private $cervezaId;
 	private $nombre;
@@ -14,51 +14,51 @@ class Cerveza {
 	}
 
 	public function getCervezaId(){
-		return this->cervezaId;
+		return $this->cervezaId;
 	}
 
 	public function setCervezaId($cervezaId){
-		this->cervezaId=$cervezaId;
+		$this->cervezaId=$cervezaId;
 	}
 
 	public function getNombre(){
-		return this->nombre;
+		return $this->nombre;
 	}
 
 	public function setNombre($nombre){
-		this->nombre=$nombre;
+		$this->nombre=$nombre;
 	}
 
 	public function getTipo(){
-		return this->tipo;
+		return $this->tipo;
 	}
 
 	public function setTipo($tipo){
-		this->tipo=$tipo;
+		$this->tipo=$tipo;
 	}
 
-	public function getDescricion(){
-		return this->descripcion;
+	public function getDescripcion(){
+		return $this->descripcion;
 	}
 
 	public function setDescripcion($descripcion){
-		this->descripcion=$descripcion;
+		$this->descripcion=$descripcion;
 	}
 
 	public function getImagen(){
-		return this->imagen;
+		return $this->imagen;
 	}
 
 	public function setImagen($imagen){
-		this->imagen=$imagen;
+		$this->imagen=$imagen;
 	}	
 
 	public function getLocalId(){
-		return this->localId;
+		return $this->localId;
 	}
 
 	public function setLocalId($localId){
-		this->localId=$localId;
+		$this->localId=$localId;
 	}
 }
 

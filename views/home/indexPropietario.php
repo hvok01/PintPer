@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -48,7 +54,7 @@
     <div class="pintper-container propietario">
         <div class="pintper-row">
             <div class="pintper-col-16">
-                <h1>Bienvenido @nombre</h1>
+                <h1>Bienvenido <?php echo $_SESSION['usuario_registrado']->Nombre;?></h1>
                 <p>Para navegar por el sitio hace click en el icono de usuaro</p>
                 <hr>
                 <h2>Pintper te permite agregar tus cervezas, detallar informacion de tu local para que la gente 

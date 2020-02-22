@@ -50,7 +50,7 @@
             <div class="pintper-col-16">
                 <h1>Agregá un nuevo estilo de cerveza</h1>
                 <hr>
-                    <form action="" class="formulario-agregar-estilos" onsubmit="return validarAgregarEstilo();">
+                    <form action="guardarEstilo" class="formulario-agregar-estilos" onsubmit="return validarAgregarEstilo();" method="post" enctype="multipart/form-data">
 
 
                         <div class="contenedor-foto" id="contenedorFoto">
@@ -59,7 +59,7 @@
 
                             <label class="contenedor-archivo">
                                 Seleccionar foto
-                                <input type="file" accept="image/*" id="estiloSubir">
+                                <input type="file" accept="image/*" id="estiloSubir" name="imagen" required>
                             </label>
                         </div>
                         <div class="contenedor-inputs">

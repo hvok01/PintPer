@@ -20,7 +20,7 @@
 			<div class="pintper-col-16">
 				<h3>Bienvenido!</h3>
 				
-				<form action="Usuario/login" method="post" onsubmit="return validar()">
+				<form action="Usuario/login" method="post" >
 
 					<input type="email" name="correoUsuario" id="correo" placeholder="Correo electronico" class="pintper-textbox" required><br>
 
