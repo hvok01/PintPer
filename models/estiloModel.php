@@ -11,7 +11,7 @@ class EstiloModel extends Model{
 	}
 
 	function addEstilo($estilo){
-		echo var_dump($estilo);
+		//echo var_dump($estilo);
 		echo $estilo->getNombre();
 		echo $estilo->getTipo();
 		echo $estilo->getDescripcion();

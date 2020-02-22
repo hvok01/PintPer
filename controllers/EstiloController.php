@@ -53,13 +53,15 @@ class EstiloController extends Controller{
 			    	mkdir($carpeta_destino, 0777, true);// sino existe la creamos			    	
 				}
 				//move el archivo a la carpeta creada
-				move_uploaded_file($tmp_name,$carpeta_destino.$imagen);
+				$newName=$this->generarNombre(strlen($imagen),$tipoimg);	 
+				move_uploaded_file($tmp_name,$carpeta_destino.$newName);
 				
 				$estilo->setNombre($nombre);
 				$estilo->setTipo($tipo);
 				$estilo->setDescripcion($descripcion);
-				$estilo->setImagen($imagen);
-				$this->model->addEstilo($estilo); 
+				$estilo->setImagen($newName);
+				$this->model->addEstilo($estilo);
+				
 				
 			}
 			else{
@@ -76,24 +78,20 @@ class EstiloController extends Controller{
 		
 	}
 
-	function CambiarNombre()
-    {
-    	/*
-        //caracteres para el nombre nuevo
-        string chars = "23456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        //crean un generador al azar
-        Random rnd = new Random();
-        $name ="" ;
-        while ($name.Length < 8)
-        {
-            name += chars.Substring(rnd.Next(chars.Length), 1);
-        }
-        //agregamos un prefijo al nombre generado al azar y la extension del mismo
-        name = "pet_" + name + ".jpg";
-        return name;
-
-        */
-    }
+	
+    //Método con rand()
+	function generarNombre($length = 10,$ext) {
+	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $charactersLength = strlen($characters);
+	    $randomString = '';
+	    for ($i = 0; $i < $length; $i++) {
+	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	    }
+	    $ext=rtrim($ext,'/');
+		$ext=explode('/',$ext);		
+	    $randomString='Img'.$randomString.'.'.$ext[1];
+	    return $randomString;
+	} 
 }
 
 ?>
