@@ -54,7 +54,7 @@
                 <hr>
                 <p>Se recomienta que la imagen a subir tenga una resolucion de 1200px X 700px.</p>
                 
-                <form action="" class="formulario-subir-publicidad" onsubmit="return validarPublicidad();">
+                <form action="Publicidad/publicar" class="formulario-subir-publicidad" onsubmit="return validarPublicidad();" method="post" enctype="multipart/form-data" >
                     <input type="text" name="Titulo" placeholder="Titulo" class="pintper-textbox" id="titulo" required autofocus> <br>
                     <input type="text" name="Descripcion" placeholder="Descripcion" class="pintper-textbox descripcion" id="descripcion" required>
                     <span id="mensaje-error"></span> <br>
@@ -64,7 +64,7 @@
 
                             <label class="contenedor-archivo">
                                 Seleccionar foto
-                                <input type="file" accept="image/*" id="estiloSubir">
+                                <input type="file" name="Foto" accept="image/*" id="estiloSubir" required="true">
                             </label>
                     </div>
                     <input type="submit" value="Guardar" class="pintper-button">

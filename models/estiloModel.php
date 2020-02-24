@@ -11,11 +11,10 @@ class EstiloModel extends Model{
 	}
 
 	function addEstilo($estilo){
-		//echo var_dump($estilo);
-		echo $estilo->getNombre();
-		echo $estilo->getTipo();
-		echo $estilo->getDescripcion();
-		echo $estilo->getImagen();
+		echo $estilo->getNombre().'<br>';
+		echo $estilo->getTipo().'<br>';
+		echo $estilo->getDescripcion().'<br>';
+		echo $estilo->getImagen().'<br>';
 	}
 
 
@@ -40,3 +39,5 @@ class EstiloModel extends Model{
 	}
 
 }
+
+?>

@@ -1,46 +1,29 @@
-<?php
-require_once 'models/cerveza.php';
-class EstiloController extends Controller{
+<?php 
+include_once 'models/publicidad.php';
+class PublicidadController extends Controller{
 	
 	function __construct(){
 		parent::__construct();
 		$this->view->user=array();
 		$this->view->mensaje="";
-		$this->view->id_p=0;
+		$this->view->id_p=0;		
 	}
 	
-	function verModuloEstilos() {
-		$this->view->render('estilos/moduloVerEstilos');
-	}
-	
-	function agregarEstilo(){
-		if($this->model->comprobarLocales()){
-			$this->view->render('estilos/agregarEstilos');	
-		}		
+	function render(){
+		$this->view->render('publicacion/subirPublicidad');
 	}
 
-	function verMisEstilos(){
-		$this->view->render('estilos/verEstilos');
-	}
-
-	function editarEstilos(){
-		$this->view->render('estilos/editarEstiloDuenio');	
-	}
-
-	/***********************************************************************
-	**********Método para guardar los estilos de cerveza nuevos*************
-	***********************************************************************/
-	function guardarEstilo(){
-		$estilo = new Cerveza();
-		$nombre     = $_POST['Nombre'];
-		$tipo       = $_POST['Tipo'];
+	function publicar(){
+		$publicidad=new Publicidad();
+		$titulo     = $_POST['Titulo'];		
 		$descripcion= $_POST['Descripcion'];
-		$imagen     = $_FILES['imagen']['name'];//nombre del archivo
-		$tmp_name   = $_FILES['imagen']['tmp_name'];//archivo tempral
-		$tipoimg    = pathinfo($imagen, PATHINFO_EXTENSION);//Tipos de imagenes
-	    $sizeimg    = $_FILES['imagen']['size'];//tamaño de las imagenes
+		$foto     = $_FILES['Foto']['name'];//nombre del archivo
+		$tmp_name   = $_FILES['Foto']['tmp_name'];//archivo tempral
+		$tipoimg    = pathinfo($foto, PATHINFO_EXTENSION);//Tipos de imagenes
+	    $sizeimg    = $_FILES['Foto']['size'];//tamaño de las imagenes
 	    $carpeta    = $_SESSION['usuario_registrado']->PropietarioId."_".$_SESSION['usuario_registrado']->Nombre;
-	    
+	    echo $_FILES['Foto']['error'];
+	    echo '<br>'.$_FILES['Foto']['tmp_name'].'<br>';
 		$permitidos = array('jpg', 'jpeg');
 		$limite_kb = 16384;
 		
@@ -49,25 +32,26 @@ class EstiloController extends Controller{
 			if($sizeimg <= $limite_kb * 1024){//Control de tamaño de imagen
 
 				//Creamos la carpeta de destino para la imagen
-				$carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/'.$carpeta.'/';
+				$carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/publicidad/';
 
 				if (!file_exists($carpeta_destino)) {//verificamos si la carpeta existe
 			    	mkdir($carpeta_destino, 0777, true);// sino existe la creamos
 				}
 				
 				//Generamos un nombre nuevo para la imagen
-				$newName=$this->generarNombre(strlen($imagen),$tipoimg);
+				$newName=$this->generarNombre($tipoimg);
 
 				$ruta=$carpeta_destino.$newName;
+				echo $ruta;
 
 				//move el archivo a la carpeta creada
 				if(move_uploaded_file($tmp_name,$ruta)){
+					ini_set('gd.jpeg_ignore_warning', true);
 					if($this->dimensionarJPEG($ruta)){//Re dimensionamos la imagen
-						$estilo->setNombre($nombre);
-						$estilo->setTipo($tipo);
-						$estilo->setDescripcion($descripcion);
-						$estilo->setImagen($carpeta.'/'.$newName);
-						$this->model->addEstilo($estilo);
+						$publicidad->setTitulo($titulo);
+						$publicidad->setTexto($descripcion);
+						$publicidad->setImagen($newName);
+						$this->model->addPublicidad($publicidad);
 					}
 				}
 				else{
@@ -82,6 +66,12 @@ class EstiloController extends Controller{
 		else{
 			echo "Error o tipo de arhivo no permitido";
 		}
+	}
+
+
+
+	function guardarEstilo(){
+		
 		
 	}/********** FIN Método para guardar estilos de cerveza nuevos*************/
 	
@@ -89,7 +79,8 @@ class EstiloController extends Controller{
 	/*************************************************************************
 	********Método con rand() para generar nombre de archivo al azar**********
 	*************************************************************************/    
-	function generarNombre($length = 10,$ext) {
+	function generarNombre($ext) {
+		$length = 7;
 	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	    $charactersLength = strlen($characters);
 	    $randomString = '';
@@ -97,23 +88,24 @@ class EstiloController extends Controller{
 	        $randomString .= $characters[rand(0, $charactersLength - 1)];
 	    }
 	    	
-	    $randomString='Img'.$randomString.'.'.$ext;
+	    $randomString="publicidad_".$randomString.'.'.$ext;
 	    return $randomString;
 	}
 
 	/********************************************************
 	************Método para dimensionar imagenes*************
 	********************************************************/
-	function dimensionarJPEG($rutaImagen,$anchoThumb = 300, $altoThumb = 400, $calidad = 75){
-
+	function dimensionarJPEG($rutaImagen,$anchoThumb = 1200, $altoThumb = 700, $calidad = 75){
+		
 		$original = @imagecreatefromJPEG($rutaImagen);
 		if (!$original)
 		{
 			$original= imagecreatefromstring(file_get_contents($rutaImagen));
-		}		
+		}
 
 		if ($original){
 			$thumb = imagecreatetruecolor($anchoThumb,$altoThumb);
+
 			if ($thumb){
 				$ancho = imagesx($original);
 				$alto = imagesy($original);
@@ -128,6 +120,6 @@ class EstiloController extends Controller{
 		}
 		return false;
 	}
-	
 }
+
 ?>

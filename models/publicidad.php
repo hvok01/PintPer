@@ -1,10 +1,9 @@
 <?php
-class Publicacion{
+class Publicidad{
 	private $publicacionId;
 	private $titulo;
 	private $texto;
-	private $imagen1;
-	private $imagen2;
+	private $imagen;
 	private $fecha;
 	private $estado;
 	private $propietarioId;
@@ -17,67 +16,59 @@ class Publicacion{
 	}
 
 	public function getPublicacionid(){
-		return this->publicacionId;
+		return $this->publicacionId;
 	}
 
 	public function setPublicacionId($publicacionId){
-		this->publicacionId=$publicacionId;
+		$this->publicacionId=$publicacionId;
 	}
 
 	public function getTitulo(){
-		return this->titulo;
+		return $this->titulo;
 	}
 
 	public function setTitulo($titulo){
-		this->titulo=$titulo;
+		$this->titulo=$titulo;
 	}
 
 	public function getTexto(){
-		return this->texto;
+		return $this->texto;
 	}
 
 	public function setTexto($texto){
-		this->texto=$texto;
+		$this->texto=$texto;
 	}
 
-	public function getImagen1(){
-		return this->imagen1;
+	public function getImagen(){
+		return $this->imagen;
 	}
 
-	public function setImagen1($imagen1){
-		this->imagen1=$imagen1;
+	public function setImagen($imagen){
+		$this->imagen=$imagen;
 	}
-
-	public function getImagen2(){
-		return this->imagen2;
-	}
-
-	public function setImagen2($imagen2){
-		this->imagen2=$imagen2;
-	}
-
+	
 	public function getFecha(){
-		return this->fecha;
+		return $this->fecha;
 	}
 
 	public function setFecha($fecha){
-		this->fecha=$fecha;
+		$this->fecha=$fecha;
 	}
 
 	public function getEstado(){
-		return this->estado;
+		return $this->estado;
 	}
 
 	public function setEstado($estado){
-		this->estado=$estado;
+		$this->estado=$estado;
 	}
 
 	public function getPropietarioId(){
-		return this->propietarioId;
+		return $this->propietarioId;
 	}
 
 	public function setPropietarioId($propietarioId){
-		this->propietarioId=$propietarioId;
+		$this->propietarioId=$propietarioId;
 	}
 }
 ?>
