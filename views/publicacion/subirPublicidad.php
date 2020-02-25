@@ -69,7 +69,7 @@
                             </label>
                     </div>
                     <input type="submit" value="Guardar" class="pintper-button">
-                    <button  class="pintper-button-marron-claro"><a href="home/user_prop">Volver</a></button>
+                    <button  class="pintper-button-marron-claro"><a href="<?php echo constant("URL")?>home/user_prop">Volver</a></button>
                 </form>
                 
             </div>

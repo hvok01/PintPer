@@ -10,7 +10,9 @@ class LocalController extends Controller{
 		$this->view->local=array();
 	}
 	
-	function render(){
+	function verCompleto($id){
+		$oneLocal=$this->model->localId($id[0]);		
+		$this->view->local=$oneLocal;
 		$this->view->render('local/verLocalUsuarioComun');
 	}
 
@@ -19,6 +21,8 @@ class LocalController extends Controller{
 	}
 
 	function verLocales() {
+		$locales=$this->model->allLocales();		
+		$this->view->local=$locales;
 		$this->view->render('local/verLocalesUsuarioComun');	
 	}
 

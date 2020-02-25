@@ -45,8 +45,29 @@
             </div>
         </div>
     </header>
+    
+    <div class="pintper-container contenedorVerLocales">
+        <?php 
+            $locales=$this->local;
+            for($i=0;$i<sizeof($locales);$i++){ ?>
+        <form action="<?php echo constant('URL')?>local/verCompleto/<?php echo $locales[$i]->LocalId;?>" method="post">
+            <div class="pintper-row">
+                <div class="pintper-col-8">
+                    <h2><?php echo $locales[$i]->Nombre;?></h2>
+                    <h3><?php echo $locales[$i]->Direccion;?></h3>
+                </div>
+                
+                <div class="pintper-col-8">
+                    <p>Horario de atencion</p>
+                    <p>Lunes a Viernes de 09:00hs a 14:00hs y 17:00hs a 20:00hs</p>
+                    <button type="submit">Ver Mas</button>
+                </div>
+            </div><hr>
+        </form>
+    <?php } ?>
 
-    <div class="pintper-container verLocales">
+    </div>
+    <!--<div class="pintper-container verLocales">        
         <div class="pintper-row">
             <div class="pintper-col-16 contenedorVerLocales">
                 <iframe src="<?php echo constant('URL')?>local/moduloLocales" frameborder="0" class="moduloVerLocales"></iframe>
@@ -57,7 +78,7 @@
                 <a href="<?php echo constant('URL')?>home/user_comun" class="pintper-button-op2">Volver</a>
             </div>
         </div>
-    </div>
+    </div>-->
 
     <script src="<?php echo constant("URL")?>public/js/navScript.js"></script>
     
