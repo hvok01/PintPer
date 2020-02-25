@@ -17,54 +17,59 @@ class PublicidadController extends Controller{
 		$publicidad=new Publicidad();
 		$titulo     = $_POST['Titulo'];		
 		$descripcion= $_POST['Descripcion'];
-		$foto     = $_FILES['Foto']['name'];//nombre del archivo
+		$foto     	= $_FILES['Foto']['name'];//nombre del archivo
 		$tmp_name   = $_FILES['Foto']['tmp_name'];//archivo tempral
 		$tipoimg    = pathinfo($foto, PATHINFO_EXTENSION);//Tipos de imagenes
 	    $sizeimg    = $_FILES['Foto']['size'];//tamaño de las imagenes
 	    $carpeta    = $_SESSION['usuario_registrado']->PropietarioId."_".$_SESSION['usuario_registrado']->Nombre;
-	    echo $_FILES['Foto']['error'];
-	    echo '<br>'.$_FILES['Foto']['tmp_name'].'<br>';
+	    
 		$permitidos = array('jpg', 'jpeg');
 		$limite_kb = 16384;
 		
-		if (in_array($tipoimg, $permitidos)){//Control de tipo de archivo
+		if($titulo!="" & $descripcion!="" & $foto!="" ){
+			if (in_array($tipoimg, $permitidos)){//Control de tipo de archivo
 
-			if($sizeimg <= $limite_kb * 1024){//Control de tamaño de imagen
+				if($sizeimg <= $limite_kb * 1024){//Control de tamaño de imagen
 
-				//Creamos la carpeta de destino para la imagen
-				$carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/publicidad/';
+					//Creamos la carpeta de destino para la imagen
+					$carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/publicidad/';
 
-				if (!file_exists($carpeta_destino)) {//verificamos si la carpeta existe
-			    	mkdir($carpeta_destino, 0777, true);// sino existe la creamos
-				}
-				
-				//Generamos un nombre nuevo para la imagen
-				$newName=$this->generarNombre($tipoimg);
-
-				$ruta=$carpeta_destino.$newName;
-				echo $ruta;
-
-				//move el archivo a la carpeta creada
-				if(move_uploaded_file($tmp_name,$ruta)){
-					ini_set('gd.jpeg_ignore_warning', true);
-					if($this->dimensionarJPEG($ruta)){//Re dimensionamos la imagen
-						$publicidad->setTitulo($titulo);
-						$publicidad->setTexto($descripcion);
-						$publicidad->setImagen($newName);
-						$this->model->addPublicidad($publicidad);
+					if (!file_exists($carpeta_destino)) {//verificamos si la carpeta existe
+				    	mkdir($carpeta_destino, 0777, true);// sino existe la creamos
 					}
+					
+					//Generamos un nombre nuevo para la imagen
+					$newName=$this->generarNombre($tipoimg);
+
+					$ruta=$carpeta_destino.$newName;
+
+					//move el archivo a la carpeta creada
+					if(move_uploaded_file($tmp_name,$ruta)){
+						ini_set('gd.jpeg_ignore_warning', true);
+						if($this->dimensionarJPEG($ruta)){//Re dimensionamos la imagen
+							$publicidad->setTitulo($titulo);
+							$publicidad->setTexto($descripcion);
+							$publicidad->setImagen($newName);
+							if($this->model->addPublicidad($publicidad)){
+								$this->view->mensaje="Se guardo correctamente";
+								$this->render();
+							}
+						}
+					}
+					else{
+						echo "Error al Cargar la imagen";
+					}
+					
 				}
 				else{
-					echo "Error al Cargar la imagen";
+					echo "Tamaño de imagen demasiado grande";
 				}
-				
 			}
 			else{
-				echo "Tamaño de imagen demasiado grande";
+				echo "Error o tipo de arhivo no permitido";
 			}
-		}
-		else{
-			echo "Error o tipo de arhivo no permitido";
+		}else{
+			echo "Debe completar todos los campos";
 		}
 	}
 

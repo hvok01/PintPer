@@ -54,9 +54,10 @@
                 <hr>
                 <p>Se recomienta que la imagen a subir tenga una resolucion de 1200px X 700px.</p>
                 
-                <form action="Publicidad/publicar" class="formulario-subir-publicidad" onsubmit="return validarPublicidad();" method="post" enctype="multipart/form-data" >
+                <form action="<?php echo constant("URL")?>Publicidad/publicar" class="formulario-subir-publicidad" onsubmit="return validarPublicidad();" method="post" enctype="multipart/form-data" >
                     <input type="text" name="Titulo" placeholder="Titulo" class="pintper-textbox" id="titulo" required autofocus> <br>
                     <input type="text" name="Descripcion" placeholder="Descripcion" class="pintper-textbox descripcion" id="descripcion" required>
+                    <span><?php echo $this->mensaje;?></span>
                     <span id="mensaje-error"></span> <br>
                     <div class="contenedor-foto" id="contenedorFoto">
                     <!--Checkear con php que si ya hay una foto subida, cambiar style=display: none, por block y agregar el link a src-->

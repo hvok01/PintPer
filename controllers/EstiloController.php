@@ -107,19 +107,20 @@ class EstiloController extends Controller{
 	function dimensionarJPEG($rutaImagen,$anchoThumb = 300, $altoThumb = 400, $calidad = 75){
 
 		$original = @imagecreatefromJPEG($rutaImagen);
-		if (!$original)
+		if (!$original)//verificamos si se crea imagecreatefromJPEG
 		{
+			//creamos de nuevo usando imagecreatefromstring
 			$original= imagecreatefromstring(file_get_contents($rutaImagen));
 		}		
 
 		if ($original){
-			$thumb = imagecreatetruecolor($anchoThumb,$altoThumb);
-			if ($thumb){
+			$imgNew = imagecreatetruecolor($anchoThumb,$altoThumb);
+			if ($imgNew){
 				$ancho = imagesx($original);
 				$alto = imagesy($original);
 
-				if(imagecopyresized($thumb,$original,0,0,0,0,$anchoThumb,$altoThumb,$ancho,$alto)){
-					$resultado = imagejpeg($thumb,$rutaImagen,$calidad);
+				if(imagecopyresized($imgNew,$original,0,0,0,0,$anchoThumb,$altoThumb,$ancho,$alto)){
+					$resultado = imagejpeg($imgNew,$rutaImagen,$calidad);
 					return true;
 				}else{
 					return false;
