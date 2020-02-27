@@ -55,7 +55,7 @@ class UsuarioController extends Controller{
 				$_SESSION['user_registrado']=$this->model->loginUser($correo);
 				$user=$_SESSION['user_registrado'];		
 				
-				if($user!=null & $user->Clave==$clave){				
+				if($user!=null and $user->Clave==$clave){				
 					$this->view->render('home/indexUsuarioComun');
 				}else{
 					$this->view->mensaje="Correo o Contraseña incorrectos";
