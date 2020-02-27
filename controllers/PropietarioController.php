@@ -24,21 +24,25 @@ class PropietarioController extends Controller{
 		$clave=htmlentities(addslashes($_POST["claveUsuario"]));
 
 		if($correo!="" and $clave!=""){
+
 			if(preg_match($mail,$correo)){
+
 				$_SESSION['usuario_registrado']=$this->model->loginProp($correo);
-				$user=$_SESSION['usuario_registrado'];				
-				if($user!=null){
+				$user=$_SESSION['usuario_registrado'];
+
+				if($user!=null & $user->Clave==$clave){
 					$this->view->render('home/indexPropietario');
 				}else{
 					$this->view->mensaje="Correo o Contraseña incorrectos";
 					$this->render();
 				}
+
 			}else{
 				$this->view->mensaje="Ingrese un correo valido!";
 				$this->render();
 			}
-		}
-		else{
+
+		}else{
 				$this->view->mensaje="Debe llenar todos los campos!";
 				$this->render();
 		}
@@ -49,8 +53,10 @@ class PropietarioController extends Controller{
 	}
 
 	function registrar(){
+
 		$mail='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
-		$doc='/[0-9]{8}$/'	;
+		$doc='/[0-9]{8}$/';
+		
 		if($_POST["Nombre"]!="" and $_POST["Apellido"]!="" and $_POST["Documento"]!="" and 
 		$_POST["Correo"]!="" and $_POST["Clave"]!=""){
 

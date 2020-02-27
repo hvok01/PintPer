@@ -60,7 +60,7 @@
                 <div class="pintper-col-8">
                     <p>Horario de atencion</p>
                     <p>Lunes a Viernes de 09:00hs a 14:00hs y 17:00hs a 20:00hs</p>
-                    <button type="submit">Ver Mas</button>
+                    <button type="submit" class="pintper-button">Ver Mas</button>
                 </div>
             </div><hr>
         </form>

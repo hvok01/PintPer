@@ -26,7 +26,9 @@ class LocalController extends Controller{
 		$this->view->render('local/verLocalesUsuarioComun');	
 	}
 
-	function verMas(){
+	function verMas($id){
+		$oneLocal=$this->model->localId($id[0]);		
+		$this->view->local=$oneLocal;
 		$this->view->render('local/verMasDeLocalUsuarioComun');	
 	}
 

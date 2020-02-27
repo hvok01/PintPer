@@ -35,7 +35,9 @@
 
                     <p>Podes registrarte para encontrar puntos de recarga <br> completando el siguiente formulario:</p>
                     <form action="#" method="post" onsubmit="return registrarUsuarioComun();">
-        
+
+                        <span id="mensaje-error"><?php echo $this->mensaje; ?></span>
+                        <span id="mensaje-error"><?php echo $this->Error?></span><br>        
                         <span id="mensaje-error"></span><br>
                         
                         <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="pintper-textbox" id="nombre" required> <br>
@@ -46,39 +48,20 @@
 
                         <input type="password" name="repetirClaveUsuario" placeholder="Repetir clave" class="pintper-textbox" id="repetirClave" required> <br>
 
-                    <select name="provinicas" class="pintper-option">
-                            <option value="Buenos Aires">Buenos Aires</option>
-                            <option value="Catamarca">Catamarca</option>
-                            <option value="Chaco">Chaco</option>
-                            <option value="Chubut">Chubut</option>
-                            <option value="Córdoba">Córdoba</option>
-                            <option value="Corrientes">Corrientes</option>
-                            <option value="Entre Ríos">Entre Ríos</option>
-                            <option value="Formosa">Formosa</option>
-                            <option value="Jujuy">Jujuy</option>
-                            <option value="La Pampa">La Pampa</option>
-                            <option value="La Rioja">La Rioja</option>
-                            <option value="Mendoza">Mendoza</option>
-                            <option value="Misiones">Misiones</option>
-                            <option value="Neuquén">Neuquén</option>
-                            <option value="Río Negro">Río Negro</option>
-                            <option value="Salta">Salta</option>
-                            <option value="San Juan">San Juan</option>
-                            <option value="San Luis" selected>San Luis</option>
-                            <option value="Santa Cruz">Santa Cruz</option>
-                            <option value="Santa Fe">Santa Fe</option>
-                            <option value="Santiago del Estero">Santiago del Estero</option>
-                            <option value="Tierra del Fuego">Tierra del Fuego</option>
-                            <option value="Tucumán">Tucumán</option>
+                        <select name="provincias" class="pintper-option">
+                            <?php
+                                for($i=0; $i<sizeof(PROVINCIAS);$i++){
+                                    if(PROVINCIAS[$i]=="San Luis"){
+                                        echo '<option value="'.PROVINCIAS[$i].'" selected>'.PROVINCIAS[$i].'</option>';
+                                    }else{
+                                        echo '<option value="'.PROVINCIAS[$i].'">'.PROVINCIAS[$i].'</option>';
+                                    }
+                                }
+                            ?>                           
                         </select> <br>
 
                         <input type="submit" value="Registrarme" class="pintper-button"> <br>
-                    </form>
-                        <?php
-                            if($this->mensaje!=""){
-                                echo "<p>".$this->mensaje."</p>";
-                            }    
-                        ?>
+                    </form>                        
                     <p> ¿Ya tenes cuenta? <a href="<?php echo constant("URL");?>Usuario">Inicía sesion</a> </p>
                 </div>
             </div>

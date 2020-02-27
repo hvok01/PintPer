@@ -35,7 +35,9 @@
                     <p>Podes registrarte para ofrecer puntos de recarga <br> completando el siguiente formulario:</p>
                     <form action="registrar" method="post" onsubmit="return validarRegistroDuenio();">
 
-                        <span id="mensaje-error"><?php echo $this->Error?></span><br>
+                        <span id="mensaje-error"><?php echo $this->mensaje; ?></span>
+                        <span id="mensaje-error"><?php echo $this->Error?></span><br>        
+                        <span id="mensaje-error"></span><br>
                     
                         <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox" id="nombre" required
                         value='<?php if(isset($_POST['Nombre']))echo $_POST['Nombre']?>'> <br>
@@ -56,20 +58,16 @@
                                 for($i=0; $i<sizeof(PROVINCIAS);$i++){
                                     if(PROVINCIAS[$i]=="San Luis"){
                                         echo '<option value="'.PROVINCIAS[$i].'" selected>'.PROVINCIAS[$i].'</option>';
+                                    }else{
+                                        echo '<option value="'.PROVINCIAS[$i].'">'.PROVINCIAS[$i].'</option>';
                                     }
-                                    echo '<option value="'.PROVINCIAS[$i].'">'.PROVINCIAS[$i].'</option>';
                                 }
                             ?>                           
                         </select> <br>
                         
                         <input type="submit" value="Registrarme" class="pintper-button"> <br>
                     </form>
-                        <?php
-                            if($this->mensaje!=""){
-                                echo "<p style='color:green; font-size:14px;'>".$this->mensaje."</p>";
-                            }    
-                        ?>
-
+                        
                     <p> ¿Ya tenes cuenta? <a href="<?php echo constant("URL");?>Propietario">Inicía sesion</a> </p>
                 </div>
             </div>
