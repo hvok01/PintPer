@@ -26,5 +26,9 @@ class HomeController extends Controller{
 	function user_prop(){
 		$this->view->render('home/indexPropietario');
 	}
+
+	function user_admin(){
+		$this->view->render('home/indexAdministrador');
+	}
 }
 ?>
