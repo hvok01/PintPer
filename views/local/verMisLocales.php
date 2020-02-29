@@ -167,11 +167,13 @@
                 <h3><?php echo $locales[$i]->Nombre; ?></h3>
                 <p><?php echo  $locales[$i]->Direccion; ?></p>
             </div>
-            <div class="pintper-col-8">
+            <div class="pintper-col-8 botones-ver-estilos">
+				<button class="pintper-button">
+					<a href="<?php echo constant('URL')?>Estilo/verMisEstilos">Ver Estilos</a>
+				</button>
                 <form action="editarLocal" method="post">
 					<input type="hidden" name="localId" value="<?php echo  $locales[$i]->LocalId; ?>">
                     <input type="submit" value="Ver Mas" class="pintper-button-op2">
-					<button class="pintper-button"><a href="<?php echo constant('URL')?>Estilo/verMisEstilos">Ver Estilos</a></button>
                 </form>
             </div>
         </div>

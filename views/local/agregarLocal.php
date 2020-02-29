@@ -188,6 +188,23 @@
 
             <div class="pintper-row">
                 <div class="pintper-col-16">
+                    <h1>Redes sociales</h1>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="pintper-row">
+
+                <div class="pintper-col-16">
+                    <input type="text" name="Nombre" placeholder="Nombre" class="pintper-textbox" id="nombre" required autofocus>
+                    <input type="text" name="Telefono" placeholder="Telefono" class="pintper-textbox" id="telefono" required> 
+                    <input type="text" name="" id="">
+                </div>
+
+            </div>
+
+            <div class="pintper-row">
+                <div class="pintper-col-16">
                     <h1>Horario de atencion</h1>
                     <hr>
                 </div>
