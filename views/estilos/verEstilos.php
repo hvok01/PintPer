@@ -149,9 +149,9 @@
 
     <div class="pintper-container verEstilos">
         <div class="pintper-row">
-            <div class="pintper-col-16">
+            <div class="pintper-col-16 verEstilos-header">
                 <h1>Estas son las cervezas que ofrecés actualmente en @NombreLocal.</h1>
-                <button><a href="">Cargar nuevo Estilo</a></button>
+                <button class="pintper-button"><a href="<?php echo constant('URL')?>estilo/agregarEstilo">Nuevo Estilo</a></button>
                 <hr>
             </div>
         </div>

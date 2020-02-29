@@ -239,6 +239,43 @@
     float: right;
 }
 
+.verEstilos .pintper-row .pintper-col-8 form .pintper-button-op2:hover {
+    color: var(--grey);
+}
+
+.verEstilos .botones-ver-estilos .pintper-button {
+    float: right; 
+    margin-left: 5vw;
+}
+
+.verEstilos .botones-ver-estilos .pintper-button a{
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 30px;
+}
+
+.verEstilos .botones-ver-estilos .pintper-button a:hover {
+    color: var(--grey);
+}
+
+.verEstilos .verEstilos-header h1 {
+    display: inline;
+}
+
+.verEstilos .verEstilos-header button {
+    float: right;
+}
+
+.verEstilos .verEstilos-header button a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.verEstilos .verEstilos-header button a:hover {
+    color: var(--grey);
+}
+
 .agregar-publicidad .pintper-row {
     background-color: white;
 }

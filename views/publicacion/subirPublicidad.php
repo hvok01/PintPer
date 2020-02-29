@@ -12,38 +12,9 @@
 </head>
 <body>
 
-    <!--nav bar-->
-    <header class="pintper-container-nav">
-        <div class="pintper-row">
-            <div class="pintper-col-1">
-                <div class="pintper-logo-container">
-                    <a href="<?php echo constant('URL')?>home/user_prop"><img src="<?php echo constant("URL")?>public/img/PintperWordWhite.png" alt="Pintper Logo"></a>
-                </div>
-            </div>
-            <div class="pintper-col-14">
-                <div class="pintper-iniciar-sesion-container" >
-                    
-                </div>
-            </div>
-            <div class="pintper-col-1" x-data="{ open: false }">
-
-                <img src="<?php echo constant("URL")?>public/img/customer.png" alt="Iniciar Sesion" class="pintper-menu" @click="open = true">
-                
-
-                <div class="menu-pintper-nav"  x-show="open" @click.away="open = false">
-                    <ul>
-                        <li class="items-fade"><a href="<?php echo constant('URL')?>Estilo/agregarEstilo">Agregar Estilos</a></li>
-                        <li class="items-fade"><a href="<?php echo constant('URL')?>Estilo/verMisEstilos">Ver mis Estilos</a></li>
-                        <li class="items-fade"><a href="<?php echo constant('URL')?>publicacion">Subir Publicidad</a></li>
-                        <li class="items-fade"><a href="<?php echo constant('URL')?>local/agregar">Agregar Local</a></li>
-                        <li class="items-fade"><a href="<?php echo constant('URL')?>local/verMisLocales">Ver mis Locales</a></li>
-                        <li class="items-fade"><a href="<?php echo constant('URL')?>propietario/configuraciones">Configuracion</a></li>
-                        <li class="items-fade"><a href="<?php echo constant('URL')?>propietario">Salir</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
+   <?php
+    include_once 'header_prop.php';
+?>
 
     <div class="pintper-container agregar-publicidad">
     
