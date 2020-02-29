@@ -4,7 +4,7 @@ class HomeController extends Controller{
 	function __construct(){
 		parent::__construct();
 		$this->view->mensaje="";
-		$this->view->id_p=0;
+		$this->view->publicidad=array();
 	}
 
 	function render(){
@@ -16,6 +16,9 @@ class HomeController extends Controller{
 	}
 
 	function user_comun(){
+		$publi=$this->model->loadPublicidad();					
+		$this->view->publicidad=$publi;
+		$this->view->mensaje="hola esto es una prueba";
 		$this->view->render('home/indexUsuarioComun');
 	}
 
