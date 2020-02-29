@@ -144,6 +144,26 @@ class LocalModel extends Model{
 		}
 	}
 
+	function searchLocales($nombre){
+		$loacles= array();
+		$cone=$this->db->conect();		
+		$sql="SELECT * FROM locales WHERE Nombre like ?;";
+		$resultado=$cone->prepare($sql);
+		$resultado->execute(array($nombre));
+		while($registro=$resultado->fetch(PDO::FETCH_OBJ)){
+			$locales[]=$registro;			
+		}
+		
+		if($locales!=null){
+			$resultado->closeCursor();
+			$resultado=null;
+			$cone=null;
+			return $locales;
+		}else{
+			return null;
+		}
+	}
+
 	function localId($localId){
 		$cone=$this->db->conect();		
 		$sql="SELECT * FROM locales WHERE LocalId=?;";

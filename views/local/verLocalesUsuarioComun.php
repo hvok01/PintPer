@@ -23,7 +23,7 @@
             <div class="pintper-col-14">
                 <div class="pintper-iniciar-sesion-container" >
                     <!-- Formulario para enviar la busqueda -->
-                    <form action="<?php echo constant('URL')?>local/verLocales" method="POST" class="form-busqueda">
+                    <form action="<?php echo constant('URL')?>local/buscarLocales" method="POST" class="form-busqueda">
                         <input type="text" name="busqueda" placeholder="Buscar local" class="pintper-txt-busqueda" id="txt-busqueda">
                         <input type="submit" value="" class="pintper-btn-buscar" onclick="return validarBusqueda();">
                     </form>

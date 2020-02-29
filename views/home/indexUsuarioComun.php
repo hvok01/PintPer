@@ -25,7 +25,7 @@
             <div class="pintper-col-14">
                 <div class="pintper-iniciar-sesion-container" >
                     <!-- Formulario para enviar la busqueda -->
-                    <form action="<?php echo constant('URL')?>local/verLocales" method="POST" class="form-busqueda">
+                    <form action="<?php echo constant('URL')?>local/buscarLocales" method="POST" class="form-busqueda">
                         <input type="text" name="busqueda" placeholder="Buscar local" class="pintper-txt-busqueda" id="txt-busqueda">
                         <input type="submit" value="" class="pintper-btn-buscar" onclick="return validarBusqueda();">
                     </form>
@@ -58,7 +58,7 @@
 
         <div class="EspacioPublicidad" id="publicidad">
 
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
                 <div class="carousel-inner">
                     <?php
                     for($i=0; $i<$row; $i++) {
