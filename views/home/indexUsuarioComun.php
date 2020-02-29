@@ -115,7 +115,7 @@
             <div class="pintper-col-14">
                 <div class="pintper-iniciar-sesion-container" >
                     <!-- Formulario para enviar la busqueda -->
-                    <form action="<?php echo constant('URL')?>local/verLocales" method="POST" class="form-busqueda">
+                    <form action="<?php echo constant('URL')?>local/buscarLocales" method="POST" class="form-busqueda">
                         <input type="text" name="busqueda" placeholder="Buscar local" class="pintper-txt-busqueda" id="txt-busqueda">
                         <input type="submit" value="" class="pintper-btn-buscar" onclick="return validarBusqueda();">
                     </form>
@@ -151,19 +151,43 @@
             </div>
         </div>
     </header>
-
+<?php
+    $pub=$this->publicidad;
+    $row=sizeof($pub);
+?>
+    <!-- <h1>Inicio de Usuario Comun.</h1> -->
+    <!-- Acá dejo un div para poner el modulo de publicidad. -->
+    <!-- Acá se encuenta la barra de navegacion de estilos de cerveza -->
     <div class="nav-estilos" x-data="{ open: false }">
 
         <div class="EspacioPublicidad" id="publicidad">
 
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
                 <div class="carousel-inner">
+                    <?php
+                    for($i=0; $i<$row; $i++) {
+                    if($i==0){ ?>
                     <div class="carousel-item active">
-                        <img class="d-block img-carousel" src="../public/img/cerveza4.jpg" alt="First slide">
+                        <img class="d-block img-carousel" src="../public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="First slide">
+                        <div class="carousel-caption">
+                        <?php
+                        echo '<h4>'.$pub[$i]->Titulo.'</h4>';
+                        echo '<h5>'.$pub[$i]->Texto.'</h5>';
+                        ?>
+                        </div><!--Caption-->
                     </div>
+                    <?php }else{ ?>
                     <div class="carousel-item">
-                        <img class="d-block img-carousel" src="../public/img/cerveza5.jpg" alt="Second slide">
+                        <img class="d-block img-carousel" src="../public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="Second slide">
+                        <div class="carousel-caption">
+                        <?php
+                        echo '<h3>'.$pub[$i]->Titulo.'</h3>';
+                        echo '<h5>'.$pub[$i]->Texto.'</h5>';
+                        ?>
+                        </div><!--Caption-->
                     </div>
+                <?php }
+                } ?>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

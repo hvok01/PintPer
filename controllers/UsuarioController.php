@@ -9,6 +9,7 @@ class UsuarioController extends Controller{
 		$this->view->mensaje="";
 		$this->view->id_p=0;
 		$this->view->Error="";
+		$this->view->publicidad=array();
 	}
 	
 	function render(){
@@ -55,7 +56,9 @@ class UsuarioController extends Controller{
 				$_SESSION['user_registrado']=$this->model->loginUser($correo);
 				$user=$_SESSION['user_registrado'];		
 				
-				if($user!=null and $user->Clave==$clave){				
+				if($user!=null and $user->Clave==$clave){
+					$publi=$this->model->loadPublicidad();					
+					$this->view->publicidad=$publi;
 					$this->view->render('home/indexUsuarioComun');
 				}else{
 					$this->view->mensaje="Correo o Contraseña incorrectos";

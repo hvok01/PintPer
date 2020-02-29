@@ -26,6 +26,15 @@ class LocalController extends Controller{
 		$this->view->render('local/verLocalesUsuarioComun');	
 	}
 
+	function buscarLocales() {
+		$nombre=$_POST['busqueda'];
+		if($nombre!=""){
+			$locales=$this->model->searchLocales($nombre);		
+			$this->view->local=$locales;
+			$this->view->render('local/verLocalesUsuarioComun');
+		}
+	}
+
 	function verMas($id){
 		$oneLocal=$this->model->localId($id[0]);		
 		$this->view->local=$oneLocal;

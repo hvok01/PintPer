@@ -1,3 +1,105 @@
+.login-usuario {
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-usuario .contenedor-izquierda {
+    display: none;
+}
+
+.login-usuario .contenedor-derecha {
+    background-color: white;
+}
+
+.login-usuario .contenedor-derecha .registrar-link {
+    height: auto;
+    padding: 10px;
+}
+
+.login-usuario .contenedor-derecha .registro {
+    padding: 10px 20px;
+}
+
+.login-usuario .contenedor-derecha .registrar-link p {
+    font-size: 12px;
+    font-family: var(--open-sans);
+    color: var(--black);
+    float: right;
+}
+
+.login-usuario .contenedor-derecha .registrar-link a {
+    text-decoration: none;
+    color: var(--blueExtra);
+    font-size: 12px;
+}
+
+.login-usuario .contenedor-derecha a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion {
+    height: 80vh;
+    width: 90%;
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex {
+    display: block;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex h1 {
+    font-family: var(--alata);
+    font-size: 28px;
+    color: var(--black);
+    margin: 0;
+    margin-top: 5vh;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex p {
+    font-family: var(--open-sans);
+    font-size: 11px;
+    color: red;
+    margin: 0;
+    margin-bottom: 3vh;
+    max-width: 170px;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex label {
+    font-size: 16px;
+    font-family: var(--alata);
+    color: var(--black);
+    margin: 5px 0;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex a {
+    font-size: 12px;
+    font-family: var(--open-sans);
+    text-align: center;
+    color: var(--black);
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px 25px;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex a:hover {
+    text-decoration: underline;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex .pintper-textbox {
+    margin: 15px 0;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex .pintper-button {
+    margin: 20px 15px;
+}
+
+.login-usuario .contenedor-derecha .form-iniciar-sesion .registrar-view h1 {
+    margin: 0;
+}
+
 .usuario-row {
     background-color: transparent;
 }
@@ -39,6 +141,7 @@
     float: right;
     position: relative;
     z-index: 20;
+    align-items: center;
 }
 
 .pintper-txt-busqueda {
@@ -56,8 +159,8 @@
     background: url("../img/buscar.png") no-repeat 50% 50%;
     background-size: cover;
     background-color: transparent;
-    width: 20px;
-    height: 20px;
+    width: 5vh;
+    height: 4vh;
     border: none; 
     padding: 0;
     margin: 10px;
@@ -80,22 +183,24 @@
 }
 
 .menu-pintper-nav {
-    width: 20vw;
-    height: 95vh;
+    width: auto;
+    height: 90vh;
     background-color: var(--primary);
     display: flex;
     position: absolute; 
     right: 0;
+    top: 10vh;
     z-index: 10;
     text-align: center;
     justify-content: center;
+    width: 250px;
+    overflow: hidden;
 }
 
 .menu-pintper-nav ul {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    margin-top: 15px;
 }
 
 .menu-pintper-nav ul li{
@@ -385,7 +490,7 @@
 .nav-estilos .navBar {
     width: 20vw;
     height: inherit;
-    background-color: #9e9e9e94;
+    background-color: #C4C4C4;
     z-index: 20;
 }
 
@@ -394,13 +499,14 @@
     width: 60%;
     margin: 0;
     text-align: center;
+    padding: 15px;
 }
 
 .nav-estilos .navBar ul li {
     margin-bottom: 20px;
     color: var(--primary);
     font-family: var(--open-sans);
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -419,7 +525,7 @@
     width: 25px;
     height: 25px;
     padding: 5px;
-    background-color: #9e9e9e94;
+    background-color: #C4C4C4;
     left: 20vw;
 }
 
@@ -428,7 +534,7 @@
     width: 25px;
     height: 25px;
     padding: 5px;
-    background-color: #9e9e9e94;
+    background-color: #C4C4C4;
     left: 0;
     z-index: 10;
 }
@@ -443,7 +549,7 @@
     width: 25px;
     height: 25px;
     padding: 5px;
-    background-color: #9e9e9e94;
+    background-color: #C4C4C4;
     left: 20vw;
 }
 
@@ -507,10 +613,10 @@
 .nav-estilos .EspacioPublicidad {
     position: absolute;
     max-width: 90vw;
-    width: 90vw;
+    width: 80vw;
     max-height: inherit;
     height: inherit;
-    margin: 0 5vw;
+    margin: 0 10vw;
     text-align: center;
 }
 
@@ -531,4 +637,72 @@
     width: inherit;
     height: inherit;
     object-fit: contain;
+}
+
+@media screen and (min-width: 768px) {
+
+    .login-usuario {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(100px, 33.333333vw));
+    }
+    
+    .login-usuario .contenedor-izquierda {
+        display: inline;
+        grid-column: 1 / 2;
+        background-color: var(--primary);
+        padding: 4vw;
+        position: relative;
+    }
+
+    .login-usuario .contenedor-izquierda h1{
+        font-family: var(--alata);
+        font-size: 48px;
+        color: var(--black);
+        margin: 0;
+    }
+
+    .login-usuario .contenedor-izquierda p{
+        font-family: var(--alata);
+        font-size: 18px;
+        color: var(--black);
+        margin: 0;
+    }
+
+    .login-usuario .contenedor-izquierda .home-link {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        top: 65vh;
+        left: 0;
+    }
+
+    .login-usuario .contenedor-izquierda #home-link {
+        width: 25px;
+        height: 25px;
+    }
+
+    .login-usuario .contenedor-derecha {
+        grid-column: 2 / 4;
+    }
+
+    .login-usuario .contenedor-derecha .form-iniciar-sesion .contenedor-flex {
+        margin-top: 5vh;
+    }
+
+    .login-usuario .propietario-contenedor-derecha {
+        background-color: var(--secondary);
+    }
+
+    .login-usuario .administrador-contenedor-derecha {
+        background-color: var(--greenSuccess);
+    }
+
+    .nav-estilos .navBar ul {
+        margin: 0 auto;
+    }
+
+    .nav-estilos .navBar ul li {
+        font-size: 18px;
+    }
+
 }

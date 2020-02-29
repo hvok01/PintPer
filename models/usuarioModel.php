@@ -45,5 +45,20 @@ class UsuarioModel extends Model{
 		}		
 		
 	}
+
+	function loadPublicidad(){
+		$publicidad=array();
+		$cone=$this->db->conect();
+		$sql="SELECT * FROM publicidad;";
+		$resultado=$cone->prepare($sql);
+		$resultado->execute();
+		while ($registro=$resultado->fetch(PDO::FETCH_OBJ)){
+			array_push($publicidad, $registro);
+		}
+		$resultado->closeCursor();
+		$resultado=null;
+		$cone=null;
+		return $publicidad;		
+	}
 }
 ?>
