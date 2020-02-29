@@ -430,6 +430,16 @@
 .verLocal .pintper-row .container-btn-local {
     text-align: center;
     margin-top: 15px;
+    margin-left: 100px
+}
+
+.verLocal .pintper-row .container-btn-local-ver-mas {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.verLocal .pintper-row .container-btn-local-ver-mas .pintper-button-op2{
+    padding: 10px 40px;
 }
 
 .verLocal .pintper-row .container-btn-local .pintper-button {
@@ -445,6 +455,17 @@
     height: auto;
     padding: 10px 40px;
     cursor: pointer;
+}
+
+.verLocal .pintper-row #facebook-icon, .verLocal .pintper-row #instagram-icon, .verLocal .pintper-row #twitter-icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 1vw;
+}
+
+.verLocal .pintper-row .social-media {
+    display: flex;
+    float: right;
 }
 
 .pintper-container .pintper-row .moduloCerveza {

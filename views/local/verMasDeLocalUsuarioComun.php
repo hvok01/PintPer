@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/pintperRoot.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/pintperGrid.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/headerPintper.css">
@@ -49,7 +50,7 @@
         </div>
 
         <div class="pintper-row">
-            <div class="pintper-col-16 container-btn-local">
+            <div class="pintper-col-16 container-btn-local-ver-mas">
                 <a href="<?php echo constant('URL')?>local/verCompleto/<?php echo $local->LocalId; ?>" class="pintper-button-op2">Regresar</a>
             </div>
         </div>

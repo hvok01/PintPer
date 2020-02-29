@@ -426,6 +426,39 @@
     justify-content: space-between;
 }
 
+.agregar-local .pintper-row #facebook-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.agregar-local .pintper-row #instagram-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.agregar-local .pintper-row #twitter-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.agregar-local .social-media div {
+    display: flex;
+    align-items: center;
+}
+
+.agregar-local .social-media input{
+    width: auto;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary); 
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    padding: 5px;
+    margin: 0 1vw;
+}
+
 .label-checkbox {
     display: inline;
     position: relative;
