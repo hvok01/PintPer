@@ -122,7 +122,7 @@
                     <ul>
                         <li><a href="<?php echo constant('URL')?>local/verMisLocales">Ver mis Locales</a></li>
                         <li><a href="<?php echo constant('URL')?>local/agregar">Agregar Local</a></li>
-						<li><a href="#">Agregar Promocion</a></li>
+						<li><a href="<?php echo constant('URL')?>promocion">Agregar Promocion</a></li>
 						<li><a href="<?php echo constant('URL')?>publicidad">Subir Publicidad</a></li>
                         <li><a href="<?php echo constant('URL')?>propietario/configuraciones">Configuracion</a></li>
                         <li><a href="<?php echo constant('URL')?>propietario">Salir</a></li>

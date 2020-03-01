@@ -1,8 +1,5 @@
 <?php
 
-/**
- * 
- */
 class Promocion
 {
 	private $promocionId;
@@ -12,27 +9,27 @@ class Promocion
 	public function __construct(){}
 	public function __destruct(){}
 
-	public setPromocionId($promocionId){
+	public function setPromocionId($promocionId){
 		$this->promocionId=$promocionId;
 	}
 
-	public getPromocionId(){
+	public function getPromocionId(){
 		return $this->promocionId;
 	}
 
-	public setImagen($imagen){
+	public function setImagen($imagen){
 		$this->imagen=$imagen;
 	}
 
-	public getPromocionId(){
+	public function getImagen(){
 		return $this->imagen;
 	}
 
-	public setLocalId($localId){
+	public function setLocalId($localId){
 		$this->localId=$localId;
 	}
 
-	public getLocalId(){
+	public function getLocalId(){
 		return $this->localId;
 	}
 

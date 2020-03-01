@@ -600,3 +600,102 @@
 .configuraciones .pintper-row .pintper-button-marron-claro a:hover {
     color: var(--secondary);
 }
+
+.subir-promo .pintper-row {
+    background-color: white;
+}
+
+.subir-promo .pintper-row h1 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--black);
+    font-family: var(--alata);
+}
+
+.subir-promo .pintper-row p {
+    color: var(--black);
+    font-size: 14px;
+    font-family: var(--alata);
+    margin: 0;
+}
+
+.subir-promo .pintper-row small {
+    color: var(--black);
+    font-size: 12px;
+    font-family: var(--alata);
+    margin: 0;
+}
+
+.subir-promo .pintper-row hr {
+    border: 1px solid var(--black);
+    margin: 25px 0;
+}
+
+.subir-promo .pintper-row .contenedor-foto {
+    width: 100%;
+    height: 250px; 
+    background-color: #5F646D;
+    margin: 0;
+    flex: 1;
+}
+
+.subir-promo .pintper-row a {
+    color: var(--white);
+    font-size: 14px;
+    font-family: var(--alata);
+    text-decoration: none;
+    padding: 10px 40px;
+}
+
+.subir-promo .pintper-row a:hover {
+    color: var(--secondary);
+}
+
+.subir-promo .pintper-row .botones-derecha {
+    position: relative;
+    z-index: 10;
+}
+
+.subir-promo .pintper-row .botones-derecha .pintper-button {
+    float: right;
+    margin-left: 15px;
+}
+
+.subir-promo .pintper-row .botones-derecha .pintper-button-marron-claro {
+    float: right;
+} 
+
+.subir-promo .pintper-row .contenedor-archivo {
+    overflow: hidden;
+    position: relative;
+    padding: 10px 40px;
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    text-decoration: none;
+    top: 44vh;
+    z-index: 20;
+}
+
+.subir-promo .pintper-row .contenedor-archivo [type=file] {
+    cursor: inherit;
+    display: block;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+.subir-promo .pintper-row .contenedor-archivo:hover {
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}

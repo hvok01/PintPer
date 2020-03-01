@@ -10,7 +10,11 @@ class PromocionController extends Controller{
 	}
 	
 	function render(){
-		
+		$this->view->render('promocion/subirPromocion');
+	}
+
+	function verPromociones() {
+		$this->view->render('promocion/verPromociones');
 	}
 
 	function cargarPromocion($localId){

@@ -631,14 +631,25 @@
     display: none;
 }
 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    top: 0;
+}
+
 .nav-estilos .EspacioPublicidad {
     position: absolute;
-    max-width: 90vw;
     width: 80vw;
+    height: auto;
     max-height: inherit;
-    height: inherit;
     margin: 0 10vw;
+    border: 1px solid red;
     text-align: center;
+    overflow: hidden;
+}
+
+.nav-estilos .EspacioPublicidad .carousel .carousel-item img {
+    position: relative;
+    z-index: 0;
+    top: 0;
 }
 
 .nav-estilos .EspacioPublicidadReducido {
@@ -650,14 +661,24 @@
     text-align: center;
 }
 
-.nav-estilos .carousel-inner {
-    height: 80vh;
-}
-
 .nav-estilos .carousel-inner .img-carousel {
     width: inherit;
     height: inherit;
     object-fit: contain;
+}
+
+.contenedor-fotos {
+    margin: 5vh 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 5px;
+    justify-content: center;
+}
+
+.contenedor-fotos .item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
 
 @media screen and (min-width: 768px) {

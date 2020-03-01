@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.10.1/dist/alpine.js" defer></script>
     <title>Bienvenido a Pintper</title>
 </head>
-<body>
+<body style="overflow-x: hidden;">
 <?php
 
 include_once 'header_user.php';
@@ -22,9 +22,7 @@ include_once 'header_user.php';
     $pub=$this->publicidad;
     $row=sizeof($pub);
 ?>
-    <!-- <h1>Inicio de Usuario Comun.</h1> -->
-    <!-- Acá dejo un div para poner el modulo de publicidad. -->
-    <!-- Acá se encuenta la barra de navegacion de estilos de cerveza -->
+
     <div class="nav-estilos" x-data="{ open: false }">
 
         <div class="EspacioPublicidad" id="publicidad">
@@ -35,23 +33,22 @@ include_once 'header_user.php';
                     for($i=0; $i<$row; $i++) {
                     if($i==0){ ?>
                     <div class="carousel-item active">
+                        
                         <img class="d-block img-carousel" src="../public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="First slide">
+                        <!--Caption-->
                         <div class="carousel-caption">
-                        <?php
-                        echo '<h4>'.$pub[$i]->Titulo.'</h4>';
-                        echo '<h5>'.$pub[$i]->Texto.'</h5>';
-                        ?>
-                        </div><!--Caption-->
+                            <h4><?php echo $pub[$i]->Titulo?></h4>
+                            <h3><?php echo $pub[$i]->Texto?></h3>
+                        </div>
                     </div>
                     <?php }else{ ?>
                     <div class="carousel-item">
-                        <img class="d-block img-carousel" src="../public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="">
                         <div class="carousel-caption">
-                        <?php
-                        echo '<h3>'.$pub[$i]->Titulo.'</h3>';
-                        echo '<h5>'.$pub[$i]->Texto.'</h5>';
-                        ?>
-                        </div><!--Caption-->
+                            <h4><?php echo $pub[$i]->Titulo?></h4>
+                            <h3><?php echo $pub[$i]->Texto?></h3>
+                        </div>
+                        <img class="d-block img-carousel" src="../public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="First slide">
+                        
                     </div>
                 <?php }
                 } ?>
@@ -68,6 +65,7 @@ include_once 'header_user.php';
                 
         </div>
 
+
         <img src="../public/img/menu.png" alt="menu" class="pintper-menu-icon" id="menu-pintper" @click="open = true">
 
         <img src="../public/img/delete.png" alt="menu" class="pintper-menu-estilos hidden" id="salir-pintper" @click="open = false">
@@ -83,7 +81,7 @@ include_once 'header_user.php';
             </ul>
         </div>
     </div>
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="../public/js/jquery-3.4.1.min.js"></script>

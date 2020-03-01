@@ -125,7 +125,7 @@
                 <div class="menu-pintper-nav"  x-show="open" @click.away="open = false">
                     <ul>
                         <li><a href="<?php echo constant('URL')?>local/verLocales">Ver Locales</a></li>
-                        <li><a href="#Promociones">Promociones</a></li>
+                        <li><a href="<?php echo constant('URL')?>promocion/verPromociones">Promociones</a></li>
                         <li><a href="<?php echo constant('URL')?>usuario/config">Configuraciones</a></li>
                         <li><a href="<?php echo constant('URL')?>Usuario">Cerrar Sesion</a></li>
                     </ul>
