@@ -4,33 +4,40 @@ class EstiloController extends Controller{
 	
 	function __construct(){
 		parent::__construct();
-		$this->view->user=array();
+		$this->view->local=array();
+		$this->view->estilos=array();
 		$this->view->mensaje="";
-		$this->view->id_p=0;
+		$this->view->error="";		
 	}
 	
 	function verModuloEstilos() {
 		$this->view->render('estilos/moduloVerEstilos');
 	}
 	
-	function agregarEstilo(){
+	function agregarEstilo($idlocal){
 		if($this->model->comprobarLocales()){
+			$this->view->id_L=$idlocal[0];
 			$this->view->render('estilos/agregarEstilos');	
 		}		
 	}
 
-	function verMisEstilos(){
+	function verMisEstilos($local){
+		$this->view->local=$this->model->getLocal($local[0]);		
+		$this->view->estilos=$this->model->allEstilos();
 		$this->view->render('estilos/verEstilos');
 	}
 
-	function editarEstilos(){
+	function editarEstilos($local){
+		$this->view->local=$this->model->getLocal($local[0]);
+		$id=$_POST['cerveza_id'];
+		$this->view->estilos=$this->model->getEstilo($id);
 		$this->view->render('estilos/editarEstiloDuenio');	
 	}
 
 	/***********************************************************************
 	**********Método para guardar los estilos de cerveza nuevos*************
 	***********************************************************************/
-	function guardarEstilo(){
+	function guardarEstilo($idlocal){		
 		$estilo = new Cerveza();
 		$nombre     = $_POST['Nombre'];
 		$tipo       = $_POST['Tipo'];
@@ -67,24 +74,117 @@ class EstiloController extends Controller{
 						$estilo->setTipo($tipo);
 						$estilo->setDescripcion($descripcion);
 						$estilo->setImagen($carpeta.'/'.$newName);
-						$this->model->addEstilo($estilo);
+						$estilo->setLocalId($idlocal[0]);
+						if($this->model->addEstilo($estilo)){
+							$this->view->id_L=$idlocal[0];
+							$this->view->mensaje="Se cargo el estilo con exito";
+							$this->view->render('estilos/agregarEstilos');
+						}else{
+							$this->view->id_L=$idlocal[0];
+							$this->view->error="Error al cargar estilo";
+							$this->view->render('estilos/agregarEstilos');
+						}
 					}
 				}
 				else{
-					echo "Error al Cargar la imagen";
+					$this->view->id_L=$idlocal[0];
+					$this->view->error="Error al Cargar la imagen";
+					$this->view->render('estilos/agregarEstilos');
 				}
 				
 			}
-			else{
-				echo "Tamaño de imagen demasiado grande";
+			else{				
+				$this->view->id_L=$idlocal[0];
+				$this->view->error="Tamaño de imagen demasiado grande";
+				$this->view->render('estilos/agregarEstilos');
 			}
 		}
-		else{
-			echo "Error o tipo de arhivo no permitido";
+		else{			
+			$this->view->id_L=$idlocal[0];
+			$this->view->error="Error o tipo de arhivo no permitido";
+			$this->view->render('estilos/agregarEstilos');
 		}
 		
 	}/********** FIN Método para guardar estilos de cerveza nuevos*************/
 	
+
+	/***********************************************************************
+	**********  Método para MODIFICAR los estilos de cerveza   *************
+	***********************************************************************/
+	function updateEstilo($id){
+		$estilo     = new Cerveza();
+		$nombre     =$_POST['Nombre'];
+		$tipo       =$_POST['Tipo'];
+		$desc       =$_POST['Descripcion'];
+		$imagen     =$_FILES['Imagen']['name'];
+		$tmp_name   = $_FILES['Imagen']['tmp_name'];//archivo tempral
+		$imagenOld  =$_POST['ImagenOld'];
+		$tipoimg    = pathinfo($imagen, PATHINFO_EXTENSION);//Tipos de imagenes
+		$sizeimg    = $_FILES['Imagen']['size'];//tamaño de las imagenes
+
+		$permitidos = array('jpg', 'jpeg');
+		$limite_kb = 16384;
+
+		echo $nombre.'-'.$tipo.'-'.$desc.'----'.$imagen.'----'.$imagenOld;
+		
+		if($imagen!=null){
+			if (in_array($tipoimg, $permitidos)){//Control de tipo de archivo
+
+				if($sizeimg <= $limite_kb * 1024){//Control de tamaño de imagen
+					$carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/';
+					$ruta=$carpeta_destino.$imagenOld;
+					//move el archivo a la carpeta creada
+					if(move_uploaded_file($tmp_name,$ruta)){
+						if($this->dimensionarJPEG($ruta)){//Re dimensionamos la imagen
+							$estilo->setEstiloId($id[0]);
+							$estilo->setNombre($nombre);
+							$estilo->setTipo($tipo);
+							$estilo->setDescripcion($desc);
+							$estilo->setImagen($imagenOld);							
+							if($this->model->modificarEstilo($estilo)){								
+								$this->view->mensaje="El estilo se modifico con exito";
+								$this->view->estilos=$this->model->getEstilo($id[0]);
+								$this->view->render('estilos/editarEstiloDuenio');
+							}else{								
+								$this->view->error="Error al intentar modificar estilo";
+								$this->view->estilos=$this->model->getEstilo($id[0]);
+								$this->view->render('estilos/editarEstiloDuenio');
+							}
+						}
+					}					
+				}else{					
+					$this->view->error="Tamaño de imagen demasiado grande";
+					$this->view->estilos=$this->model->getEstilo($id[0]);
+					$this->view->render('estilos/editarEstiloDuenio');
+				}				
+			}else{				
+				$this->view->error="Error o tipo de arhivo no permitido";
+				$this->view->estilos=$this->model->getEstilo($id[0]);
+				$this->view->render('estilos/editarEstiloDuenio');
+			}
+			
+		}else{
+			$estilo->setEstiloId($id[0]);
+			$estilo->setNombre($nombre);
+			$estilo->setTipo($tipo);
+			$estilo->setDescripcion($desc);
+			$estilo->setImagen($imagenOld);							
+			if($this->model->modificarEstilo($estilo)){								
+				$this->view->mensaje="El estilo se modifico con exito";
+				$this->view->estilos=$this->model->getEstilo($id[0]);
+				$this->view->render('estilos/editarEstiloDuenio');
+			}else{								
+				$this->view->error="Error al intentar modificar estilo";
+				$this->view->estilos=$this->model->getEstilo($id[0]);
+				$this->view->render('estilos/editarEstiloDuenio');
+			}
+			echo("no cambio");
+		}
+	}
+
+
+
+
 
 	/*************************************************************************
 	********Método con rand() para generar nombre de archivo al azar**********

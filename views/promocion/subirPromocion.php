@@ -12,6 +12,7 @@
     <title>Promocion</title>
 </head>
 <body>
+    
     <?php
         include_once 'header_prop.php';
     ?>
@@ -27,7 +28,7 @@
             </div>
         </div>
 
-        <form action="" method="post">
+        <form action="<?php echo constant('URL');?>promocion/cargarPromocion" method="post" enctype="multipart/form-data">
 
         <div class="pintper-row">
 

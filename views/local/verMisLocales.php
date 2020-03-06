@@ -7,15 +7,15 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperGrid.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/headerPintper.css">
     <link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/propietarioStyle.css">
-    <!-- Alpine js -->
+    <!--Alpine js -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.10.1/dist/alpine.js" defer></script>
     <title>Bienvenido a Pintper</title>
 </head>
 <body>
 
     <?php
-	include_once 'header_prop.php';
-?>
+	   include_once 'header_prop.php';
+    ?>
 
     <?php 
         $locales=$this->local;    
@@ -29,7 +29,7 @@
             </div>
         </div>
         <!--Repetir de acá hasta el hr-->
-        <?php 
+        <?php            
             for($i=0; $i<sizeof($locales);$i++){
         ?>
         <div class="pintper-row">
@@ -39,7 +39,7 @@
             </div>
             <div class="pintper-col-8 botones-ver-estilos">
 				<button class="pintper-button">
-					<a href="<?php echo constant('URL')?>Estilo/verMisEstilos">Ver Estilos</a>
+					<a href="<?php echo constant('URL')?>Estilo/verMisEstilos/<?php echo $locales[$i]->LocalId;?>">Ver Estilos</a>
 				</button>
                 <form action="editarLocal" method="post">
 					<input type="hidden" name="localId" value="<?php echo  $locales[$i]->LocalId; ?>">

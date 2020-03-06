@@ -29,26 +29,14 @@
                 
                 <div class="pintper-col-8">
                     <p>Horario de atencion</p>
-                    <p>Lunes a Viernes de 09:00hs a 14:00hs y 17:00hs a 20:00hs</p>
+                    <p><?php echo $locales[$i]->HorarioAtencion;?></p>
                     <button type="submit" class="pintper-button">Ver Mas</button>
                 </div>
             </div><hr>
         </form>
     <?php } ?>
 
-    </div>
-    <!--<div class="pintper-container verLocales">        
-        <div class="pintper-row">
-            <div class="pintper-col-16 contenedorVerLocales">
-                <iframe src="<?php echo constant('URL')?>local/moduloLocales" frameborder="0" class="moduloVerLocales"></iframe>
-            </div>
-        </div>
-        <div class="pintper-row">
-            <div class="pintper-col-16">
-                <a href="<?php echo constant('URL')?>home/user_comun" class="pintper-button-op2">Volver</a>
-            </div>
-        </div>
-    </div>-->
+    </div>   
 
     <script src="<?php echo constant("URL")?>public/js/navScript.js"></script>
     

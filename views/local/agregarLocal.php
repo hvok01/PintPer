@@ -67,14 +67,14 @@
                 <div class="pintper-col-8">
                     <label for="Desde">Mañana desde:</label> <br>
                     <input type="time" name="Desde" class="pintper-textbox" id="desdeHora" required value="08:00"> <br>
-                    <label for="Desde">Tarde/Noche Desde:</label> <br>
-                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHora" required value="17:00">
+                    <label for="Desde2">Tarde/Noche Desde:</label> <br>
+                    <input type="time" name="Desde2" class="pintper-textbox" id="desdeHora" required value="17:00">
                 </div>
                 <div class="pintper-col-8">
                     <label for="Hasta">Hasta:</label> <br>
                     <input type="time" name="Hasta" class="pintper-textbox" id="hastaHora" required value="14:00"> <br>
-                    <label for="Desde">Hasta:</label> <br>
-                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHora" required value="23:00">
+                    <label for="Hasta2">Hasta:</label> <br>
+                    <input type="time" name="Hasta2" class="pintper-textbox" id="desdeHora" required value="23:00">
                 </div>
             </div>
 
