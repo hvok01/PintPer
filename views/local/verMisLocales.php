@@ -43,7 +43,7 @@
 				</button>
                 <form action="editarLocal" method="post">
 					<input type="hidden" name="localId" value="<?php echo  $locales[$i]->LocalId; ?>">
-                    <input type="submit" value="Ver Mas" class="pintper-button-op2">
+                    <input type="submit" value="Editar" class="pintper-button-op2">
                 </form>
             </div>
         </div>

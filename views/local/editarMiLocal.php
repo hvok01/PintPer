@@ -52,7 +52,13 @@
 
             <div class="pintper-row">
                 <div class="pintper-col-16">
-                    <h1>Horario de atencion</h1>
+                    <h1>Horario de atencion</h1> <br>
+                    <div class="editar-horario-atencion">
+                        <label class="label-checkbox">
+                            <input type="checkbox" name="Editar" id="editarLocal" checked>Editar horario de atencion
+                            <span class="chequeado"></span>
+                        </label>
+                    </div>
                     <hr>
                 </div>
             </div>
@@ -60,15 +66,15 @@
             <div class="pintper-row">
                 <div class="pintper-col-8">
                     <label for="Desde">Mañana desde:</label> <br>
-                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHora" required value="08:00"> <br>
+                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHoraManiana" required value="08:00"> <br>
                     <label for="Desde">Tarde/Noche Desde:</label> <br>
-                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHora" required value="17:00">
+                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHoraTarde" required value="17:00">
                 </div>
                 <div class="pintper-col-8">
                     <label for="Hasta">Hasta:</label> <br>
-                    <input type="time" name="Hasta" class="pintper-textbox" id="hastaHora" required value="14:00"> <br>
+                    <input type="time" name="Hasta" class="pintper-textbox" id="hastaHoraTarde" required value="14:00"> <br>
                     <label for="Desde">Hasta:</label> <br>
-                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHora" required value="23:00">
+                    <input type="time" name="Desde" class="pintper-textbox" id="hastaHoraNoche" required value="23:00">
                 </div>
             </div>
 
@@ -249,6 +255,39 @@
         });
         $("#ModalMap").on("shown.bs.modal", function () {
             $("#ModalMapPreview").locationpicker("autosize");
+        });
+
+        //activar horarios de atencion si el checkbox esta activado
+
+        var editarLocal = document.getElementById('editarLocal');
+
+        var horarios1 = document.querySelector('#desdeHoraManiana');
+        var horarios2 = document.querySelector('#desdeHoraTarde');
+        var horarios3 = document.querySelector('#hastaHoraTarde');
+        var horarios4 = document.querySelector('#hastaHoraNoche');
+
+        editarLocal.addEventListener('click', function(){
+            
+            if(editarLocal.checked === true) {
+                horarios1.disabled = false;
+                document.getElementById('desdeHoraManiana').style.border = '2px solid #6E5D52';
+                horarios2.disabled = false;
+                document.getElementById('desdeHoraTarde').style.border = '2px solid #6E5D52';
+                horarios3.disabled = false;
+                document.getElementById('hastaHoraTarde').style.border = '2px solid #6E5D52';
+                horarios4.disabled = false;
+                document.getElementById('hastaHoraNoche').style.border = '2px solid #6E5D52';
+            } else {
+                horarios1.disabled = true;
+                document.getElementById('desdeHoraManiana').style.border = '2px solid #5F646D';
+                horarios2.disabled = true;
+                document.getElementById('desdeHoraTarde').style.border = '2px solid #5F646D';
+                horarios3.disabled = true;
+                document.getElementById('hastaHoraTarde').style.border = '2px solid #5F646D';
+                horarios4.disabled = true;
+                document.getElementById('hastaHoraNoche').style.border = '2px solid #5F646D';
+            }
+
         });
     </script>
 
