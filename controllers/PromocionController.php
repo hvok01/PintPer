@@ -4,9 +4,9 @@ class PromocionController extends Controller{
 	
 	function __construct(){
 		parent::__construct();
-		$this->view->user=array();
+		$this->view->promociones=array();
 		$this->view->mensaje="";
-		$this->view->id_p=0;		
+		$this->view->error="";		
 	}
 	
 	function render(){
@@ -14,19 +14,20 @@ class PromocionController extends Controller{
 	}
 
 	function verPromociones() {
+		$this->view->promociones=$this->model->allPromociones();
 		$this->view->render('promocion/verPromociones');
 	}
 
-	function cargarPromocion($localId){
-		$promocion=new Promocion();
-		$foto     	= $_FILES['Foto']['name'];//nombre del archivo
-		$tmp_name   = $_FILES['Foto']['tmp_name'];//archivo tempral
+	function cargarPromocion(){
+		$promocion  =new Promocion();
+		$foto     	= $_FILES['imagen']['name'];//nombre del archivo
+		$tmp_name   = $_FILES['imagen']['tmp_name'];//archivo tempral
 		$tipoimg    = pathinfo($foto, PATHINFO_EXTENSION);//Tipos de imagenes
-	    $sizeimg    = $_FILES['Foto']['size'];//tamaño de las imagenes
+	    $sizeimg    = $_FILES['imagen']['size'];//tamaño de las imagenes
 	    $permitidos = array('jpg', 'jpeg');
-		$limite_kb = 16384;
-		
-		if($titulo!="" & $descripcion!="" & $foto!="" ){
+		$limite_kb  = 16384;
+		//echo "Aca";
+		if($foto!="" ){
 			if (in_array($tipoimg, $permitidos)){//Control de tipo de archivo
 
 				if($sizeimg <= $limite_kb * 1024){//Control de tamaño de imagen
@@ -45,30 +46,36 @@ class PromocionController extends Controller{
 
 					//move el archivo a la carpeta creada
 					if(move_uploaded_file($tmp_name,$ruta)){
-						ini_set('gd.jpeg_ignore_warning', true);
+
 						if($this->dimensionarJPEG($ruta)){//Re dimensionamos la imagen
-							$promocion->setLocalId($localId);
 							$promocion->setImagen($newName);
 							if($this->model->guardarPromocion($promocion)){
 								$this->view->mensaje="Se guardo correctamente";
 								$this->render();
+							}else{
+								$this->view->error="Error al intentar guardar!!!";
+								$this->render();
 							}
 						}
-					}
-					else{
-						echo "Error al Cargar la imagen";
+
+					}else{
+						$this->view->error="Error al Cargar la imagen";
+						$this->render();
 					}
 					
+				}else{					
+					$this->view->error="Tamaño de imagen demasiado grande";
+					$this->render();
 				}
-				else{
-					echo "Tamaño de imagen demasiado grande";
-				}
+
+			}else{				
+				$this->view->error="Error o tipo de arhivo no permitido";
+				$this->render();
 			}
-			else{
-				echo "Error o tipo de arhivo no permitido";
-			}
+
 		}else{
-			echo "Debe completar todos los campos";
+			$this->view->error="Debe subir una imagen de su promocion";
+			$this->render();
 		}
 	}
 

@@ -4,7 +4,7 @@ class Promocion
 {
 	private $promocionId;
 	private $imagen;
-	private $localId;
+	private $propietarioId;
 	
 	public function __construct(){}
 	public function __destruct(){}
@@ -25,11 +25,11 @@ class Promocion
 		return $this->imagen;
 	}
 
-	public function setLocalId($localId){
+	public function setPropietarioId($localId){
 		$this->localId=$localId;
 	}
 
-	public function getLocalId(){
+	public function getPropietarioId(){
 		return $this->localId;
 	}
 

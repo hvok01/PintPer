@@ -66,10 +66,16 @@ class LocalController extends Controller{
 		$direccion=$_POST['Direccion'];
 		$desde=$_POST['Desde'];
 		$hasta=$_POST['Hasta'];
+		$desde2=$_POST['Desde2'];
+		$hasta2=$_POST['Hasta2'];
+		$face=$_POST['Facebook'];
+		$insta=$_POST['Instagram'];
+		$twit=$_POST['Twitter'];
 		$dias=$_POST['Dias'];
 		$lat=$_POST['Lat'];
 		$lon=$_POST['Lon'];
 		$totalDias="";
+
 		$controlTelefono='/^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/';
 
 		if($nombre!="" & $telefono!="" & $direccion!=""){
@@ -77,7 +83,7 @@ class LocalController extends Controller{
 				for($i=0; $i<sizeof($dias);$i++){
 					$totalDias.=$dias[$i]."-";
 				}
-				$totalDias.=" de - ".$desde." a ".$hasta;
+				$totalDias.=" de - ".$desde." a ".$hasta." y de ".$desde2." a ".$hasta2;
 
 				$local->setNombre($nombre);
 				$local->setDireccion($direccion);
@@ -85,9 +91,9 @@ class LocalController extends Controller{
 				$local->setLongitud($lon);
 				$local->setTelefono($telefono);
 				$local->setHorario($totalDias);
-				$local->setTwitter("");
-				$local->setFacebook("");
-				$local->setInstagram("");
+				$local->setTwitter($twit);
+				$local->setFacebook($face);
+				$local->setInstagram($insta);
 
 				if($this->model->agregar($local)) {
 					$this->view->mensaje="El Local se guardo con Exito!";

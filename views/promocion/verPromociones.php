@@ -16,24 +16,20 @@
 <body>
 
     <?php
-
-    include_once 'header_user.php';
-
+        include_once 'header_user.php';
+        $promociones=$this->promociones;
+        $rows=sizeof($promociones);
+        $carpeta=constant('URL').'public/imagenes-usuarios/promociones/';
     ?>
 
     <div class="contenedor-fotos">
-        <div class="item"><img src="../public/img/beer1.jpg" alt="imagen1"></div>
-        <div class="item"><img src="../public/img/beer2.jpg" alt="imagen2"></div>
-        <div class="item"><img src="../public/img/beer4.jpg" alt="imagen4"></div>
-        <div class="item"><img src="../public/img/beer5.jpg" alt="imagen5"></div>
-        <div class="item"><img src="../public/img/beer1.jpg" alt="imagen1"></div>
-        <div class="item"><img src="../public/img/beer5.jpg" alt="imagen5"></div>
-        <div class="item"><img src="../public/img/beer2.jpg" alt="imagen2"></div>
-        <div class="item"><img src="../public/img/beer4.jpg" alt="imagen4"></div>
-        <div class="item"><img src="../public/img/beer5.jpg" alt="imagen5"></div>
-        <div class="item"><img src="../public/img/beer2.jpg" alt="imagen2"></div>
-        <div class="item"><img src="../public/img/beer5.jpg" alt="imagen5"></div>
-        <div class="item"><img src="../public/img/beer1.jpg" alt="imagen1"></div>
+        <?php
+            for ($i=0; $i < $rows; $i++) { ?>
+                <div class="item">
+                    <img src="<?php echo $carpeta.$promociones[$i]->Imagen;?>" alt="imagen1">
+                </div>
+        <?php } ?>        
+        
     </div>
 
 </body>

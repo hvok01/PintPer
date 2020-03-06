@@ -33,5 +33,9 @@ class HomeController extends Controller{
 	function user_admin(){
 		$this->view->render('home/indexAdministrador');
 	}
+
+	function sugerencia(){
+		echo("aca");
+	}
 }
 ?>

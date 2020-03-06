@@ -157,7 +157,7 @@
 
 			</div>
 			<p>
-			Pintper es un sistema de distribución de cerveza artesanal, conectamos clientes y locales brindando múltiples beneficios.
+			Pintper es un sistema de informaciòn sobre cerveza artesanal, conectamos clientes y locales brindando múltiples beneficios.
 			</p>
 		</div>
 	</div>
@@ -219,7 +219,7 @@
 	<div class="seccion-4">
 		<h1> contacto </h1>
 		<p>¿Tenés dudas? mandanos un mensaje!</p>
-		<form action="" method="post">
+		<form action="home/sugerencia" method="post">
 			<input type="text" name="" placeholder="nombre" class="pintper-textbox">
 			<input type="email" name="" placeholder="correo" class="pintper-textbox">
 			<textarea name="" cols="50" rows="10" placeholder="mensaje"></textarea>
