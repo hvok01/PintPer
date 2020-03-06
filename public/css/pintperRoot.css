@@ -54,6 +54,49 @@ html, body {
     text-decoration: none;
 }
 
+.pintper-button-op3 {
+    width: 140px;
+    height: 40px;
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    text-decoration: none;
+    padding: 10px 30px;
+}
+
+.pintper-button-op3:hover {
+    color: var(--primary);
+    text-decoration: none;
+    border: 2px solid var(--primary);
+    background-color: white;
+}
+
+.pintper-button-op4 {
+    width: 160px;
+    height: 50px;
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--alata);
+    text-decoration: none;
+    margin: 25px;
+    display: inline-block;
+    border: 2px solid transparent;
+    padding: 10px 40px;
+}
+
+.pintper-button-op4:hover {
+    color: var(--white);
+    text-decoration: none;
+    border: 2px solid var(--primary);
+    background-color: transparent;
+}
+
 .pintper-button-op2:hover {
     cursor: pointer;
     border: 2px solid var(--primary);

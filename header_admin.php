@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="public/css/pintperRoot.css">
-	<link rel="stylesheet" type="text/css" href="public/css/pintperGrid.css">
-	<link rel="stylesheet" type="text/css" href="public/css/headerPintper.css">
-	<link rel="stylesheet" type="text/css" href="public/css/indexStyle.css">
-	<link rel="icon" href="public/img/Favicon2.png">
-	<title>Pintper</title>
-</head>
-<body>
-	<header class="pintper-container-nav">
-		<div class="pintper-row">
-			<div class="pintper-col-1">
-				<div class="pintper-logo-container">
-					<a href="<?php echo constant('URL')?>home">
+<!-- Alpine js -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.10.1/dist/alpine.js" defer></script>
 
-					<!--Svg Logo-->
-					<svg version="1.1" baseProfile="basic" id="pintper-logo-simple" 
+<!--nav bar-->
+<header class="pintper-container-nav">
+        <div class="pintper-row">
+            <div class="pintper-col-1">
+                <div class="pintper-logo-container">
+                    <a href="<?php echo constant("URL")?>home/user_admin">
+                    <svg version="1.1" baseProfile="basic" id="pintper-logo-simple" 
 						xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
 						xml:space="preserve">
 					<style type="text/css">
@@ -106,131 +94,40 @@
 						</g>
 					</g>
 					</svg>
+                    </a>
+                </div>
+            </div>
+            <div class="pintper-col-14">
+                <div class="pintper-iniciar-sesion-container" >
 
-					</a>
-				</div>
-			</div>
-			<div class="pintper-col-15">
+                </div>
+            </div>
+            <div class="pintper-col-1" x-data="{ open: false }">
 
-			</div>
-		</div>
-	</header>
+                <!-- <img src="../public/img/customer.png" alt="Iniciar Sesion" class="pintper-menu" @click="open = true" style="top: 6px;"> -->
 
-	<div class="contenedor-index">
+                <div class="usuario-menu">
+                    <svg version="1.1" baseProfile="basic" id="user-icon" @click="open = true"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                        xml:space="preserve">
+                    <path id="user-icon-1" d="M96.2,351.9c-20.7,20.7-37,44.9-48.4,71.8C36,451.6,30,481.2,30,511.7h38.1c0-103.8,84.1-187.9,187.9-187.9
+                        s187.9,84.1,187.9,187.9H482c0-30.5-6-60.1-17.8-88c-11.4-26.9-27.7-51.1-48.4-71.8c-20.7-20.7-44.9-37-71.8-48.4
+                        c-3-1.3-6-2.5-9.1-3.6c12.6-7.1,24.1-15.9,34.5-26.2c14.7-14.7,26.3-31.9,34.3-51c8.4-19.8,12.6-40.8,12.6-62.4s-4.2-42.6-12.6-62.4
+                        c-8.1-19.1-19.6-36.2-34.3-51c-14.7-14.7-31.9-26.3-51-34.3C298.6,4.2,277.6,0,256,0s-42.6,4.2-62.4,12.6
+                        c-19.1,8.1-36.2,19.6-51,34.3c-14.7,14.7-26.3,31.9-34.3,51c-8.4,19.8-12.6,40.8-12.6,62.4s4.2,42.6,12.6,62.4
+                        c8.1,19.1,19.6,36.2,34.3,51c10.3,10.3,21.9,19.1,34.5,26.2c-3,1.1-6.1,2.3-9.1,3.6C141.1,314.9,116.9,331.2,96.2,351.9z
+                        M133.7,160.3c0-67.5,54.7-122.3,122.3-122.3s122.3,54.7,122.3,122.3S323.5,282.6,256,282.6S133.7,227.8,133.7,160.3z"/>
+                    </svg>
+                </div>
+                
 
-		<p>Bienvenido</p>
-
-		<img src="public/img/PintperLogo.png" alt="Logo Pintper"> <br>
-
-		<a class="pintper-button-op4" href="<?php echo constant('URL')?>usuario">Busco birra</a>
-
-		<a class="pintper-button-op4" href="<?php echo constant('URL')?>propietario">Hago birra</a>
-
-		<div class="icon-scroll-down">
-			<svg version="1.1" baseProfile="basic" id="scroll-down"
-				xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-				xml:space="preserve">
-			<style type="text/css">
-				.st0{fill:#F6F6FB;}
-			</style>
-			<polygon id="scroll-down-icon" class="st0" points="482.5,113.3 256,341.6 29.5,113.3 0,141.8 256,398.7 512,141.8 "/>
-			</svg>
-		</div>
-
-	</div>
-
-	<div class="grid-seccion-0">
-		<div class="seccion-0">
-			<div class="que-es-pintper">
-				<p>01</p>
-				<div></div>
-				<h2>¿qué es <br> pintper?</h2>
-			</div>
-		</div>
-
-		<div class="section-0-1">
-
-		</div>
-
-		<div class="section-0-2">
-			<div>
-
-			</div>
-			<p>
-			Pintper es un sistema de distribución de cerveza artesanal, conectamos clientes y locales brindando múltiples beneficios.
-			</p>
-		</div>
-	</div>
-
-	<div class="grid-seccion-1">
-		<div class="seccion-1">
-			<div class="haces-birra">
-				<p>02</p>
-				<div></div>
-				<h2>¿hacés birra?</h2>
-			</div>
-		</div>
-
-		<div class="section-1-1">
-
-		</div>
-	
-		<div class="section-1-2">
-			<div>
-
-			</div> <br>
-			<p>
-			Si hacés cerveza pódes crear tu perfil, agregar tus locales donde tus clientes van a pasar a hacer recargas, mantené tu perfil actualizado promocionando ofertas y controlando el stock, destacá estilos y hacé crecer tu negocio.
-			</p> <br>
-				<a class="pintper-button-op3" href="<?php echo constant('URL')?>propietario"> Registrate hoy!
-				</a>
-				<br> <br>
-		</div> 
-	</div>
-
-	<div class="grid-seccion-2">
-		<div class="seccion-2">
-			<div class="algo-para-tomar">
-				<p>03</p>
-				<div></div>
-				<h2>¿buscás <br>algo para<br> tomar?</h2>
-			</div>
-		</div>
-
-		<div class="section-2-1">
-
-		</div>
-	
-		<div class="section-2-2">
-			<div>
-
-			</div> <br>
-			<p>
-			Si te gusta disfrutar de una buena cerveza, registrate y busca locales cerca de tu ubicacion. Podes ver cómo llegar a cualquier local, que estilos te ofrecen y si hay stock.
-			</p> <br>
-				<a class="pintper-button-op3" href="<?php echo constant('URL')?>usuario"> Registrate hoy!
-				</a>
-				<br> <br>
-		</div>
-	</div>
-
-	<div class="seccion-4">
-		<h1> contacto </h1>
-		<p>¿Tenés dudas? mandanos un mensaje!</p>
-		<form action="" method="post">
-			<input type="text" name="" placeholder="nombre" class="pintper-textbox">
-			<input type="email" name="" placeholder="correo" class="pintper-textbox">
-			<textarea name="" cols="50" rows="10" placeholder="mensaje"></textarea>
-			<input type="submit" value="Enviar" class="pintper-button-op2">
-		</form>
-	</div>
-
-
-	<!--footer-->
-
-	<?php include('footer.php'); ?>
-	
-	<script type="" src="public/js/jquery-3.4.1.js"></script>
-	<script type="" src="public/js/bootstrap.min.js"></script>
-</body>
-</html>
+                <div class="menu-pintper-nav"  x-show="open" @click.away="open = false">
+                    <ul>
+						<li><a href="<?php echo constant('URL')?>propietario/registroView">Agregar propietario</a></li>
+                        <li><a href="<?php echo constant('URL')?>administrador/configuraciones">Configuracion</a></li>
+                        <li><a href="<?php echo constant('URL')?>administrador">Salir</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>

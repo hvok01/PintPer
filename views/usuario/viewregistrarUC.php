@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../public/css/pintperRoot.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/pintperGrid.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/headerPintper.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/usuarioStyle.css">
-    <link rel="icon" href="../public/img/Favicon2.png">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperRoot.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperGrid.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/usuarioStyle.css">
+	<link rel="icon" href="<?php echo constant("URL")?>public/img/Favicon2.png">
     <title>Registrar usuario</title>
 </head>
 <body>
@@ -70,7 +69,7 @@
                             ?>                           
                         </select> <br>
 
-                    <input type="submit" value="Registrarme" class="pintper-button"> <br>
+                    <input type="submit" value="Registrar" class="pintper-button"> <br>
 
                 </form>
 

@@ -11,21 +11,12 @@
     <title>Registrar Dueño de local</title>
 </head>
 <body>
-    <!--nav bar-->
-    <header class="pintper-container-nav">
-        <div class="pintper-row">
-            <div class="pintper-col-1">
-                <div class="pintper-logo-container">
-                    <a href="#"><img src="../public/img/PintperWordWhite.png" alt="Pintper Logo"></a>
-                </div>
-            </div>
-            <div class="pintper-col-15">
-                <div class="pintper-iniciar-sesion-container">
-                    <a href="#"><img src="../public/img/customer.png" alt="Iniciar Sesion"></a>
-                </div>
-            </div>
-        </div>
-    </header>
+
+    <?php 
+
+    include_once 'header_admin.php';
+
+    ?>
 
     <div class="pintper-container">
             <div class="pintper-row usuario-row">
@@ -33,7 +24,7 @@
                 <div class="pintper-col-16">
                     <h3>Registrar Dueño de local</h3>
 
-                    <p>Podes registrarte para ofrecer puntos de recarga <br> completando el siguiente formulario:</p>
+                    <p>formulario para agregar dueños de local</p>
                     <form action="registrar" method="post" onsubmit="return validarRegistroDuenio();">
 
                         <span id="mensaje-error"><?php echo $this->mensaje; ?></span>
@@ -69,7 +60,6 @@
                         <input type="submit" value="Registrarme" class="pintper-button"> <br>
                     </form>
                         
-                    <p> ¿Ya tenes cuenta? <a href="<?php echo constant("URL");?>Propietario">Inicía sesion</a> </p>
                 </div>
             </div>
     </div>

@@ -112,6 +112,7 @@
     color: var(--black);
     font-style: italic;
     margin: 0 25vw;
+    margin-bottom: 25px;
 }
 
 .seccion-1, .seccion-2 {
@@ -364,6 +365,11 @@ p {
         position: relative;
         top: -10px;
     }
+
+    .pintper-button-op3 {
+        position: relative;
+        top: 10px;
+    }
     
     .section-1-2 div {
         margin-bottom: 15px;
@@ -464,5 +470,10 @@ p {
 
     .section-0-2 p {
         padding: 6vh 2vw 5vh 2vw;
+    }
+
+    .pintper-button-op3 {
+        position: relative;
+        top: 30px;
     }
 }
