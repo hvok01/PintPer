@@ -9,6 +9,23 @@ define('DB','pintperDB');
 define('USER','root');
 //-----PASSWORD BASE DE DATOS
 define('PASS','');
+
+// configuracion para la base de dos del hosting
+
+/*
+//-----URL
+define("URL","https://pintper.000webhostapp.com/");
+//-----HOST
+define('HOST','localhost');
+//-----BASE DE DATOS
+define('DB','id12837067_pintperdb');
+//-----USUARIO BASE DE DATOS
+define('USER','id12837067_pintper');
+//-----PASSWORD BASE DE DATOS
+define('PASS','pint2020');
+*/
+
+
 //-----PROVINCIAS ARGENTINAS
 define('PROVINCIAS', array(
 	'Buenos Aires',	'Catamarca',
