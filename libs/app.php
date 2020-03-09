@@ -8,10 +8,10 @@ class Principal{
 		$url=explode('/',$url);
 		//cuando se ingresa sin definir controlador
 		if(empty($url[0])){
-			$archivoController='controllers/homecontroller.php';
+			$archivoController='controllers/homeController.php';
 			require_once $archivoController;
 			$controller=new HomeController();
-			$controller->loadModel('Home');
+			$controller->loadModel('home');
 			$controller->render();
 			return false;
 		}
@@ -44,14 +44,8 @@ class Principal{
 			    session_start(); 
 			}
 			if($_SESSION['usuario_registrado']==null)
-			{
-				/* $archivoController='controllers/home.php';
-				require_once $archivoController;
-				$controller=new Home();
-				$controller->loadModel('Home');
-				$controller->render();
-				return false; */
-			    //header("Location:".constant('URL')."home.php");
+			{				
+			    header("Location:".constant('URL')."index.php");
 			}
 			$controller=new Errores();
 

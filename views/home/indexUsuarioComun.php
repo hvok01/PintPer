@@ -23,7 +23,7 @@ include_once 'header_user.php';
     $row=sizeof($pub);
 ?>
 
-    <div class="nav-estilos" x-data="{ open: false }">
+    <div class="nav-estilos slider" x-data="{ open: false }">
 
         <div class="EspacioPublicidad" id="publicidad">
 

@@ -125,8 +125,7 @@ class EstiloController extends Controller{
 		$permitidos = array('jpg', 'jpeg');
 		$limite_kb = 16384;
 
-		echo $nombre.'-'.$tipo.'-'.$desc.'----'.$imagen.'----'.$imagenOld;
-		
+				
 		if($imagen!=null){
 			if (in_array($tipoimg, $permitidos)){//Control de tipo de archivo
 
@@ -178,7 +177,6 @@ class EstiloController extends Controller{
 				$this->view->estilos=$this->model->getEstilo($id[0]);
 				$this->view->render('estilos/editarEstiloDuenio');
 			}
-			echo("no cambio");
 		}
 	}
 

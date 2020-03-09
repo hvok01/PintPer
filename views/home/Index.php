@@ -217,7 +217,7 @@
 	<div class="seccion-4">
 		<h1> contacto </h1>
 		<p>¿Tenés dudas? mandanos un mensaje!</p>
-		<form action="" method="post">
+		<form action="Home/sugerencia" method="post">
 			<input type="text" name="" placeholder="nombre" class="pintper-textbox">
 			<input type="email" name="" placeholder="correo" class="pintper-textbox">
 			<textarea name="" cols="50" rows="10" placeholder="mensaje"></textarea>

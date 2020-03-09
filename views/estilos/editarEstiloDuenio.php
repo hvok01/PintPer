@@ -29,11 +29,10 @@
                         <!--Checkear con php que si ya hay una foto subida, cambiar style=display: none, por block y agregar el link a src-->
                         <div class="contenedor-foto" id="contenedorFoto">
                             <?php 
-                                $carpeta=constant('URL').'public/imagenes-usuarios/3_Nico/';//.$this->estilos->Imagen;
-                               echo $carpeta.'<br>';
-                               echo $this->estilos->Imagen;
+                                $carpeta=constant('URL').'public/imagenes-usuarios/'.$this->estilos->Imagen;
+                               
                             ?>
-                            <img src="../../public/imagenes-usuarios/3_Nico/ImgzN5YalmZ1a2V.jpg" alt="Imagen Previa" class="imagen_previa" style="display: block; width: 100%; height: 100%; object-fit: cover;" id="imagenPrevia">
+                            <img src="<?php echo $carpeta;?>" alt="Imagen Previa" class="imagen_previa" style="display: block; width: 100%; height: 100%; object-fit: cover;" id="imagenPrevia">
 
                             <label class="contenedor-archivo">
                                 Seleccionar foto

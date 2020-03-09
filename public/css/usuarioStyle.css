@@ -637,7 +637,7 @@
 
 .nav-estilos .EspacioPublicidad {
     position: absolute;
-    width: 80vw;
+    width: 65vw;/*Modifique esta linea*/
     height: auto;
     max-height: inherit;
     margin: 0 10vw;
@@ -647,6 +647,8 @@
 }
 
 .nav-estilos .EspacioPublicidad .carousel .carousel-item img {
+    width: 100%;/* Agregue el width y el height*/
+    height: auto;
     position: relative;
     z-index: 0;
     top: 0;
@@ -655,7 +657,7 @@
 .nav-estilos .EspacioPublicidadReducido {
     position: relative;
     float: right;
-    width: 70vw;
+    width: 65vw;/*Modifique esta linea*/
     height: inherit;
     margin: 0 5vw;
     text-align: center;
