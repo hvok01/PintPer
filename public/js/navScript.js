@@ -2,6 +2,8 @@ const menu = document.querySelector('#menu-pintper');
 const salir = document.querySelector('#salir-pintper');
 const publicidad = document.querySelector('#publicidad');
 
+//eventos de click para los estilos
+
 menu.addEventListener('click', () => {
     menu.classList.toggle("hidden");
     salir.classList.remove("hidden");
@@ -30,3 +32,19 @@ function validarBusqueda () {
     }
 
 }
+
+//evento click para el menu de la derecha
+
+/* const iconMenu = document.querySelector('#user-icon');
+const menuNav = document.querySelector('#menu-usuario-comun');
+
+iconMenu.addEventListener('click', () => {
+
+    if(publicidad.classList.value != "EspacioPublicidadMenu") {
+        publicidad.classList.toggle("EspacioPublicidadMenu");
+    } else {
+        publicidad.classList.remove("EspacioPublicidadMenu");
+    }
+
+    console.log("hola");
+}); */

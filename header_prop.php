@@ -118,7 +118,7 @@
                 </div>
                 
 
-                <div class="menu-pintper-nav"  x-show="open" @click.away="open = false">
+                <div class="menu-pintper-nav" id="menu-usuario-comun" x-show="open" @click.away="open = false">
                     <ul>
                         <li><a href="<?php echo constant('URL')?>local/verMisLocales">Ver mis Locales</a></li>
                         <li><a href="<?php echo constant('URL')?>local/agregar">Agregar Local</a></li>
