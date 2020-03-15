@@ -34,6 +34,7 @@ function validarBusqueda () {
 }
 
 //evento click para el menu de la derecha
+//este evento esta en proceso y dejo el codigo para el futuro.
 
 /* const iconMenu = document.querySelector('#user-icon');
 const menuNav = document.querySelector('#menu-usuario-comun');
