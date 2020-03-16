@@ -16,10 +16,6 @@ class LocalController extends Controller{
 		$this->view->render('local/verLocalUsuarioComun');
 	}
 
-	function moduloLocales() {
-		$this->view->render('local/moduloVerLocalesUsuarioComun');	
-	}
-
 	function verLocales() {
 		$locales=$this->model->allLocales();		
 		$this->view->local=$locales;
@@ -111,35 +107,47 @@ class LocalController extends Controller{
 	}
 
 	function updateLocal(){
+
 		$local=new Local();
 		$nombre=$_POST['Nombre'];
 		$telefono=$_POST['Telefono'];
 		$direccion=$_POST['Direccion'];
 		$lat=$_POST['Lat'];
 		$lon=$_POST['Lon'];
-		/*$desde=$_POST['Desde'];
+		$desde=$_POST['Desde'];
 		$hasta=$_POST['Hasta'];
+		$desde2=$_POST['Desde2'];
+		$hasta2=$_POST['Hasta2'];
+		$face=$_POST['Facebook'];
+		$insta=$_POST['Instagram'];
+		$twit=$_POST['Twitter'];
+		//$editarHorario=$_POST['horario'];
 		$dias=$_POST['Dias'];		
-		$totalDias="";*/
+		$totalDias="";
 		$controlTelefono='/^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/';
 
 		if($nombre!="" & $telefono!="" & $direccion!=""){
 			if(preg_match($controlTelefono,$telefono)){
-				/*for($i=0; $i<sizeof($dias);$i++){
-					$totalDias.=$dias[$i]."-";
-				}
-				$totalDias.=" de - ".$desde." a ".$hasta;
-				*/
+				
 				$local->setLocalId($_POST['localId']);
 				$local->setNombre($nombre);
 				$local->setDireccion($direccion);
 				$local->setLatitud($lat);
 				$local->setLongitud($lon);
 				$local->setTelefono($telefono);
-				//$local->setHorario($totalDias);
-				$local->setTwitter("");
-				$local->setFacebook("");
-				$local->setInstagram("");
+				$local->setTwitter($twit);
+				$local->setFacebook($face);
+				$local->setInstagram($insta);
+
+				if (isset($_POST['EditarHorario'])) {
+					for($i=0; $i<sizeof($dias);$i++){
+						$totalDias.=$dias[$i]."-";
+					}
+					$totalDias.=" de - ".$desde." a ".$hasta." y de ".$desde2." a ".$hasta2;
+
+					$local->setHorario($totalDias);					
+				}
+								
 				$local->setPropietarioId($_SESSION['usuario_registrado']->PropietarioId);
 
 				if($this->model->modificarLocal($local)) {

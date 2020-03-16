@@ -10,7 +10,9 @@ class EstiloController extends Controller{
 		$this->view->error="";		
 	}
 	
-	function verModuloEstilos() {
+	function verModuloEstilos($idlocal) {
+		$this->view->local=$this->model->getLocal($idlocal[0]);		
+		$this->view->estilos=$this->model->allEstilos();
 		$this->view->render('estilos/moduloVerEstilos');
 	}
 	

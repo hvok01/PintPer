@@ -35,7 +35,7 @@ class LocalModel extends Model{
 		$resultado->bindParam(3, $lat);
 		$resultado->bindParam(4, $lon);		
 		$resultado->bindParam(5, $telefono);
-		$resultado->bindParam(6, $horario);		
+		$resultado->bindParam(6, $horario);
 		$resultado->bindParam(7, $twitter);
 		$resultado->bindParam(8, $facebook);
 		$resultado->bindParam(9, $instagam);
@@ -91,35 +91,61 @@ class LocalModel extends Model{
 	function modificarLocal($local){
 		$cone=$this->db->conect();
 
-		$nombre=$local->getNombre();
-		$dire  =$local->getDireccion();
-		$lat   =$local->getLatitud();
-		$lon   =$local->getLongitud();		
-		$tel   =$local->getTelefono();
-		$twi   =$local->getTwitter();
-		$fac   =$local->getFacebook();
-		$ins   =$local->getInstagram();
-		$local =$local->getLocalId();
-		$prop  =$_SESSION['usuario_registrado']->PropietarioId;
+		$nombre  =$local->getNombre();
+		$dire    =$local->getDireccion();
+		$lat     =$local->getLatitud();
+		$lon     =$local->getLongitud();		
+		$tel     =$local->getTelefono();
+		$twi     =$local->getTwitter();
+		$fac     =$local->getFacebook();
+		$ins     =$local->getInstagram();
+		$localId =$local->getLocalId();
+		$prop    =$_SESSION['usuario_registrado']->PropietarioId;
 
-		$sql="UPDATE locales SET Nombre=?, Direccion=?, Latitud=?, Longitud=?, Telefono=?, Twitter=?
-		, Facebook=?, Instagram=? WHERE LocalId=? and PropietarioId=?;";
+		if($local->getHorario()!=null){
+			$horario=$local->getHorario();
+			$sql="UPDATE locales SET Nombre=?, Direccion=?, Latitud=?, Longitud=?, Telefono=?, HorarioAtencion=?,
+			 Twitter=?, Facebook=?, Instagram=? WHERE LocalId=? and PropietarioId=?;";
+			
+			$resultado=$cone->prepare($sql);
+			$resultado->bindParam(1, $nombre);
+			$resultado->bindParam(2, $dire);
+			$resultado->bindParam(3, $lat);
+			$resultado->bindParam(4, $lon);
+			$resultado->bindParam(5, $tel);
+			$resultado->bindParam(6, $horario);
+			$resultado->bindParam(7, $twi);
+			$resultado->bindParam(8, $fac);
+			$resultado->bindParam(9, $ins);
+			$resultado->bindParam(10, $localId);
+			$resultado->bindParam(11, $prop);
+			
+			$resultado->execute();
+			$resultado->closeCursor();
+			$resultado=null;
+			
+		}else{
+			$sql="UPDATE locales SET Nombre=?, Direccion=?, Latitud=?, Longitud=?, Telefono=?,
+			 Twitter=?, Facebook=?, Instagram=? WHERE LocalId=? and PropietarioId=?;";
+			
+			$resultado=$cone->prepare($sql);
+			$resultado->bindParam(1, $nombre);
+			$resultado->bindParam(2, $dire);
+			$resultado->bindParam(3, $lat);
+			$resultado->bindParam(4, $lon);
+			$resultado->bindParam(5, $tel);
+			$resultado->bindParam(6, $twi);
+			$resultado->bindParam(7, $fac);
+			$resultado->bindParam(8, $ins);
+			$resultado->bindParam(9, $localId);
+			$resultado->bindParam(10, $prop);
+			
+			$resultado->execute();
+
+			$resultado->closeCursor();
+			$resultado=null;
+		}
 		
-		$resultado=$cone->prepare($sql);
-		$resultado->bindParam(1, $nombre);
-		$resultado->bindParam(2, $dire);
-		$resultado->bindParam(3, $lat);
-		$resultado->bindParam(4, $lon);
-		$resultado->bindParam(5, $tel);
-		$resultado->bindParam(6, $twi);
-		$resultado->bindParam(7, $fac);
-		$resultado->bindParam(8, $ins);
-		$resultado->bindParam(9, $local);
-		$resultado->bindParam(10, $prop);
-		
-		$resultado->execute();
-		$resultado->closeCursor();
-		$resultado=null;
 		$con=null;
 		return true;		
 	}

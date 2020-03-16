@@ -43,7 +43,7 @@
                     <hr>
                     <h2>Nuestras Cervezas</h2>
 
-                    <iframe src="<?php echo constant('URL')?>estilo/verModuloEstilos" frameborder="0" class="moduloCerveza"></iframe>
+                    <iframe src="<?php echo constant('URL')?>estilo/verModuloEstilos/<?php echo $local->LocalId;?>" frameborder="0" class="moduloCerveza"></iframe>
 
                             
                 </div>
