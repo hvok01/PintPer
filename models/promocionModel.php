@@ -13,20 +13,20 @@ class promocionModel extends Model{
 
 	
 	function guardarPromocion($promocion){
-		$cone=$this->db->conect();
+		$cone         =$this->db->conect();
 		$propietarioId=$_SESSION['usuario_registrado']->PropietarioId;		
-		$imagen=$promocion->getImagen();
-		$fecha=date("yy-m-d");
-		$carpeta=$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/promociones/';
+		$imagen       =$promocion->getImagen();
+		$fecha        =date("yy-m-d");
+		$carpeta      =$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/promociones/';
 		
-		$sql="SELECT * FROM promociones WHERE PropietarioId=?;";
-		$resultado=$cone->prepare($sql);
+		$sql          ="SELECT * FROM promociones WHERE PropietarioId=?;";
+		$resultado    =$cone->prepare($sql);
 		$resultado->execute(array($propietarioId));
 
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;			
+			$cone     =null;			
 		}
 
 		if($registro==null){
@@ -42,7 +42,7 @@ class promocionModel extends Model{
 			$resultado->execute();
 			$resultado->closeCursor();
 			$resultado=null;
-			$con=null;
+			$con      =null;
 			return true;			
 		}else{
 			$cone=$this->db->conect();
@@ -58,7 +58,7 @@ class promocionModel extends Model{
 			$resultado->execute();
 			$resultado->closeCursor();
 			$resultado=null;
-			$con=null;
+			$con      =null;
 			return true;
 		}
 
@@ -66,12 +66,10 @@ class promocionModel extends Model{
 	}
 
 	function allPromociones(){
-		$cone=$this->db->conect();
+		$cone       =$this->db->conect();
 		$promociones=array();		
-		
-		$sql="SELECT * FROM promociones";
-		
-		$resultado=$cone->prepare($sql);
+		$sql        ="SELECT * FROM promociones";		
+		$resultado  =$cone->prepare($sql);
 		$resultado->execute();
 
 		while ($registro=$resultado->fetch(PDO::FETCH_OBJ)) {
@@ -79,7 +77,7 @@ class promocionModel extends Model{
 		}
 		$resultado->closeCursor();
 		$resultado=null;
-		$cone=null;
+		$cone     =null;
 		return $promociones;
 	}
 

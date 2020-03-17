@@ -32,7 +32,7 @@ class EstiloModel extends Model{
 		$resultado->execute();
 		$resultado->closeCursor();
 		$resultado=null;
-		$con=null;
+		$con      =null;
 		return true;
 	}
 
@@ -50,7 +50,7 @@ class EstiloModel extends Model{
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return true;			
 		}else{
 			return null;
@@ -60,38 +60,36 @@ class EstiloModel extends Model{
 	function allEstilos(){
 		$cone=$this->db->conect();
 		$estilo=array();
-		$propietarioId=$_SESSION['usuario_registrado']->PropietarioId;
-		
-		$sql="SELECT c.CervezaId, c.Nombre, c.Tipo, c.Descripcion, c.Imagen FROM cervezas c JOIN locales l ON (c.LocalId=l.LocalId) WHERE l.PropietarioId= ?";
+				
+		$sql="SELECT c.CervezaId, c.Nombre, c.Tipo, c.Descripcion, c.Imagen FROM cervezas c JOIN locales l ON (c.LocalId=l.LocalId)";
 		
 		$resultado=$cone->prepare($sql);
-		$resultado->execute(array($propietarioId));
+		$resultado->execute(array());
 
 		while ($registro=$resultado->fetch(PDO::FETCH_OBJ)) {
 			array_push($estilo, $registro);
 		}
 		$resultado->closeCursor();
 		$resultado=null;
-		$cone=null;
+		$cone     =null;
 		return $estilo;
 	}
 
-	function getLocal($id){//Revisar esta funcion
+	function getLocal($id){
 		
 		$cone=$this->db->conect();
-		$propietarioId=$_SESSION['usuario_registrado']->PropietarioId;
 		
-		$sql="SELECT LocalId, Nombre FROM locales WHERE LocalId=? AND PropietarioId=?;";
+		$sql="SELECT LocalId, Nombre FROM locales WHERE LocalId=?;";
 		
 		$resultado=$cone->prepare($sql);
 		$resultado->bindParam(1, $id);
-		$resultado->bindParam(2, $propietarioId);
+		
 		$resultado->execute();
 
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $registro;			
 		}else{
 			return null;
@@ -109,12 +107,12 @@ class EstiloModel extends Model{
 		if ($registro=$resultado->fetch(PDO::FETCH_OBJ)) {
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $registro;
 		}
 		$resultado->closeCursor();
 		$resultado=null;
-		$cone=null;
+		$cone     =null;
 		return null;
 	}
 
@@ -126,7 +124,7 @@ class EstiloModel extends Model{
 		$tipo        = $estilo->getTipo();
 		$descripcion = $estilo->getDescripcion();
 		$imagen      = $estilo->getImagen();
-		$idcerveza     = $estilo->getCervezId();
+		$idcerveza   = $estilo->getCervezId();
 
 		$sql="UPDATE cervezas SET Nombre=?, Tipo=?, Descripcion=?, Imagen=? WHERE CervezaId=?;";
 		
@@ -140,7 +138,7 @@ class EstiloModel extends Model{
 		$resultado->execute();
 		$resultado->closeCursor();
 		$resultado=null;
-		$con=null;
+		$con      =null;
 		return true;		
 	}	
 

@@ -1,3 +1,13 @@
+<?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
+if (!isset($_SESSION['usuario_registrado'])) {
+    header('Location:'.constant("URL").'index.php');
+}
+?>
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -153,20 +163,6 @@
             //Coloca los marcadores en el mapa
             var marker = new google.maps.Marker(configMarker);
             var markerUser = new google.maps.Marker(configMarker2);
-
-            //Dibuja un circulo al rededor del marcador del local
-            var options = {
-                strokeColor: "#0000FF",
-                strokeOpacity: .35,
-                strokeWeight: 2,
-                fillColor: "#FF0000",
-                fillOpacity: .15,
-                map: gMapa,
-                center: latLon,
-                radius: 300
-            }
-            var circle = new google.maps.Circle(options);
-            //fin dibuja circulo
 
             //***Dibuja la ruta desde el usuario hasta la ubicacion del Local***
             var objConfigDr={

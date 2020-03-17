@@ -19,9 +19,9 @@ class PropietarioController extends Controller{
 	}
 
 	function login(){
-		$mail='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
+		$mail  ='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
 		$correo=htmlentities(addslashes($_POST["correoUsuario"]));
-		$clave=htmlentities(addslashes($_POST["claveUsuario"]));
+		$clave =htmlentities(addslashes($_POST["claveUsuario"]));
 
 		if($correo!="" and $clave!=""){
 
@@ -55,7 +55,7 @@ class PropietarioController extends Controller{
 	function registrar(){
 
 		$mail='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/';
-		$doc='/[0-9]{8}$/';
+		$doc ='/[0-9]{8}$/';
 		
 		if($_POST["Nombre"]!="" and $_POST["Apellido"]!="" and $_POST["Documento"]!="" and 
 		$_POST["Correo"]!="" and $_POST["Clave"]!=""){
@@ -97,6 +97,13 @@ class PropietarioController extends Controller{
 	function configuraciones(){
 		$this->view->render('propietario/configuracionesDuenio');	
 	}
+
+	function logout(){
+		$_SESSION = array();
+		session_destroy();
+		$this->render();
+	}
+	
 }
 
 ?>

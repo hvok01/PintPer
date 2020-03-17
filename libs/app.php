@@ -48,7 +48,6 @@ class Principal{
 			    header("Location:".constant('URL')."index.php");
 			}
 			$controller=new Errores();
-
 		}
 	}	
 }

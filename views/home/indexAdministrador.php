@@ -14,10 +14,8 @@
 </head>
 <body>
 
-    <?php 
-
-            include_once 'header_admin.php';
-
+    <?php
+        include_once 'header_admin.php';
     ?>
 
     <div class="pintper-container">

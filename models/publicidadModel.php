@@ -11,14 +11,14 @@ class PublicidadModel extends Model{
 	}
 
 	function addPublicidad($publicidad){
-		$cone=$this->db->conect();
+		$cone         =$this->db->conect();
 		$propietarioId=$_SESSION['usuario_registrado']->PropietarioId;
-		$titulo=$publicidad->getTitulo();
-		$texto=$publicidad->getTexto();
-		$imagen=$publicidad->getImagen();
-		$fecha=date("yy-m-d");
-		$estado=true;
-		$carpeta=$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/publicidad/';
+		$titulo       =$publicidad->getTitulo();
+		$texto        =$publicidad->getTexto();
+		$imagen       =$publicidad->getImagen();
+		$fecha        =date("yy-m-d");
+		$estado       =true;
+		$carpeta      =$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/publicidad/';
 		
 		$sql="SELECT * FROM publicidad WHERE PropietarioId=?;";
 		$resultado=$cone->prepare($sql);
@@ -27,7 +27,7 @@ class PublicidadModel extends Model{
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;			
+			$cone     =null;			
 		}
 
 		if($registro==null){
@@ -47,7 +47,7 @@ class PublicidadModel extends Model{
 			$resultado->execute();
 			$resultado->closeCursor();
 			$resultado=null;
-			$con=null;
+			$con      =null;
 			return true;			
 		}else{
 			$cone=$this->db->conect();
@@ -66,13 +66,9 @@ class PublicidadModel extends Model{
 			$resultado->execute();
 			$resultado->closeCursor();
 			$resultado=null;
-			$con=null;
+			$con      =null;
 			return true;
 		}
-
-
-	}
-	
+	}	
 }
-
 ?>

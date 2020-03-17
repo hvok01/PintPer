@@ -83,10 +83,10 @@ class PromocionController extends Controller{
 	********Método con rand() para generar nombre de archivo al azar**********
 	*************************************************************************/    
 	function generarNombre($ext) {
-		$length = 7;
-	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$length           = 7;
+	    $characters       = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	    $charactersLength = strlen($characters);
-	    $randomString = '';
+	    $randomString     = '';
 	    for ($i = 0; $i < $length; $i++) {
 	        $randomString .= $characters[rand(0, $charactersLength - 1)];
 	    }
@@ -111,7 +111,7 @@ class PromocionController extends Controller{
 
 			if ($thumb){
 				$ancho = imagesx($original);
-				$alto = imagesy($original);
+				$alto  = imagesy($original);
 
 				if(imagecopyresized($thumb,$original,0,0,0,0,$anchoThumb,$altoThumb,$ancho,$alto)){
 					$resultado = imagejpeg($thumb,$rutaImagen,$calidad);

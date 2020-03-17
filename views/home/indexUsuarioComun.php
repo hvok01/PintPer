@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo constant('URL')?>public/css/bootstrap.min.css">
     <link rel="icon" href="../public/img/Favicon2.png">
-	<link rel="stylesheet" type="text/css" href="../public/css/pintperRoot.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/pintperGrid.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/headerPintper.css">
-    <link rel="stylesheet" type="text/css" href="../public/css/usuarioStyle.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/pintperRoot.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/pintperGrid.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/headerPintper.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/usuarioStyle.css">
     <!-- Alpine js -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.10.1/dist/alpine.js" defer></script>
     <title>Bienvenido a Pintper</title>
@@ -34,7 +34,7 @@ include_once 'header_user.php';
                     if($i==0){ ?>
                     <div class="carousel-item active">
                         
-                        <img class="d-block img-carousel" src="../public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="First slide">
+                        <img class="d-block img-carousel" src="<?php echo constant('URL')?>public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="First slide">
                         <!--Caption-->
                         <div class="carousel-caption">
                             <h4><?php echo $pub[$i]->Titulo?></h4>
@@ -47,7 +47,7 @@ include_once 'header_user.php';
                             <h4><?php echo $pub[$i]->Titulo?></h4>
                             <h3><?php echo $pub[$i]->Texto?></h3>
                         </div>
-                        <img class="d-block img-carousel" src="../public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="First slide">
+                        <img class="d-block img-carousel" src="<?php echo constant('URL')?>public/imagenes-usuarios/publicidad/<?php echo $pub[$i]->Imagen?>" alt="First slide">
                         
                     </div>
                 <?php }
@@ -66,9 +66,9 @@ include_once 'header_user.php';
         </div>
 
 
-        <img src="../public/img/menu.png" alt="menu" class="pintper-menu-icon" id="menu-pintper" @click="open = true">
+        <img src="<?php echo constant('URL')?>public/img/menu.png" alt="menu" class="pintper-menu-icon" id="menu-pintper" @click="open = true">
 
-        <img src="../public/img/delete.png" alt="menu" class="pintper-menu-estilos hidden" id="salir-pintper" @click="open = false">
+        <img src="<?php echo constant('URL')?>public/img/delete.png" alt="menu" class="pintper-menu-estilos hidden" id="salir-pintper" @click="open = false">
 
         <div id="navBar" class="navBar" x-show="open">
 
@@ -84,9 +84,9 @@ include_once 'header_user.php';
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../public/js/jquery-3.4.1.min.js"></script>
+    <script src="<?php echo constant('URL')?>public/js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="../public/js/bootstrap.min.js"></script>
+    <script src="<?php echo constant('URL')?>public/js/bootstrap.min.js"></script>
     
     <script>
        $('.carousel').carousel();

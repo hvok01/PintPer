@@ -45,7 +45,7 @@
 					<h1>Iniciar Sesion</h1>
 					<p><?php echo $this->mensaje; ?> </p>
 				
-					<form action="Usuario/login" method="post">
+					<form action="<?php echo constant("URL");?>usuario/login" method="post">
 
 						<label for="correoUsuario">Correo</label> <br>
 						<input type="email" name="correoUsuario" id="correo" placeholder="Correo electronico" class="pintper-textbox" required> <br>

@@ -7,11 +7,11 @@ class DataBase{
 	private $charset;
 	
 	public function __construct(){
-		$this->host=constant('HOST');
-		$this->db=constant('DB');
-		$this->user=constant('USER');
+		$this->host    =constant('HOST');
+		$this->db      =constant('DB');
+		$this->user    =constant('USER');
 		$this->password=constant('PASS');
-		$this->charset="utf8";
+		$this->charset ="utf8";
 	}
 	
 	function conect(){
