@@ -8,14 +8,16 @@ class AdministradorModel extends Model{
 	}
 
 	function loginAdmin($correo){
-		$cone=$this->db->conect();
-		$sql="SELECT * FROM administradores WHERE correo=?;";
+		$cone     =$this->db->conect();
+		$sql      ="SELECT * FROM administradores WHERE correo=?;";
 		$resultado=$cone->prepare($sql);
+
 		$resultado->execute(array($correo));
+
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $registro;	
 		}else{
 			return null;
@@ -23,13 +25,10 @@ class AdministradorModel extends Model{
 	}
 
 	function registrarAdmin($user){
-		$cone=$this->db->conect();
-
+		$cone  =$this->db->conect();
 		$correo=$user->getCorreo();
-        $clave=$user->getClave();
-        
-		$token="token";
-
+        $clave =$user->getClave();        
+		
 		$sql="INSERT INTO administradores (correo,clave) 
 		VALUES (?,?);";
 		
@@ -40,10 +39,8 @@ class AdministradorModel extends Model{
 		$resultado->execute();
 		$resultado->closeCursor();
 		$resultado=null;
-		$con=null;
+		$con      =null;
 		return true;
 	}
-
 }
-
 ?>

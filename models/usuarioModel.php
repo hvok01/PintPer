@@ -8,13 +8,13 @@ class UsuarioModel extends Model{
 	}
 
 	function resgistrarUsuario($user){
-		$cone=$this->db->conect();
-		$nick= $user->getNickName();
-		$correo= $user->getCorreo();
-		$clave= $user->getClave();
-		$estado= $user->getEstado();
+		$cone  =$this->db->conect();
+		$nick  =$user->getNickName();
+		$correo=$user->getCorreo();
+		$clave =$user->getClave();
+		$estado=$user->getEstado();
 		
-		$sql="INSERT INTO usuarios (NickName,Correo,Clave,Estado) VALUES (?,?,?,?)";
+		$sql   ="INSERT INTO usuarios (NickName,Correo,Clave,Estado) VALUES (?,?,?,?)";
 		
 		$resultado=$cone->prepare($sql);
 		$resultado->bindParam(1, $nick);
@@ -25,20 +25,20 @@ class UsuarioModel extends Model{
 		$resultado->execute();
 		$resultado->closeCursor();
 		$resultado=null;
-		$con=null;
+		$con      =null;
 		return true;
 	}
 
 	function loginUser($correo){
 
-		$cone=$this->db->conect();
-		$sql="SELECT * FROM usuarios WHERE Correo=?;";
+		$cone     =$this->db->conect();
+		$sql      ="SELECT * FROM usuarios WHERE Correo=?;";
 		$resultado=$cone->prepare($sql);
 		$resultado->execute(array($correo));
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $registro;	
 		}else{
 			return null;
@@ -48,16 +48,16 @@ class UsuarioModel extends Model{
 
 	function loadPublicidad(){
 		$publicidad=array();
-		$cone=$this->db->conect();
-		$sql="SELECT * FROM publicidad;";
-		$resultado=$cone->prepare($sql);
+		$cone      =$this->db->conect();
+		$sql       ="SELECT * FROM publicidad;";
+		$resultado =$cone->prepare($sql);
 		$resultado->execute();
 		while ($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			array_push($publicidad, $registro);
 		}
 		$resultado->closeCursor();
 		$resultado=null;
-		$cone=null;
+		$cone     =null;
 		return $publicidad;		
 	}
 }

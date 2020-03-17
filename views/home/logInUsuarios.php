@@ -41,7 +41,7 @@
 		<a href="<?php echo constant('URL')?>Propietario">acá</a>
 	<hr> 
 	
-	<script type="" src="public/js/jquery-3.4.1.js"></script>
-	<script type="" src="public/js/bootstrap.min.js"></script>
+	<script type="" src="<?php echo constant('URL')?>public/js/jquery-3.4.1.js"></script>
+	<script type="" src="<?php echo constant('URL')?>public/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -44,16 +44,16 @@ class LocalModel extends Model{
 		$resultado->execute();
 		$resultado->closeCursor();
 		$resultado=null;
-		$con=null;
+		$con      =null;
 		return true;
 	}
 
 	function listaLocales(){
-		$loacles= array();
-		$cone=$this->db->conect();
+		$loacles      = array();
+		$cone         =$this->db->conect();
 		$propietarioId=$_SESSION['usuario_registrado']->PropietarioId;
-		$sql="SELECT * FROM locales WHERE PropietarioId=?;";
-		$resultado=$cone->prepare($sql);
+		$sql          ="SELECT * FROM locales WHERE PropietarioId=?;";
+		$resultado    =$cone->prepare($sql);
 		$resultado->execute(array($propietarioId));
 		while($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$locales[]=$registro;			
@@ -62,7 +62,7 @@ class LocalModel extends Model{
 		if($locales!=null){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $locales;
 		}else{
 			return null;
@@ -70,10 +70,9 @@ class LocalModel extends Model{
 	}
 
 	function getLocalId($localId){
-		$cone=$this->db->conect();
-		
+		$cone         =$this->db->conect();		
 		$propietarioId=$_SESSION['usuario_registrado']->PropietarioId;
-		$sql="SELECT * FROM locales WHERE LocalId=? and PropietarioId=?;";
+		$sql          ="SELECT * FROM locales WHERE LocalId=? and PropietarioId=?;";
 		$resultado=$cone->prepare($sql);
 		$resultado->bindParam(1, $localId);
 		$resultado->bindParam(2, $propietarioId);
@@ -81,7 +80,7 @@ class LocalModel extends Model{
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $registro;
 		}else{
 			return null;
@@ -89,8 +88,7 @@ class LocalModel extends Model{
 	}
 
 	function modificarLocal($local){
-		$cone=$this->db->conect();
-
+		$cone    =$this->db->conect();
 		$nombre  =$local->getNombre();
 		$dire    =$local->getDireccion();
 		$lat     =$local->getLatitud();
@@ -151,10 +149,10 @@ class LocalModel extends Model{
 	}
 
 	function allLocales(){
-		$loacles= array();
-		$cone=$this->db->conect();		
-		$sql="SELECT * FROM locales;";
-		$resultado=$cone->prepare($sql);
+		$loacles   = array();
+		$cone      =$this->db->conect();		
+		$sql       ="SELECT * FROM locales;";
+		$resultado =$cone->prepare($sql);
 		$resultado->execute();
 		while($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$locales[]=$registro;			
@@ -163,7 +161,7 @@ class LocalModel extends Model{
 		if($locales!=null){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $locales;
 		}else{
 			return null;
@@ -171,10 +169,10 @@ class LocalModel extends Model{
 	}
 
 	function searchLocales($nombre){
-		$loacles= array();
-		$cone=$this->db->conect();		
-		$sql="SELECT * FROM locales WHERE Nombre like ?;";
-		$resultado=$cone->prepare($sql);
+		$loacles   = array();
+		$cone      =$this->db->conect();		
+		$sql       ="SELECT * FROM locales WHERE Nombre like ?;";
+		$resultado =$cone->prepare($sql);
 		$resultado->execute(array($nombre));
 		while($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$locales[]=$registro;			
@@ -183,7 +181,7 @@ class LocalModel extends Model{
 		if($locales!=null){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $locales;
 		}else{
 			return null;
@@ -191,14 +189,14 @@ class LocalModel extends Model{
 	}
 
 	function localId($localId){
-		$cone=$this->db->conect();		
-		$sql="SELECT * FROM locales WHERE LocalId=?;";
+		$cone     =$this->db->conect();		
+		$sql      ="SELECT * FROM locales WHERE LocalId=?;";
 		$resultado=$cone->prepare($sql);		
 		$resultado->execute(array($localId));
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;
+			$cone     =null;
 			return $registro;
 		}else{
 			return null;

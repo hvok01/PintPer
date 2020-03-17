@@ -6,6 +6,7 @@ class PublicidadController extends Controller{
 		parent::__construct();
 		$this->view->user=array();
 		$this->view->mensaje="";
+		$this->view->error="";
 		$this->view->id_p=0;		
 	}
 	
@@ -14,7 +15,7 @@ class PublicidadController extends Controller{
 	}
 
 	function publicar(){
-		$publicidad=new Publicidad();
+		$publicidad =new Publicidad();
 		$titulo     = $_POST['Titulo'];		
 		$descripcion= $_POST['Descripcion'];
 		$foto     	= $_FILES['Foto']['name'];//nombre del archivo
@@ -24,7 +25,7 @@ class PublicidadController extends Controller{
 	    $carpeta    = $_SESSION['usuario_registrado']->PropietarioId."_".$_SESSION['usuario_registrado']->Nombre;
 	    
 		$permitidos = array('jpg', 'jpeg');
-		$limite_kb = 16384;
+		$limite_kb  = 16384;
 		
 		if($titulo!="" & $descripcion!="" & $foto!="" ){
 			if (in_array($tipoimg, $permitidos)){//Control de tipo de archivo
@@ -57,38 +58,35 @@ class PublicidadController extends Controller{
 						}
 					}
 					else{
-						echo "Error al Cargar la imagen";
+						$this->view->error="Error al Cargar la imagen";
+						$this->render();
 					}
 					
 				}
 				else{
-					echo "Tamaño de imagen demasiado grande";
+					$this->view->error="Tamaño de imagen demasiado grande";
+					$this->render();
 				}
 			}
 			else{
-				echo "Error o tipo de arhivo no permitido";
+				$this->view->error="Error o tipo de arhivo no permitido";
+				$this->render();
 			}
 		}else{
-			echo "Debe completar todos los campos";
+			$this->view->error="Debe completar todos los campos";
+			$this->render();
 		}
 	}
 
-
-
-	function guardarEstilo(){
-		
-		
-	}/********** FIN Método para guardar estilos de cerveza nuevos*************/
-	
 
 	/*************************************************************************
 	********Método con rand() para generar nombre de archivo al azar**********
 	*************************************************************************/    
 	function generarNombre($ext) {
-		$length = 7;
-	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$length           = 7;
+	    $characters       = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	    $charactersLength = strlen($characters);
-	    $randomString = '';
+	    $randomString     = '';
 	    for ($i = 0; $i < $length; $i++) {
 	        $randomString .= $characters[rand(0, $charactersLength - 1)];
 	    }

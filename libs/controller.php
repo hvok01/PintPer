@@ -7,7 +7,7 @@ class Controller{
 	
 	function loadModel($model){
 		$model=explode('Controller',$model);		
-		$url='models/'.$model[0].'Model.php';
+		$url  ='models/'.$model[0].'Model.php';
 		if(file_exists($url)){
 			require $url;
 			$modelName=$model[0].'Model';

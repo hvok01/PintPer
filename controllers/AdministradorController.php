@@ -20,8 +20,8 @@ class AdministradorController extends Controller{
 
 	function login(){
 		$correo=$_POST["correoUsuario"];
-		$clave=$_POST["claveUsuario"];
-		$user=$this->model->loginAdmin($correo);
+		$clave =$_POST["claveUsuario"];
+		$user  =$this->model->loginAdmin($correo);
 		
 		if($user!=null){
 			$_SESSION['usuario_registrado']=$correo;

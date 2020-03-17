@@ -51,7 +51,7 @@ class EstiloController extends Controller{
 	    $carpeta    = $_SESSION['usuario_registrado']->PropietarioId."_".$_SESSION['usuario_registrado']->Nombre;
 	    
 		$permitidos = array('jpg', 'jpeg');
-		$limite_kb = 16384;
+		$limite_kb  = 16384;
 		
 		if (in_array($tipoimg, $permitidos)){//Control de tipo de archivo
 
@@ -125,7 +125,7 @@ class EstiloController extends Controller{
 		$sizeimg    = $_FILES['Imagen']['size'];//tamaño de las imagenes
 
 		$permitidos = array('jpg', 'jpeg');
-		$limite_kb = 16384;
+		$limite_kb  = 16384;
 
 				
 		if($imagen!=null){
@@ -134,6 +134,7 @@ class EstiloController extends Controller{
 				if($sizeimg <= $limite_kb * 1024){//Control de tamaño de imagen
 					$carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/PintPer/public/imagenes-usuarios/';
 					$ruta=$carpeta_destino.$imagenOld;
+					
 					//move el archivo a la carpeta creada
 					if(move_uploaded_file($tmp_name,$ruta)){
 						if($this->dimensionarJPEG($ruta)){//Re dimensionamos la imagen
@@ -190,9 +191,9 @@ class EstiloController extends Controller{
 	********Método con rand() para generar nombre de archivo al azar**********
 	*************************************************************************/    
 	function generarNombre($length = 10,$ext) {
-	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $characters       = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	    $charactersLength = strlen($characters);
-	    $randomString = '';
+	    $randomString     = '';
 	    for ($i = 0; $i < $length; $i++) {
 	        $randomString .= $characters[rand(0, $charactersLength - 1)];
 	    }
@@ -217,7 +218,7 @@ class EstiloController extends Controller{
 			$imgNew = imagecreatetruecolor($anchoThumb,$altoThumb);
 			if ($imgNew){
 				$ancho = imagesx($original);
-				$alto = imagesy($original);
+				$alto  = imagesy($original);
 
 				if(imagecopyresized($imgNew,$original,0,0,0,0,$anchoThumb,$altoThumb,$ancho,$alto)){
 					$resultado = imagejpeg($imgNew,$rutaImagen,$calidad);

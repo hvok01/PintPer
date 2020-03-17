@@ -53,8 +53,8 @@ class UsuarioController extends Controller{
 
 			if(preg_match($mail,$correo)){
 				
-				$_SESSION['user_registrado']=$this->model->loginUser($correo);
-				$user=$_SESSION['user_registrado'];		
+				$_SESSION['usuario_registrado']=$this->model->loginUser($correo);
+				$user=$_SESSION['usuario_registrado'];		
 				
 				if($user!=null and $user->Clave==$clave){
 					$publi=$this->model->loadPublicidad();					
@@ -78,6 +78,12 @@ class UsuarioController extends Controller{
 
 	function config(){
 		$this->view->render('usuario/configUsuario');
+	}
+
+	function logout(){
+		$_SESSION = array();
+		session_destroy();
+		$this->render();
 	}
 
 }

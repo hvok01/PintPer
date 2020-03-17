@@ -127,7 +127,7 @@
                         <li><a href="<?php echo constant('URL')?>local/verLocales">Ver Locales</a></li>
                         <li><a href="<?php echo constant('URL')?>promocion/verPromociones">Promociones</a></li>
                         <li><a href="<?php echo constant('URL')?>usuario/config">Configuraciones</a></li>
-                        <li><a href="<?php echo constant('URL')?>Usuario">Cerrar Sesion</a></li>
+                        <li><a href="<?php echo constant('URL')?>usuario/logout">Cerrar Sesion</a></li>
                     </ul>
                 </div>
             </div>

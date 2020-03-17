@@ -8,14 +8,14 @@ class PropietarioModel extends Model{
 	}
 
 	function loginProp($correo){
-		$cone=$this->db->conect();
-		$sql="SELECT * FROM propietarios WHERE Correo=?;";
+		$cone     =$this->db->conect();
+		$sql      ="SELECT * FROM propietarios WHERE Correo=?;";
 		$resultado=$cone->prepare($sql);
 		$resultado->execute(array($correo));
 		if($registro=$resultado->fetch(PDO::FETCH_OBJ)){
 			$resultado->closeCursor();
 			$resultado=null;
-			$cone=null;			
+			$cone     =null;			
 			return $registro;
 		}else{
 			return null;
@@ -23,14 +23,13 @@ class PropietarioModel extends Model{
 	}
 
 	function registrarProp($user){
-		$cone=$this->db->conect();
-
-		$nombre=$user->getNombre();
-		$apellido=$user->getApellido();
-		$dni=$user->getDni();
-		$correo=$user->getCorreo();
-		$clave=$user->getClave();
-		$estado=$user->getEstado();		
+		$cone     =$this->db->conect();
+		$nombre   =$user->getNombre();
+		$apellido =$user->getApellido();
+		$dni      =$user->getDni();
+		$correo   =$user->getCorreo();
+		$clave    =$user->getClave();
+		$estado   =$user->getEstado();		
 		$provincia=$user->getProvincia();
 
 		$sql="INSERT INTO propietarios (Nombre,Apellido,Dni,Correo,Clave,Estado,Provincia) 
@@ -48,7 +47,7 @@ class PropietarioModel extends Model{
 		$resultado->execute();
 		$resultado->closeCursor();
 		$resultado=null;
-		$con=null;
+		$con      =null;
 		return true;
 	}
 

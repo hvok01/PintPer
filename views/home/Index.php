@@ -3,12 +3,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="public/css/pintperRoot.css">
-	<link rel="stylesheet" type="text/css" href="public/css/pintperGrid.css">
-	<link rel="stylesheet" type="text/css" href="public/css/headerPintper.css">
-	<link rel="stylesheet" type="text/css" href="public/css/indexStyle.css">
-	<link rel="icon" href="public/img/Favicon2.png">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/pintperRoot.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/pintperGrid.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/headerPintper.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant('URL')?>public/css/indexStyle.css">
+	<link rel="icon" href="<?php echo constant('URL')?>public/img/Favicon2.png">
 	<title>Pintper</title>
 </head>
 <body>
@@ -120,7 +120,7 @@
 
 		<p>Bienvenido</p>
 
-		<img src="public/img/PintperLogo.png" alt="Logo Pintper"> <br>
+		<img src="<?php echo constant('URL')?>public/img/PintperLogo.png" alt="Logo Pintper"> <br>
 
 		<a class="pintper-button-op4" href="<?php echo constant('URL')?>usuario">Busco birra</a>
 
@@ -217,7 +217,7 @@
 	<div class="seccion-4">
 		<h1> contacto </h1>
 		<p>¿Tenés dudas? mandanos un mensaje!</p>
-		<form action="Home/sugerencia" method="post">
+		<form action="<?php echo constant('URL')?>Home/sugerencia" method="post">
 			<input type="text" name="" placeholder="nombre" class="pintper-textbox">
 			<input type="email" name="" placeholder="correo" class="pintper-textbox">
 			<textarea name="" cols="50" rows="10" placeholder="mensaje"></textarea>
@@ -230,7 +230,7 @@
 
 	<?php include('footer.php'); ?>
 	
-	<script type="" src="public/js/jquery-3.4.1.js"></script>
-	<script type="" src="public/js/bootstrap.min.js"></script>
+	<script type="" src="<?php echo constant('URL')?>public/js/jquery-3.4.1.js"></script>
+	<script type="" src="<?php echo constant('URL')?>public/js/bootstrap.min.js"></script>
 </body>
 </html>

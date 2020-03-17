@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="../public/css/pintperRoot.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/pintperGrid.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/headerPintper.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/usuarioStyle.css">
-    <link rel="icon" href="../public/img/Favicon2.png">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperRoot.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/pintperGrid.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/headerPintper.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo constant("URL")?>public/css/usuarioStyle.css">
+    <link rel="icon" href="<?php echo constant("URL")?>public/img/Favicon2.png">
     <!-- Alpine js -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.10.1/dist/alpine.js" defer></script>
     <title>Contacto: Pintper</title>
@@ -33,13 +33,13 @@
             </div>
             <div class="pintper-col-1" x-data="{ open: false }">
                 
-                <img src="../public/img/customer.png" alt="Iniciar Sesion" class="pintper-menu" @click="open = true">
+                <img src="<?php echo constant("URL")?>public/img/customer.png" alt="Iniciar Sesion" class="pintper-menu" @click="open = true">
                 
 
                 <div class="menu-pintper-nav"  x-show="open" @click.away="open = false">
                     <ul>
                         <li class="items-fade"><a href="<?php echo constant('URL')?>local/verLocales">Ver Locales</a></li>
-                        <li class="items-fade"><a href="#Promociones">Promociones</a></li>
+                        <li class="items-fade"><a href="<?php echo constant('URL')?>promocion/verPromociones">Promociones</a></li>
                         <li class="items-fade"><a href="<?php echo constant('URL')?>usuario/config">Configuraciones</a></li>
                         <li class="items-fade"><a href="<?php echo constant('URL')?>Usuario">Cerrar Sesion</a></li>
                     </ul>
