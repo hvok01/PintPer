@@ -27,7 +27,7 @@
             for ($i=0; $i < $rows; $i++) { ?>
                 <div class="item">
 
-                    <img src="<?php echo $carpeta.$promociones[$i]->Imagen;?>" alt="imagen1" id="myImg">
+                    <img src="<?php echo $carpeta.$promociones[$i]->Imagen;?>" alt="imagen1" id="myImg" class="myImagen<?php echo $i;?>">
 
                     <div id="myModal" class="modal">
 
@@ -39,35 +39,39 @@
                 </div>
         <?php } ?>        
         
-        <div class="item">
-            <img src="../public/img/cerveza5.jpg" alt="imagen1" id="myImg">
-
-            <div id="myModal" class="modal">
-
-                <span class="close">&times;</span>
-
-                <img class="modal-content" id="img01">
-
-            </div>
-        </div>
     </div>
 
     <script>
-        var modal = document.getElementById("myModal");
+        var modal = document.querySelector(".modal");
 
-        var img = document.getElementById("myImg");
-        var modalImg = document.getElementById("img01");
+        var elementosDiv = document.querySelectorAll(".item");
 
-        img.onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
+        const img = [];
+        
+        for(var i = 0; i < elementosDiv.length; i++){
+
+            img.push(document.querySelector(".myImagen"+i));
+        
         }
 
-        var span = document.getElementsByClassName("close")[0];
+        for (var j = 0; j < img.length; j++) {
 
-        span.onclick = function() {
-            modal.style.display = "none";
+            var modalImg = document.querySelector(".modal-content");
+
+            img[j].onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+
+            var span = document.getElementsByClassName("close")[0];
+
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
         }
+
+        
     </script>
 </body>
 </html>
