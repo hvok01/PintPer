@@ -43,7 +43,7 @@
         <div class="pintper-row">
             <div class="pintper-col-16 container-btn-local">
                 <!--Vuelve a donde estan todos los locales -->
-                <a href="<?php echo constant('URL')?>home/user_comun" class="pintper-button-op2">Volver</a>
+                <a href="<?php echo constant('URL')?>local/verLocales" class="pintper-button-op2">Volver</a>
                 <!--Ver más para ver cervezas y estilos del local -->
                 <a href="<?php echo constant('URL')?>local/verMas/<?php echo $local->LocalId; ?>" class="pintper-button">Ver más</a>
                 <div class="social-media">

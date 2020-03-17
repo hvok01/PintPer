@@ -26,6 +26,7 @@
         <?php
             for ($i=0; $i < $rows; $i++) { ?>
                 <div class="item">
+
                     <img src="<?php echo $carpeta.$promociones[$i]->Imagen;?>" alt="imagen1" id="myImg">
 
                     <div id="myModal" class="modal">
@@ -56,15 +57,16 @@
 
         var img = document.getElementById("myImg");
         var modalImg = document.getElementById("img01");
+
         img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
+            modal.style.display = "block";
+            modalImg.src = this.src;
         }
 
         var span = document.getElementsByClassName("close")[0];
 
         span.onclick = function() {
-        modal.style.display = "none";
+            modal.style.display = "none";
         }
     </script>
 </body>

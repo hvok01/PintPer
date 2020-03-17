@@ -55,7 +55,7 @@
                     <h1>Horario de atencion</h1> <br>
                     <div class="editar-horario-atencion">
                         <label class="label-checkbox">
-                            <input type="checkbox" name="Editar" id="editarLocal" checked>Editar horario de atencion
+                            <input type="checkbox" name="EditarHorario" id="editarLocal" checked>Editar horario de atencion
                             <span class="chequeado"></span>
                         </label>
                     </div>
@@ -67,14 +67,14 @@
                 <div class="pintper-col-8">
                     <label for="Desde">Mañana desde:</label> <br>
                     <input type="time" name="Desde" class="pintper-textbox" id="desdeHoraManiana" required value="08:00"> <br>
-                    <label for="Desde">Tarde/Noche Desde:</label> <br>
-                    <input type="time" name="Desde" class="pintper-textbox" id="desdeHoraTarde" required value="17:00">
+                    <label for="Desde2">Tarde/Noche Desde:</label> <br>
+                    <input type="time" name="Desde2" class="pintper-textbox" id="desdeHoraTarde" required value="17:00">
                 </div>
                 <div class="pintper-col-8">
                     <label for="Hasta">Hasta:</label> <br>
                     <input type="time" name="Hasta" class="pintper-textbox" id="hastaHoraTarde" required value="14:00"> <br>
-                    <label for="Desde">Hasta:</label> <br>
-                    <input type="time" name="Desde" class="pintper-textbox" id="hastaHoraNoche" required value="23:00">
+                    <label for="Hasta2">Hasta:</label> <br>
+                    <input type="time" name="Hasta2" class="pintper-textbox" id="hastaHoraNoche" required value="23:00">
                 </div>
             </div>
 
@@ -131,7 +131,7 @@
                             c2.4-2.5,5.9-5.3,9.9-5.3c7.1,0,54.6,0,54.6,0V92.3h-72.8c0,0-60.4,4.2-69.9,69.4c-0.2,1.4-0.3,2.7-0.3,4.1v74.6h-58.5v66.3h58.5
                             v158.5H46.8V46.8h418.4V465.2z"/>
                         </svg>
-                        <input type="text" name="Facebook" placeholder="Facebook">
+                        <input type="text" name="Facebook" placeholder="Facebook" value="<?php echo $this->local->Facebook;?>">
                     </div>
 
                     <div class="pintper-col-5">
@@ -150,7 +150,7 @@
                                 c78.2,0,141.8-63.6,141.8-141.8V141.8C512,63.6,448.4,0,370.2,0L370.2,0z"/>
                         </g>
                         </svg>
-                        <input type="text" name="Instagram" placeholder="Instagram"> 
+                        <input type="text" name="Instagram" placeholder="Instagram" value="<?php echo $this->local->Instagram;?>"> 
                     </div>
 
                     <div class="pintper-col-5">
@@ -171,7 +171,7 @@
                             c14.5,41.4,52,72.1,97.1,76.8C100.6,402.5,52.2,419.7,0,423c45.7,30.6,100.6,48.5,159.7,48.5c158.7,0,287.3-128.6,287.3-287.3
                             c0-6.5-0.2-12.9-0.6-19.3c1.1-5.3,1.7-10.7,1.9-16.2c28.1-10.7,51-32,63.7-59.1C493.6,102.1,471.4,109.4,447.5,109.5z"/>
                         </svg>
-                        <input type="text" name="Twitter" placeholder="Twitter">
+                        <input type="text" name="Twitter" placeholder="Twitter" value="<?php echo $this->local->Twitter;?>">
                     </div>
             </div>
             

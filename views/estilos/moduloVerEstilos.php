@@ -11,36 +11,26 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.10.1/dist/alpine.js" defer></script>
 </head>
 <body>
+    <?php 
+        $estilos=$this->estilos; 
+        $rows=sizeof($estilos);
+    ?>
     <div class="pintper-container modulo-ver-estilos">
         <!--repetir desde pintper-row-->
-        <div class="pintper-row">
-            <div class="pintper-col-16 container-birras">
-                <h3>IPA</h3>
-                <p>Tipo Cerveza</p> <br>
-                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
+        <?php 
+            for($i=0; $i<$rows;$i++){ 
+        ?>
+            <div class="pintper-row">                
+                <div class="pintper-col-16 container-birras">
+                    <img src="<?php echo constant('URL')?>/public/imagenes-usuarios/<?php echo $estilos[$i]->Imagen?>" alt="" width=100 height=100>
+                    <h3><?php echo $estilos[$i]->Nombre;?></h3>
+                    <p><?php echo $estilos[$i]->Tipo;?></p> <br>
+                    <small><?php echo $estilos[$i]->Descripcion;?>.</small>
+                </div>
             </div>
-        </div>
-        <div class="pintper-row">
-            <div class="pintper-col-16 container-birras">
-                <h3>Roja</h3>
-                <p>Tipo Cerveza</p> <br>
-                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
-            </div>
-        </div>
-        <div class="pintper-row">
-            <div class="pintper-col-16 container-birras">
-                <h3>Lager</h3>
-                <p>Tipo Cerveza</p> <br>
-                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
-            </div>
-        </div>
-        <div class="pintper-row">
-            <div class="pintper-col-16 container-birras">
-                <h3>Stout</h3>
-                <p>Tipo Cerveza</p> <br>
-                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
-            </div>
-        </div>
+        <?php
+            }
+        ?>    
         
         <br><br><br>
     </div>

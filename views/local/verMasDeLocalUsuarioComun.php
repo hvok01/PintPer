@@ -43,6 +43,7 @@
                     <hr>
                     <h2>Nuestras Cervezas</h2>
 
+<<<<<<< HEAD
                     <div class="estilo-ver-mas-local modulo-ver-estilos">
                    
                         <!--Repetir desde acá hasta el hr-->
@@ -75,6 +76,12 @@
 
                     </div>
                 </div> 
+=======
+                    <iframe src="<?php echo constant('URL')?>estilo/verModuloEstilos/<?php echo $local->LocalId;?>" frameborder="0" class="moduloCerveza"></iframe>
+
+                            
+                </div>
+>>>>>>> fec8b9393834f313805b4f4c16fdf99fd11502e8
         </div>
 
         <div class="pintper-row">
