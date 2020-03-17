@@ -39,14 +39,42 @@
                     <!--Dentro de ese div se mostraria el mapa -->
                     <div class="mapa" id="mapa"></div>
                 </div>
-                <div class="pintper-col-8">
+                <div class="pintper-col-8 contenedor-info-estilos">
                     <hr>
                     <h2>Nuestras Cervezas</h2>
 
-                    <iframe src="<?php echo constant('URL')?>estilo/verModuloEstilos" frameborder="0" class="moduloCerveza"></iframe>
+                    <div class="estilo-ver-mas-local modulo-ver-estilos">
+                   
+                        <!--Repetir desde acá hasta el hr-->
+                        <div class="pintper-row">
+                            <div class="pintper-col-16 container-birras">
+                                <h3>IPA</h3>
+                                <p>Tipo Cerveza</p> <br>
+                                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
+                            </div>
+                        </div>
+                        <hr>
 
-                            
-                </div>
+                        <div class="pintper-row ">
+                            <div class="pintper-col-16 container-birras">
+                                <h3>Roja</h3>
+                                <p>Tipo Cerveza</p> <br>
+                                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="pintper-row ">
+                            <div class="pintper-col-16 container-birras">
+                                <h3>Lager</h3>
+                                <p>Tipo Cerveza</p> <br>
+                                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
+                            </div>
+                        </div>
+                        <hr>
+
+                    </div>
+                </div> 
         </div>
 
         <div class="pintper-row">
