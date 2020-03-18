@@ -57,7 +57,7 @@ class EstiloModel extends Model{
 		}
 	}
 
-	function allEstilos(){
+	/*function allEstilos(){
 		$cone=$this->db->conect();
 		$estilo=array();
 				
@@ -73,7 +73,7 @@ class EstiloModel extends Model{
 		$resultado=null;
 		$cone     =null;
 		return $estilo;
-	}
+	}*/ //REVISAR
 
 	function getLocal($id){
 		
@@ -116,7 +116,7 @@ class EstiloModel extends Model{
 		return null;
 	}
 
-	function modificarEstilo(){
+	function modificarEstilo($estilo){
 		
 		$cone=$this->db->conect();
 

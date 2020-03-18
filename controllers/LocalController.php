@@ -8,6 +8,7 @@ class LocalController extends Controller{
 		$this->view->mensaje="";
 		$this->view->id_p=0;
 		$this->view->local=array();
+		$this->view->estilos=array();
 	}
 	
 	function verCompleto($id){
@@ -25,14 +26,15 @@ class LocalController extends Controller{
 	function buscarLocales() {
 		$nombre=$_POST['busqueda'];
 		if($nombre!=""){
-			$locales=$this->model->searchLocales($nombre);		
+			$locales=$this->model->searchLocales($nombre);
 			$this->view->local=$locales;
-			$this->view->render('local/verLocalesUsuarioComun');
+			$this->view->render('local/verLocalesUsuarioComun');			
 		}
 	}
 
 	function verMas($id){
-		$oneLocal=$this->model->localId($id[0]);		
+		$oneLocal=$this->model->localId($id[0]);
+		$this->view->estilos=$this->model->allEstilos($id[0]);
 		$this->view->local=$oneLocal;
 		$this->view->render('local/verMasDeLocalUsuarioComun');	
 	}
@@ -98,11 +100,11 @@ class LocalController extends Controller{
 
 			}else{
 				$this->view->mensaje="Error. Número de telefono invalido.!";
-				$this->render();
+				$this->agregar();
 			}
 		}else{
 			$this->view->mensaje="Debe llenar todos los campos!";
-			$this->render();
+			$this->agregar();
 		}		
 	}
 
@@ -156,11 +158,11 @@ class LocalController extends Controller{
 
 			}else{
 				$this->view->mensaje="Error. Número de telefono invalido.!";
-				$this->render();
+				$this->editarLocal();
 			}
 		}else{
 			$this->view->mensaje="Debe llenar todos los campos!";
-			$this->render();
+			$this->editarLocal();
 		}			
 	}
 

@@ -1,3 +1,13 @@
+<?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
+if (!isset($_SESSION['usuario_registrado'])) {
+    header('Location:'.constant("URL").'index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,13 +48,6 @@
                     </div>  
                 </div>
         <?php } ?>        
-        
-<<<<<<< HEAD
-    </div>
-=======
-        <div class="item">
-            <img src="<?php echo constant("URL")?>public/img/cerveza5.jpg" alt="imagen1" id="myImg">
->>>>>>> 3ddf2445be163f978574f35b62486877cd75906d
 
     <script>
         var modal = document.querySelector(".modal");

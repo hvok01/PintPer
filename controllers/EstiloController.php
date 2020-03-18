@@ -138,7 +138,7 @@ class EstiloController extends Controller{
 					//move el archivo a la carpeta creada
 					if(move_uploaded_file($tmp_name,$ruta)){
 						if($this->dimensionarJPEG($ruta)){//Re dimensionamos la imagen
-							$estilo->setEstiloId($id[0]);
+							$estilo->setCervezaId($id[0]);
 							$estilo->setNombre($nombre);
 							$estilo->setTipo($tipo);
 							$estilo->setDescripcion($desc);
@@ -166,7 +166,7 @@ class EstiloController extends Controller{
 			}
 			
 		}else{
-			$estilo->setEstiloId($id[0]);
+			$estilo->setCervezaId($id[0]);
 			$estilo->setNombre($nombre);
 			$estilo->setTipo($tipo);
 			$estilo->setDescripcion($desc);

@@ -7,7 +7,7 @@ if (!isset($_SESSION['usuario_registrado'])) {
     header('Location:'.constant("URL").'index.php');
 }
 ?>
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,7 +29,13 @@ if (!isset($_SESSION['usuario_registrado'])) {
     <div class="pintper-container contenedorVerLocales">
         <?php 
             $locales=$this->local;
-            for($i=0;$i<sizeof($locales);$i++){ ?>
+            $rows=0;
+            if($locales!=null){
+                $rows=sizeof($locales);
+            }else{
+                echo "<h1 style='color:red; text-align:center'>No se encontraron resultados para la busqueda...</h1>";
+            }            
+            for($i=0;$i<$rows;$i++){ ?>
         <form action="<?php echo constant('URL')?>local/verCompleto/<?php echo $locales[$i]->LocalId;?>" method="post">
             <div class="pintper-row">
                 <div class="pintper-col-8">

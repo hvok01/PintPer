@@ -169,7 +169,7 @@ class LocalModel extends Model{
 	}
 
 	function searchLocales($nombre){
-		$loacles   = array();
+		$locales   = array();
 		$cone      =$this->db->conect();		
 		$sql       ="SELECT * FROM locales WHERE Nombre like ?;";
 		$resultado =$cone->prepare($sql);
@@ -201,6 +201,25 @@ class LocalModel extends Model{
 		}else{
 			return null;
 		}			
+	}
+
+	function allEstilos($idLocal){
+		$cone=$this->db->conect();
+		$estilo=array();
+				
+		$sql="SELECT * FROM cervezas WHERE LocalId=?";
+		
+		$resultado=$cone->prepare($sql);
+		$resultado->execute(array($idLocal));
+
+		while ($registro=$resultado->fetch(PDO::FETCH_OBJ)) {
+			array_push($estilo, $registro);
+		}
+		
+		$resultado->closeCursor();
+		$resultado=null;
+		$cone     =null;
+		return $estilo;
 	}
 }
 ?>

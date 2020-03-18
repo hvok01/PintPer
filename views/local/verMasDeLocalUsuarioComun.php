@@ -7,7 +7,6 @@ if (!isset($_SESSION['usuario_registrado'])) {
     header('Location:'.constant("URL").'index.php');
 }
 ?>
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -54,35 +53,29 @@ if (!isset($_SESSION['usuario_registrado'])) {
                     <h2>Nuestras Cervezas</h2>
 
                     <div class="estilo-ver-mas-local modulo-ver-estilos">
-                   
+<?php 
+    $estilos=$this->estilos;
+    //echo var_dump($estilos);
+    $rows=sizeof($estilos);
+?>                   
                         <!--Repetir desde acá hasta el hr-->
+                        <?php
+                           for($i=0; $i<$rows;$i++) {
+                        ?>
                         <div class="pintper-row">
                             <div class="pintper-col-16 container-birras">
-                                <h3>IPA</h3>
-                                <p>Tipo Cerveza</p> <br>
-                                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
+                                <img src="<?php echo constant('URL')?>/public/imagenes-usuarios/<?php echo $estilos[$i]->Imagen?>" alt="" width=100 height=100>
+                                <h3><?php echo $estilos[$i]->Nombre;?></h3>                                
                             </div>
-                        </div>
-                        <hr>
-
-                        <div class="pintper-row ">
                             <div class="pintper-col-16 container-birras">
-                                <h3>Roja</h3>
-                                <p>Tipo Cerveza</p> <br>
-                                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
+                                <p><?php echo $estilos[$i]->Tipo;?></p> <br>
+                                <small><?php echo $estilos[$i]->Descripcion;?>.</small>
                             </div>
                         </div>
                         <hr>
-
-                        <div class="pintper-row ">
-                            <div class="pintper-col-16 container-birras">
-                                <h3>Lager</h3>
-                                <p>Tipo Cerveza</p> <br>
-                                <small>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse ipsum beatae fuga! Quam laudantium cupiditate voluptates eaque iusto libero voluptatibus amet, modi nesciunt. Qui, dignissimos odio eveniet molestiae accusantium facilis.</small>
-                            </div>
-                        </div>
-                        <hr>
-
+                        <?php
+                           }
+                        ?>
                     </div>
                 </div> 
         </div>

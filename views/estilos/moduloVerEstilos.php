@@ -7,7 +7,6 @@ if (!isset($_SESSION['usuario_registrado'])) {
     header('Location:'.constant("URL").'index.php');
 }
 ?>
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

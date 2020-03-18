@@ -1,3 +1,13 @@
+<?php
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
+if (!isset($_SESSION['usuario_registrado'])) {
+    header('Location:'.constant("URL").'index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,7 +23,7 @@
 </head>
 <body>
 
-   <?php
+<?php
     include_once 'header_prop.php';
 ?>
 
